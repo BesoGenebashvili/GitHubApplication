@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication
 {
-    partial class Form1
+    partial class GitHubAnalog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // GitHubAnalog
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "GitHubAnalog";
+            this.Text = "GitHub Analog";
+            this.Load += new System.EventHandler(this.GitHubAnalog_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
