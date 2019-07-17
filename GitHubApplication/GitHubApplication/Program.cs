@@ -16,7 +16,7 @@ namespace GitHubApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GitHubAnalog());
+            Application.Run(new LoginForm());
         }
     }
 }

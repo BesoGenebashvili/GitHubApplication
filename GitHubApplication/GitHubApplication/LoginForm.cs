@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GitHubApplication
 {
-    public partial class GitHubAnalog : Form
+    public partial class LoginForm : Form
     {
-        public GitHubAnalog()
+        public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void GitHubAnalog_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

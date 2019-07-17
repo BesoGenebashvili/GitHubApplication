@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication
 {
-    partial class GitHubAnalog
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // GitHubAnalog
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "GitHubAnalog";
-            this.Text = "GitHub Analog";
-            this.Load += new System.EventHandler(this.GitHubAnalog_Load);
+            this.Name = "LoginForm";
+            this.Text = "Login";
             this.ResumeLayout(false);
 
         }
@@ -45,4 +44,3 @@
         #endregion
     }
 }
-
