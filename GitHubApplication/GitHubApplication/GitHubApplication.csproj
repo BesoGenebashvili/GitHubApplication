@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -96,6 +97,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Intermittent-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\long-blue-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\long-gray-label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\short-blue-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\signUp-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-down-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\minimise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\signInBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\signInButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\signUpButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

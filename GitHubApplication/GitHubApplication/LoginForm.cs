@@ -16,5 +16,21 @@ namespace GitHubApplication
         {
             InitializeComponent();
         }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
