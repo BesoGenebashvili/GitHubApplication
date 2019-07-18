@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GitHubApplication.Services;
+using GitHubApplication.Common;
+using GitHubApplication.DataBaseContext;
+using Unity.Lifetime;
+using Unity;
 
 namespace GitHubApplication
 {
@@ -13,7 +15,13 @@ namespace GitHubApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            ServiceManager.Instance.Container.RegisterType<GitHubDataBaseContext>(new ContainerControlledLifetimeManager());
+            ServiceManager.Instance.Container.RegisterType<IUserService, UserServiceDb>();
+
+            LoginForm loginForm = ServiceManager.Instance.Container.Resolve<LoginForm>();
+
+            Application.Run(loginForm);
         }
     }
 }

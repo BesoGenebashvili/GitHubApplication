@@ -1,4 +1,6 @@
 ﻿using GitHubApplication.Common;
+using GitHubApplication.Models;
+using GitHubApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +17,13 @@ namespace GitHubApplication
     {
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
+        private readonly IUserService UserService;
 
-        public RegisterForm()
+        public RegisterForm(IUserService userService)
         {
             InitializeComponent();
 
+            UserService = userService;
             Validator = new Validator(UserNameLabel.ForeColor);
             LabelTextBoxPairs = new Dictionary<Label, TextBox>()
             {
@@ -29,7 +33,6 @@ namespace GitHubApplication
                 [RetypePasswordLabel] = RetypePasswordTextBox
             };
         }
-
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
@@ -46,7 +49,46 @@ namespace GitHubApplication
 
         private void SignUpUser()
         {
-            
+            User user = new User
+            {
+                UserName = UserNameTextBox.Text,
+                Email = EmailTextBox.Text,
+                Password = PasswordTextBox.Text,
+            };
+
+            User registeredUser = UserService.RegisterUser(user);
+            if (registeredUser == null)
+            {
+                MessageBox.Show("User Registered");
+            }
+            else
+            {
+                MessageBox.Show("User successfully registered");
+            }
+        }
+        
+        private bool ValidateEmail()
+        {
+            if (EmailTextBox.Text.Contains('@'))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool ValidatePassword()
+        {
+            if (PasswordTextBox.Text == RetypePasswordTextBox.Text && PasswordTextBox.Text.Length >= 6)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void TopButtons_MouseHover(object sender, EventArgs e)

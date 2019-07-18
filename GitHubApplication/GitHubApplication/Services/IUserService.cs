@@ -6,6 +6,8 @@ namespace GitHubApplication.Services
     {
         User LoginUser(User user);
         User RegisterUser(User user);
-        bool ChangePassword(User user, string newPassword);
+        User FindUser(string userName);
+        User ChangePassword(User user, string newPassword);
+        bool DeactivateUser(User user);
     }
 }

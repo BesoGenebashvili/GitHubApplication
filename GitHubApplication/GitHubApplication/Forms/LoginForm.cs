@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GitHubApplication.Common;
+using GitHubApplication.Models;
+using GitHubApplication.Services;
+using Unity;
 
 namespace GitHubApplication
 {
@@ -15,11 +18,13 @@ namespace GitHubApplication
     {
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
+        private readonly IUserService UserService;
 
-        public LoginForm()
+        public LoginForm(IUserService userService)
         {
             InitializeComponent();
 
+            UserService = userService;
             Validator = new Validator(UserNameLabel.ForeColor);
             LabelTextBoxPairs = new Dictionary<Label, TextBox>()
             {
@@ -30,7 +35,7 @@ namespace GitHubApplication
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            if(Validator.ValidateTextBoxes(LabelTextBoxPairs))
+            if (Validator.ValidateTextBoxes(LabelTextBoxPairs))
             {
                 SignInUser();
             }
@@ -38,12 +43,23 @@ namespace GitHubApplication
 
         private void SignInUser()
         {
-            // 
+            User user = new User()
+            {
+                UserName = UserNameTextBox.Text,
+                Password = PasswordTextBox.Text
+            };
+
+            User loggedUser = UserService.LoginUser(user);
+
+            if (loggedUser == null)
+                MessageBox.Show("user not found");
+            else
+                MessageBox.Show("user successfully logged");
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
+            RegisterForm registerForm = ServiceManager.Instance.Container.Resolve<RegisterForm>();
             registerForm.ShowDialog();
         }
 
