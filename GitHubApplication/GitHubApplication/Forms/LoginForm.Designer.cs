@@ -114,7 +114,7 @@
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
             this.CloseButton.Image = global::GitHubApplication.Properties.Resources.close;
-            this.CloseButton.Location = new System.Drawing.Point(367, 16);
+            this.CloseButton.Location = new System.Drawing.Point(370, 16);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Padding = new System.Windows.Forms.Padding(3);
             this.CloseButton.Size = new System.Drawing.Size(19, 19);

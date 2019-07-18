@@ -16,5 +16,25 @@ namespace GitHubApplication
         {
             InitializeComponent();
         }
+
+        private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private void CloseButton_Click(object sender, EventArgs e) => Close();
+
+        private void TopButtons_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is PictureBox topButtonPictureBox)
+            {
+                topButtonPictureBox.BackColor = Color.FromKnownColor(KnownColor.DimGray);
+            }
+        }
+
+        private void TopButtons_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is PictureBox topButtonPictureBox)
+            {
+                topButtonPictureBox.BackColor = Color.Transparent;
+            }
+        }
     }
 }

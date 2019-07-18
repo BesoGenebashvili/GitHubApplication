@@ -52,9 +52,14 @@ namespace GitHubApplication
             User loggedUser = UserService.LoginUser(user);
 
             if (loggedUser == null)
+            {
                 MessageBox.Show("user not found");
+            }
             else
-                MessageBox.Show("user successfully logged");
+            {
+                GitHubForm gitHubForm = new GitHubForm();
+                gitHubForm.Show();
+            }
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)

@@ -252,6 +252,54 @@
   <ItemGroup>
     <Folder Include="Controls\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\mainformBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\searchBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\searchIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\circleUnderImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\circleProfileImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logOutButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cautionIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\ProfileSettingsTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\resetButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\saveButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\uploadButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\uploadImage-120x120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\profilePictureUpload.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.14\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.14\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
