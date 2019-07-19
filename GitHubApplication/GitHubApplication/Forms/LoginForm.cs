@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GitHubApplication.Common;
+using GitHubApplication.Forms;
 using GitHubApplication.Models;
 using GitHubApplication.Services;
 using Unity;
@@ -53,11 +54,11 @@ namespace GitHubApplication
 
             if (loggedUser == null)
             {
-                MessageBox.Show("user not found");
+                GitMessageBox.Message("user not found");
             }
             else
             {
-                GitHubForm gitHubForm = new GitHubForm();
+                GitHubForm gitHubForm = new GitHubForm(loggedUser);
                 gitHubForm.Show();
             }
         }

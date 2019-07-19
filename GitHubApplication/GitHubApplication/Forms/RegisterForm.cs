@@ -1,4 +1,5 @@
 ﻿using GitHubApplication.Common;
+using GitHubApplication.Forms;
 using GitHubApplication.Models;
 using GitHubApplication.Services;
 using System;
@@ -7,6 +8,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,18 +58,62 @@ namespace GitHubApplication
                 Email = EmailTextBox.Text,
                 Password = PasswordTextBox.Text,
             };
-
-            User registeredUser = UserService.RegisterUser(user);
-            if (registeredUser == null)
+                ConfirmForm confirmForm = new ConfirmForm(SendMail(user.Email));
+                confirmForm.ShowDialog();
+            if (confirmForm.ConfirmStatus && confirmForm.ShowDialog() == DialogResult.Cancel)
             {
-                MessageBox.Show("User Registered");
+                User registeredUser = UserService.RegisterUser(user);
+                if (registeredUser == null)
+                {
+                    GitMessageBox.Message("user not found");
+                }
+                else
+                {
+                    GitHubForm gitHubForm = new GitHubForm(registeredUser);
+                    gitHubForm.Show();
+                }
+                this.Close();
             }
             else
             {
-                MessageBox.Show("User successfully registered");
+                GitMessageBox.Message("Confirm Code is Incorect");
             }
         }
-        
+        string SendMail(string mail)
+        {
+            try
+            {
+                string hash = Guid.NewGuid().ToString();
+                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "githubapplicationun");
+                var toAddress = new MailAddress(mail, "Name");
+                const string fromPassword = "githubapplicationun123";
+                string subject = "დარეგისტრირდი დებილო";
+                string body = $"confirm code - {hash}";
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                    return hash;
+                }
+            }
+            catch (Exception)
+            {
+                GitMessageBox.Message("message could not be sent");
+                return null;
+            }
+        }
         private bool ValidateEmail()
         {
             if (EmailTextBox.Text.Contains('@'))

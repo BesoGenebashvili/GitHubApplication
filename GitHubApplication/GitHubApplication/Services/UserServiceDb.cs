@@ -62,5 +62,7 @@ namespace GitHubApplication.Services
         {
            return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
         }
+
+      
     }
 }

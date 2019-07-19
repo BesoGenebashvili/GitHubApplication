@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GitHubApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace GitHubApplication
 {
     public partial class GitHubForm : Form
     {
-        public GitHubForm()
+        private readonly User user;
+
+        public GitHubForm(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
