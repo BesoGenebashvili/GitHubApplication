@@ -28,56 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ConfirmButton = new System.Windows.Forms.PictureBox();
             this.ConfirmTextBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ConfirmButton)).BeginInit();
+            this.MessageboxLabel = new System.Windows.Forms.Label();
+            this.OkButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.OkButton)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ConfirmButton
-            // 
-            this.ConfirmButton.BackColor = System.Drawing.Color.Transparent;
-            this.ConfirmButton.BackgroundImage = global::GitHubApplication.Properties.Resources.ConfirmButton;
-            this.ConfirmButton.Location = new System.Drawing.Point(166, 90);
-            this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(84, 39);
-            this.ConfirmButton.TabIndex = 0;
-            this.ConfirmButton.TabStop = false;
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // ConfirmTextBox
             // 
             this.ConfirmTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
             this.ConfirmTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmTextBox.Location = new System.Drawing.Point(38, 24);
+            this.ConfirmTextBox.Location = new System.Drawing.Point(32, 68);
             this.ConfirmTextBox.Multiline = true;
             this.ConfirmTextBox.Name = "ConfirmTextBox";
             this.ConfirmTextBox.Size = new System.Drawing.Size(329, 34);
             this.ConfirmTextBox.TabIndex = 1;
             // 
+            // MessageboxLabel
+            // 
+            this.MessageboxLabel.AutoSize = true;
+            this.MessageboxLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MessageboxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MessageboxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MessageboxLabel.Location = new System.Drawing.Point(143, 10);
+            this.MessageboxLabel.Name = "MessageboxLabel";
+            this.MessageboxLabel.Size = new System.Drawing.Size(99, 18);
+            this.MessageboxLabel.TabIndex = 22;
+            this.MessageboxLabel.Text = "Message Box";
+            // 
+            // OkButton
+            // 
+            this.OkButton.BackColor = System.Drawing.Color.Transparent;
+            this.OkButton.Image = global::GitHubApplication.Properties.Resources.confirm_button;
+            this.OkButton.Location = new System.Drawing.Point(139, 141);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(107, 35);
+            this.OkButton.TabIndex = 21;
+            this.OkButton.TabStop = false;
+            // 
             // ConfirmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GitHubApplication.Properties.Resources.ConfirmForm;
+            this.BackgroundImage = global::GitHubApplication.Properties.Resources.MessageBoxForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(400, 141);
+            this.ClientSize = new System.Drawing.Size(384, 187);
+            this.Controls.Add(this.MessageboxLabel);
+            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.ConfirmTextBox);
-            this.Controls.Add(this.ConfirmButton);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmForm";
-            ((System.ComponentModel.ISupportInitialize)(this.ConfirmButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OkButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ConfirmButton;
         private System.Windows.Forms.TextBox ConfirmTextBox;
+        private System.Windows.Forms.Label MessageboxLabel;
+        private System.Windows.Forms.PictureBox OkButton;
     }
 }

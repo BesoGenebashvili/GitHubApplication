@@ -130,8 +130,17 @@
   <data name="uploadImage-120x120" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\uploadImage-120x120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="long-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\long-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mainformBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\mainformBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok-Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ok-Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="project-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\project-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\searchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +148,8 @@
   <data name="ConfirmButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="resetButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\resetButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="star-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\star-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,14 +187,23 @@
   <data name="MessageBoxForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MessageBoxForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="circle-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\circle-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="location-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\location-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="signInBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\signInBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimise" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\minimise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fork-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\fork-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ConfirmForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resetButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\resetButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="left-down-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-down-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,13 +220,34 @@
   <data name="profilePictureUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\profilePictureUpload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="star-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\star-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="saveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\saveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirm-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\confirm-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="followers-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\followers-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\minimise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ProfileSettingsTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\ProfileSettingsTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="email-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\email-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\avatar-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="OkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trendingTabBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\trendingTabBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

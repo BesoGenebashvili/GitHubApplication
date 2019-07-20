@@ -40,5 +40,7 @@ namespace GitHubApplication
                 topButtonPictureBox.BackColor = Color.Transparent;
             }
         }
+
+       
     }
 }

@@ -37,10 +37,10 @@
             // OkButton
             // 
             this.OkButton.BackColor = System.Drawing.Color.Transparent;
-            this.OkButton.Image = global::GitHubApplication.Properties.Resources.OkButton;
-            this.OkButton.Location = new System.Drawing.Point(164, 136);
+            this.OkButton.Image = global::GitHubApplication.Properties.Resources.ok_Button;
+            this.OkButton.Location = new System.Drawing.Point(139, 141);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(84, 39);
+            this.OkButton.Size = new System.Drawing.Size(107, 35);
             this.OkButton.TabIndex = 0;
             this.OkButton.TabStop = false;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
@@ -51,7 +51,7 @@
             this.MessageboxLabel.BackColor = System.Drawing.Color.Transparent;
             this.MessageboxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MessageboxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.MessageboxLabel.Location = new System.Drawing.Point(149, 9);
+            this.MessageboxLabel.Location = new System.Drawing.Point(143, 10);
             this.MessageboxLabel.Name = "MessageboxLabel";
             this.MessageboxLabel.Size = new System.Drawing.Size(99, 18);
             this.MessageboxLabel.TabIndex = 20;
@@ -61,14 +61,14 @@
             // 
             this.MessageLabel.AutoSize = true;
             this.MessageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.MessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.MessageLabel.Location = new System.Drawing.Point(12, 63);
+            this.MessageLabel.Location = new System.Drawing.Point(36, 83);
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.MessageLabel.Size = new System.Drawing.Size(0, 17);
             this.MessageLabel.TabIndex = 21;
             // 
-            // MessageBoxForm
+            // GitMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +80,7 @@
             this.Controls.Add(this.OkButton);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MessageBoxForm";
+            this.Name = "GitMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxForm";
             ((System.ComponentModel.ISupportInitialize)(this.OkButton)).EndInit();

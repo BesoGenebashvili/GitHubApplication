@@ -53,7 +53,7 @@
             this.signupLabel.BackColor = System.Drawing.Color.Transparent;
             this.signupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.signupLabel.Location = new System.Drawing.Point(167, 18);
+            this.signupLabel.Location = new System.Drawing.Point(171, 18);
             this.signupLabel.Name = "signupLabel";
             this.signupLabel.Size = new System.Drawing.Size(52, 18);
             this.signupLabel.TabIndex = 19;
