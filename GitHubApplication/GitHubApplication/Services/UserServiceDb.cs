@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using GitHubApplication.Common;
 using GitHubApplication.DataBaseContext;
 using GitHubApplication.Models;
 
@@ -63,6 +66,48 @@ namespace GitHubApplication.Services
            return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
         }
 
-      
+        public bool SentMail(User mail, string subject, string body)
+        {
+            try
+            {
+                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "githubapplicationun");
+                var toAddress = new MailAddress(mail.Email, "Name");
+                const string fromPassword = "githubapplicationun123";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                Box.MessageBox("could not be sent");
+                return false;
+            }
+        }
+
+        public User RecoveryPassword(string userEmail)
+        {
+            User us =  DataBase.Users.FirstOrDefault(u => u.UserName.Equals("halamadriddd", StringComparison.CurrentCultureIgnoreCase));
+            User searchResult = DataBase.Users.FirstOrDefault(u => u.Email == userEmail);
+            if (searchResult == null)
+                return null;
+            SentMail(searchResult, "Recovery Password", $"Your Passwor is - {searchResult.Password}");
+            return searchResult;
+        }
     }
 }

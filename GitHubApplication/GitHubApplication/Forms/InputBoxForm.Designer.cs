@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication.Forms
 {
-    partial class ConfirmForm
+    partial class GiInputBoxForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,11 +51,11 @@
             this.MessageboxLabel.BackColor = System.Drawing.Color.Transparent;
             this.MessageboxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MessageboxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.MessageboxLabel.Location = new System.Drawing.Point(143, 10);
+            this.MessageboxLabel.Location = new System.Drawing.Point(158, 10);
             this.MessageboxLabel.Name = "MessageboxLabel";
-            this.MessageboxLabel.Size = new System.Drawing.Size(99, 18);
+            this.MessageboxLabel.Size = new System.Drawing.Size(69, 18);
             this.MessageboxLabel.TabIndex = 22;
-            this.MessageboxLabel.Text = "Message Box";
+            this.MessageboxLabel.Text = "Input Box";
             // 
             // OkButton
             // 
@@ -66,8 +66,9 @@
             this.OkButton.Size = new System.Drawing.Size(107, 35);
             this.OkButton.TabIndex = 21;
             this.OkButton.TabStop = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // ConfirmForm
+            // GiInputBoxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +80,7 @@
             this.Controls.Add(this.ConfirmTextBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ConfirmForm";
+            this.Name = "GiInputBoxForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmForm";
             ((System.ComponentModel.ISupportInitialize)(this.OkButton)).EndInit();

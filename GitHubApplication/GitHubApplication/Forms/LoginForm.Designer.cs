@@ -184,6 +184,7 @@
             this.ForgotYourPasswordLabel.Size = new System.Drawing.Size(162, 18);
             this.ForgotYourPasswordLabel.TabIndex = 23;
             this.ForgotYourPasswordLabel.Text = "Forgot your password?";
+            this.ForgotYourPasswordLabel.Click += new System.EventHandler(this.ForgotYourPasswordLabel_Click);
             // 
             // SignInButton
             // 

@@ -58,60 +58,32 @@ namespace GitHubApplication
                 Email = EmailTextBox.Text,
                 Password = PasswordTextBox.Text,
             };
-                ConfirmForm confirmForm = new ConfirmForm(SendMail(user.Email));
-                confirmForm.ShowDialog();
-            if (confirmForm.ConfirmStatus && confirmForm.ShowDialog() == DialogResult.Cancel)
+            string hash = Guid.NewGuid().ToString();
+            if (UserService.SentMail(user, "Registration", $"Confirmation code - {hash}"))
             {
-                User registeredUser = UserService.RegisterUser(user);
-                if (registeredUser == null)
+                if (Box.InputBox() == hash)
                 {
-                    GitMessageBox.Message("user not found");
+                    User registeredUser = UserService.RegisterUser(user);
+                    if (registeredUser == null)
+                    {
+                        Box.MessageBox("user not found");
+                    }
+                    else
+                    {
+                        GitHubForm gitHubForm = new GitHubForm(registeredUser);
+                        gitHubForm.Show();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    GitHubForm gitHubForm = new GitHubForm(registeredUser);
-                    gitHubForm.Show();
+                    Box.MessageBox("Confirm Code is Incorect");
                 }
-                this.Close();
+
             }
             else
             {
-                GitMessageBox.Message("Confirm Code is Incorect");
-            }
-        }
-        string SendMail(string mail)
-        {
-            try
-            {
-                string hash = Guid.NewGuid().ToString();
-                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "githubapplicationun");
-                var toAddress = new MailAddress(mail, "Name");
-                const string fromPassword = "githubapplicationun123";
-                string subject = "დარეგისტრირდი დებილო";
-                string body = $"confirm code - {hash}";
-                var smtp = new SmtpClient
-                {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                };
-                using (var message = new MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = body
-                })
-                {
-                    smtp.Send(message);
-                    return hash;
-                }
-            }
-            catch (Exception)
-            {
-                GitMessageBox.Message("message could not be sent");
-                return null;
+                Box.MessageBox("The message could not be sent");
             }
         }
         private bool ValidateEmail()

@@ -157,14 +157,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Box.cs" />
     <Compile Include="Common\ServiceManager.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="DataBaseContext\GitHubDataBaseContext.cs" />
-    <Compile Include="Forms\ConfirmForm.cs">
+    <Compile Include="Forms\InputBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ConfirmForm.Designer.cs">
-      <DependentUpon>ConfirmForm.cs</DependentUpon>
+    <Compile Include="Forms\InputBoxForm.Designer.cs">
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GitHubForm.cs">
       <SubType>Form</SubType>
@@ -207,8 +208,8 @@
     <Compile Include="UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ConfirmForm.resx">
-      <DependentUpon>ConfirmForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InputBoxForm.resx">
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GitHubForm.resx">
       <DependentUpon>GitHubForm.cs</DependentUpon>

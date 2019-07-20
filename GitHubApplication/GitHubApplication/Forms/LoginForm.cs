@@ -68,7 +68,15 @@ namespace GitHubApplication
             RegisterForm registerForm = ServiceManager.Instance.Container.Resolve<RegisterForm>();
             registerForm.ShowDialog();
         }
-
+        private void ForgotYourPasswordLabel_Click(object sender, EventArgs e)
+        {
+            string email = Box.InputBox();
+            if (email != null && email.Contains('@'))
+            {
+                UserService.RecoveryPassword(email);
+            }
+            Box.MessageBox("Password successfully sent");
+        }
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
             if (sender is PictureBox topButtonPictureBox)
@@ -93,5 +101,7 @@ namespace GitHubApplication
         {
             Validator.ValidateTextBoxes(LabelTextBoxPairs);
         }
+
+       
     }
 }
