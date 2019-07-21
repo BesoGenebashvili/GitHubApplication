@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using GitHubApplication.Common;
 using GitHubApplication.DataBaseContext;
 using GitHubApplication.Models;
@@ -63,42 +64,45 @@ namespace GitHubApplication.Services
 
         public User FindUser(string userName)
         {
-           return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
+            return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
         }
 
-        public bool SentMail(User user, string subject, string body)
+        public Task<bool> SentMailAsync(User user, string subject, string body)
         {
-            try
+            return Task.Run(() =>
             {
-                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "GitHub Application");
-                var toAddress = new MailAddress(user.Email, "Name");
-                const string fromPassword = "githubapplicationun123";
+                try
+                {
+                    var fromAddress = new MailAddress("githubapplicationun@gmail.com", "GitHub Application");
+                    var toAddress = new MailAddress(user.Email, "Name");
+                    const string fromPassword = "githubapplicationun123";
 
-                SmtpClient smtpClient = new SmtpClient
-                {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                };
+                    SmtpClient smtpClient = new SmtpClient
+                    {
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                    };
 
-                using (MailMessage mailMessage = new MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = body
-                })
-                {
-                    smtpClient.Send(mailMessage);
-                    return true;
+                    using (MailMessage mailMessage = new MailMessage(fromAddress, toAddress)
+                    {
+                        Subject = subject,
+                        Body = body
+                    })
+                    {
+                        smtpClient.Send(mailMessage);
+                        return true;
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                CustomBox.Message("could not be sent");
-                return false;
-            }
+                catch (Exception)
+                {
+                    CustomBox.Message("could not be sent");
+                    return false;
+                }
+            });
         }
 
         public User PasswordRecovery(string userEmail)
@@ -108,7 +112,7 @@ namespace GitHubApplication.Services
             if (searchResult == null)
                 return null;
 
-            SentMail(searchResult, "Password Recovery", $"Your password is - {searchResult.Password}");
+            SentMailAsync(searchResult, "Password Recovery", $"Your password is - {searchResult.Password}");
             return searchResult;
         }
     }

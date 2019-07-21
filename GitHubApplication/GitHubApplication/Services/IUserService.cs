@@ -1,4 +1,5 @@
-﻿using GitHubApplication.Models;
+﻿using System.Threading.Tasks;
+using GitHubApplication.Models;
 
 namespace GitHubApplication.Services
 {
@@ -10,6 +11,6 @@ namespace GitHubApplication.Services
         User ChangePassword(User user, string newPassword);
         User PasswordRecovery(string userEmail);
         bool DeactivateUser(User user);
-        bool SentMail(User mail, string subject, string body);
+        Task<bool> SentMailAsync(User mail, string subject, string body);
     }
 }

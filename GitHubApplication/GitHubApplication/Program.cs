@@ -19,9 +19,8 @@ namespace GitHubApplication
             ServiceManager.Instance.Container.RegisterType<GitHubDataBaseContext>(new ContainerControlledLifetimeManager());
             ServiceManager.Instance.Container.RegisterType<IUserService, UserServiceDb>();
 
-            LoginForm loginForm = ServiceManager.Instance.Container.Resolve<LoginForm>();
-
-            Application.Run(loginForm);
+            GitHubForm gitHubForm = ServiceManager.Instance.Container.Resolve<GitHubForm>();
+            Application.Run(gitHubForm);
         }
     }
 }

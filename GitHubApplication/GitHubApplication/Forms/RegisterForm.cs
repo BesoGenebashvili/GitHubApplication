@@ -21,6 +21,7 @@ namespace GitHubApplication
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
         private readonly IUserService UserService;
+        public event EventHandler<User> SuccessfullyRegistered;
 
         public RegisterForm(IUserService userService)
         {
@@ -44,71 +45,59 @@ namespace GitHubApplication
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            if(Validator.ValidateTextBoxes(LabelTextBoxPairs))
+            if (Validator.ValidateTextBoxes(LabelTextBoxPairs) && ValidateEmail() && ValidatePassword())
             {
-                SignUpUser();
+                User user = new User
+                {
+                    UserName = UserNameTextBox.Text,
+                    Email = EmailTextBox.Text,
+                    Password = PasswordTextBox.Text,
+                };
+                SignUpUser(user);
             }
         }
 
-        private void SignUpUser()
+        private void SignUpUser(User newUser)
         {
-            User user = new User
+            if (SentConfirmationCode(newUser))
             {
-                UserName = UserNameTextBox.Text,
-                Email = EmailTextBox.Text,
-                Password = PasswordTextBox.Text,
-            };
-            string hash = Guid.NewGuid().ToString();
-            if (UserService.SentMail(user, "Registration", $"Confirmation code - {hash}"))
-            {
-                if (CustomBox.Input() == hash)
-                {
-                    User registeredUser = UserService.RegisterUser(user);
-                    if (registeredUser == null)
-                    {
-                        CustomBox.Message("user not found");
-                    }
-                    else
-                    {
-                        GitHubForm gitHubForm = new GitHubForm(registeredUser);
-                        gitHubForm.Show();
-                    }
-                    this.Close();
-                }
+                User registeredUser = UserService.RegisterUser(newUser);
+
+                if (registeredUser == null)
+                    MessageBox.Show("User Already registered");
+
                 else
                 {
-                    CustomBox.Message("Confirm Code is Incorect");
+                    SuccessfullyRegistered?.Invoke(this, registeredUser);
+                    Close();
+                    return;
                 }
-
             }
             else
+                foreach (var item in LabelTextBoxPairs) item.Value.Clear();
+        }
+
+        private bool SentConfirmationCode(User newUser)
+        {
+            string confirmationCode = Guid.NewGuid().ToString();
+
+            if (UserService.SentMailAsync(newUser, "Registration", $"Confirmation code - {confirmationCode}").Result)
             {
+                if (CustomBox.Input() == confirmationCode)
+                    return true;
+
+                else
+                    CustomBox.Message("Confirm Code is Incorect");
+            }
+            else
                 CustomBox.Message("The message could not be sent");
-            }
-        }
-        private bool ValidateEmail()
-        {
-            if (EmailTextBox.Text.Contains('@'))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
-        private bool ValidatePassword()
-        {
-            if (PasswordTextBox.Text == RetypePasswordTextBox.Text && PasswordTextBox.Text.Length >= 6)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        private bool ValidateEmail() => EmailTextBox.Text.Contains('@');
+
+        private bool ValidatePassword() => PasswordTextBox.Text == RetypePasswordTextBox.Text;
 
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
@@ -130,10 +119,6 @@ namespace GitHubApplication
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
 
-        private void TextBoxes_TextChanged(object sender, EventArgs e)
-        {
-            Validator.ValidateTextBoxes(LabelTextBoxPairs);
-        }
-
+        private void TextBoxes_TextChanged(object sender, EventArgs e) => Validator.ValidateTextBoxes(LabelTextBoxPairs);
     }
 }

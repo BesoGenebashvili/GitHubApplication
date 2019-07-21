@@ -459,6 +459,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub";
             this.TransparencyKey = System.Drawing.SystemColors.InactiveBorder;
+            this.Load += new System.EventHandler(this.GitHubForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).EndInit();

@@ -20,7 +20,7 @@ namespace GitHubApplication
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
         private readonly IUserService UserService;
-
+        public event EventHandler<User> SuccessfullyLogged;
         public LoginForm(IUserService userService)
         {
             InitializeComponent();
@@ -38,45 +38,61 @@ namespace GitHubApplication
         {
             if (Validator.ValidateTextBoxes(LabelTextBoxPairs))
             {
-                SignInUser();
-            }
-        }
-
-        private void SignInUser()
-        {
-            User user = new User()
-            {
-                UserName = UserNameTextBox.Text,
-                Password = PasswordTextBox.Text
-            };
-
-            User loggedUser = UserService.LoginUser(user);
-
-            if (loggedUser == null)
-            {
-                CustomMessageBox.Message("user not found");
+                User user = new User()
+                {
+                    UserName = UserNameTextBox.Text,
+                    Password = PasswordTextBox.Text
+                };
+                SignInUser(user);
             }
             else
             {
-                GitHubForm gitHubForm = new GitHubForm(loggedUser);
-                gitHubForm.Show();
+                UserNameOrPasswordFailLabel.Visible = true;
+            }
+        }
+
+        private void SignInUser(User user)
+        {
+            var result = UserService.LoginUser(user);
+            if (result != null)
+            {
+                UserNameOrPasswordFailLabel.Visible = false;
+                SuccessfullyLogged?.Invoke(this, result);
+                DialogResult = DialogResult.OK;
+                Close();
+                return;
+            }
+            else
+            {
+                UserNameOrPasswordFailLabel.Visible = true;
             }
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = ServiceManager.Instance.Container.Resolve<RegisterForm>();
+            var registerForm = ServiceManager.Instance.Container.Resolve<RegisterForm>();
+            registerForm.SuccessfullyRegistered += SuccessfullyRegisteredHandler;
             registerForm.ShowDialog();
         }
-        private void ForgotYourPasswordLabel_Click(object sender, EventArgs e)
+
+        public void SuccessfullyRegisteredHandler(object sender, User user)
         {
-            string email = CustomBox.Input();
-            if (email != null && email.Contains('@'))
-            {
-                UserService.PasswordRecovery(email);
-            }
-            CustomBox.Message("Password successfully sent");
+            SignInUser(user);
+
+            if (sender is RegisterForm registerForm)
+                registerForm.SuccessfullyRegistered -= SuccessfullyRegisteredHandler;
         }
+
+        private void ForgotYourPasswordButton_Click(object sender, EventArgs e)
+        {
+            string enteredEmail = CustomBox.Input();
+            if (enteredEmail != null && enteredEmail.Contains('@'))
+            {
+                UserService.PasswordRecovery(enteredEmail);
+            }
+            CustomBox.Message($"Password successfully sent to : {enteredEmail}");
+        }
+
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
             if (sender is PictureBox topButtonPictureBox)

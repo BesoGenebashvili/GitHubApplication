@@ -38,8 +38,9 @@
             this.SignUpButton = new System.Windows.Forms.PictureBox();
             this.NotMemberLabel = new System.Windows.Forms.Label();
             this.line = new System.Windows.Forms.PictureBox();
-            this.ForgotYourPasswordLabel = new System.Windows.Forms.Label();
+            this.ForgotYourPasswordButton = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.PictureBox();
+            this.UserNameOrPasswordFailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignUpButton)).BeginInit();
@@ -173,18 +174,18 @@
             this.line.TabIndex = 20;
             this.line.TabStop = false;
             // 
-            // ForgotYourPasswordLabel
+            // ForgotYourPasswordButton
             // 
-            this.ForgotYourPasswordLabel.AutoSize = true;
-            this.ForgotYourPasswordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ForgotYourPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotYourPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(168)))), ((int)(((byte)(172)))));
-            this.ForgotYourPasswordLabel.Location = new System.Drawing.Point(25, 227);
-            this.ForgotYourPasswordLabel.Name = "ForgotYourPasswordLabel";
-            this.ForgotYourPasswordLabel.Size = new System.Drawing.Size(162, 18);
-            this.ForgotYourPasswordLabel.TabIndex = 23;
-            this.ForgotYourPasswordLabel.Text = "Forgot your password?";
-            this.ForgotYourPasswordLabel.Click += new System.EventHandler(this.ForgotYourPasswordLabel_Click);
+            this.ForgotYourPasswordButton.AutoSize = true;
+            this.ForgotYourPasswordButton.BackColor = System.Drawing.Color.Transparent;
+            this.ForgotYourPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotYourPasswordButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(168)))), ((int)(((byte)(172)))));
+            this.ForgotYourPasswordButton.Location = new System.Drawing.Point(25, 227);
+            this.ForgotYourPasswordButton.Name = "ForgotYourPasswordButton";
+            this.ForgotYourPasswordButton.Size = new System.Drawing.Size(162, 18);
+            this.ForgotYourPasswordButton.TabIndex = 23;
+            this.ForgotYourPasswordButton.Text = "Forgot your password?";
+            this.ForgotYourPasswordButton.Click += new System.EventHandler(this.ForgotYourPasswordButton_Click);
             // 
             // SignInButton
             // 
@@ -198,13 +199,27 @@
             this.SignInButton.TabStop = false;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
+            // UserNameOrPasswordFailLabel
+            // 
+            this.UserNameOrPasswordFailLabel.AutoSize = true;
+            this.UserNameOrPasswordFailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UserNameOrPasswordFailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameOrPasswordFailLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.UserNameOrPasswordFailLabel.Location = new System.Drawing.Point(115, 266);
+            this.UserNameOrPasswordFailLabel.Name = "UserNameOrPasswordFailLabel";
+            this.UserNameOrPasswordFailLabel.Size = new System.Drawing.Size(223, 18);
+            this.UserNameOrPasswordFailLabel.TabIndex = 23;
+            this.UserNameOrPasswordFailLabel.Text = "Incorrect username or password";
+            this.UserNameOrPasswordFailLabel.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.signInBG;
             this.ClientSize = new System.Drawing.Size(400, 424);
             this.Controls.Add(this.SignInButton);
-            this.Controls.Add(this.ForgotYourPasswordLabel);
+            this.Controls.Add(this.UserNameOrPasswordFailLabel);
+            this.Controls.Add(this.ForgotYourPasswordButton);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.NotMemberLabel);
             this.Controls.Add(this.line);
@@ -241,7 +256,8 @@
         private System.Windows.Forms.PictureBox SignUpButton;
         private System.Windows.Forms.Label NotMemberLabel;
         private System.Windows.Forms.PictureBox line;
-        private System.Windows.Forms.Label ForgotYourPasswordLabel;
+        private System.Windows.Forms.Label ForgotYourPasswordButton;
         private System.Windows.Forms.PictureBox SignInButton;
+        private System.Windows.Forms.Label UserNameOrPasswordFailLabel;
     }
 }
