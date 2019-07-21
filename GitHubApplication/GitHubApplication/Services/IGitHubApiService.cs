@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Threading.Tasks;
 using GitHubApplication.Models;
 
 namespace GitHubApplication.Services
 {
-    interface IGitHubApiService
+    public interface IGitHubApiService
     {
         Repository[] SearchForRepositories(string languageName, DateTime dateTime);
-        Repository[] TrendingRepositories();
+        Task<Repository[]> TrendingRepositories();
         User[] TrendingDevelopers();
     }
 }

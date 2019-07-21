@@ -1,20 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GitHubApplication.Models;
 
 namespace GitHubApplication
 {
-    public partial class ProjectControl : UserControl
+    public partial class RepositoryControl : UserControl
     {
-        public ProjectControl()
+        private Repository _Repository;
+
+        public Repository Repository
+        {
+            get => _Repository;
+            set
+            {
+                _Repository = value;
+
+                NameLabel.Text = value.Name;
+                DescriptionLabel.Text = value.Description;
+                LanguageLabel.Text = value.LanguageName;
+                StarCountLabel.Text = value.StarCount.ToString();
+                ForkCountLabel.Text = value.ForkCount.ToString();
+                CreatedDateLabel.Text = value.CreatedDate.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public RepositoryControl(Repository repository)
         {
             InitializeComponent();
+
+            Repository = repository;
         }
     }
 }

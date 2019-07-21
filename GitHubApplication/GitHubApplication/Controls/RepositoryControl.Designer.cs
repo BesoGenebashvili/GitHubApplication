@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication
 {
-    partial class ProjectControl
+    partial class RepositoryControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.NameLabel = new System.Windows.Forms.Label();
-            this.DateLabel = new System.Windows.Forms.Label();
+            this.CreatedDateLabel = new System.Windows.Forms.Label();
             this.LanguageLabel = new System.Windows.Forms.Label();
             this.StarCountLabel = new System.Windows.Forms.Label();
             this.ForkCountLabel = new System.Windows.Forms.Label();
@@ -57,17 +57,17 @@
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "GitHubAppProject";
             // 
-            // DateLabel
+            // CreatedDateLabel
             // 
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.DateLabel.Location = new System.Drawing.Point(881, 39);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(80, 18);
-            this.DateLabel.TabIndex = 3;
-            this.DateLabel.Text = "2019.07.08";
-            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.CreatedDateLabel.AutoSize = true;
+            this.CreatedDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatedDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.CreatedDateLabel.Location = new System.Drawing.Point(881, 39);
+            this.CreatedDateLabel.Name = "CreatedDateLabel";
+            this.CreatedDateLabel.Size = new System.Drawing.Size(80, 18);
+            this.CreatedDateLabel.TabIndex = 3;
+            this.CreatedDateLabel.Text = "2019.07.08";
+            this.CreatedDateLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // LanguageLabel
             // 
@@ -173,7 +173,7 @@
             this.Controls.Add(this.StarCountLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LanguageLabel);
-            this.Controls.Add(this.DateLabel);
+            this.Controls.Add(this.CreatedDateLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ProjectControl";
@@ -192,7 +192,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.Label CreatedDateLabel;
         private System.Windows.Forms.Label LanguageLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

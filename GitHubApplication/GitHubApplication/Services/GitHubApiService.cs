@@ -25,12 +25,12 @@ namespace GitHubApplication.Services
             return GetRepositories(repositoriesRootObject);
         }
 
-        public Repository[] TrendingRepositories()
+        public async Task<Repository[]> TrendingRepositories()
         {
-            string defaultDate = DateTime.Now.Subtract(new TimeSpan(1, 0, 0, 0)).ToString("yyyy-MM-dd");
+            string defaultDate = DateTime.Now.Subtract(new TimeSpan(10, 0, 0, 0)).ToString("yyyy-MM-dd");
             string apiUrl = "https://api.github.com/search/repositories?q=created:>" + $"{defaultDate}+&sort=stars&order=desc";
 
-            RepositoriesRootObject repositoriesRootObject = GetObjectAsync<RepositoriesRootObject>(apiUrl).Result;
+            RepositoriesRootObject repositoriesRootObject = await GetObjectAsync<RepositoriesRootObject>(apiUrl);
 
             return GetRepositories(repositoriesRootObject);
         }
@@ -44,9 +44,10 @@ namespace GitHubApplication.Services
                     {
                         Name = i.name,
                         LanguageName = i.language,
-                        Date = i.created_at,
+                        CreatedDate = i.created_at,
                         StarCount = i.stargazers_count,
-                        ForkCount = i.forks_count
+                        ForkCount = i.forks_count,
+                        Description = i.description
                     };
                 }).ToArray();
         }
@@ -67,7 +68,7 @@ namespace GitHubApplication.Services
                     Name = u.name,
                     Bio = u.bio.ToString(),
                     Email = u.email.ToString(),
-                    Location = u.location.ToString(),
+                    Location = u.location.ToString()
                 };
             }).ToArray();
         }
@@ -84,8 +85,7 @@ namespace GitHubApplication.Services
 
                 string JsonString = reader.ReadToEnd();
 
-                var data = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(JsonString);
-                return data;
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(JsonString);
             });
         }
     }

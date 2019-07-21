@@ -97,6 +97,7 @@
             this.TopRepositoriesButton.Size = new System.Drawing.Size(129, 20);
             this.TopRepositoriesButton.TabIndex = 1;
             this.TopRepositoriesButton.Text = "Top Repositories";
+            this.TopRepositoriesButton.Click += new System.EventHandler(this.TopRepositoriesButton_Click);
             // 
             // TopDevelopersButton
             // 
@@ -109,6 +110,7 @@
             this.TopDevelopersButton.Size = new System.Drawing.Size(120, 20);
             this.TopDevelopersButton.TabIndex = 2;
             this.TopDevelopersButton.Text = "Top Developers";
+            this.TopDevelopersButton.Click += new System.EventHandler(this.TopDevelopersButton_Click);
             // 
             // SearchButton
             // 

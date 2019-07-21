@@ -1,16 +1,19 @@
-﻿using GitHubApplication.Common;
-using GitHubApplication.Models;
-using GitHubApplication.Services;
+﻿using Unity;
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
-using Unity;
+using GitHubApplication.Common;
+using GitHubApplication.Models;
+using GitHubApplication.Services;
+using System.Threading.Tasks;
 
 namespace GitHubApplication
 {
     public partial class GitHubForm : Form
     {
         private readonly IUserService UserService;
+        private readonly IGitHubApiService GitHubService;
 
         private User _User;
         public User User
@@ -23,10 +26,11 @@ namespace GitHubApplication
             }
         }
 
-        public GitHubForm(IUserService userService)
+        public GitHubForm(IGitHubApiService gitHubService, IUserService userService)
         {
             InitializeComponent();
 
+            GitHubService = gitHubService;
             UserService = userService;
         }
 
@@ -72,6 +76,24 @@ namespace GitHubApplication
             {
                 topButtonPictureBox.BackColor = Color.Transparent;
             }
+        }
+
+        private void TopRepositoriesButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+
+            Task.Run(() =>
+            {
+                RepositoryControl[] repositoryControls = GitHubService.TrendingRepositories().Result?
+                    .Select(r => new RepositoryControl(r)).ToArray();
+
+                MainPanel.Controls.AddRange(repositoryControls);
+            });
+        }
+
+        private void TopDevelopersButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
