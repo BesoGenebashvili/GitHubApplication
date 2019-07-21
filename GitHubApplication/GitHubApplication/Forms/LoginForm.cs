@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Unity;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
-using GitHubApplication.Common;
-using GitHubApplication.Forms;
 using GitHubApplication.Models;
+using GitHubApplication.Common;
+using System.Collections.Generic;
 using GitHubApplication.Services;
-using Unity;
 
 namespace GitHubApplication
 {
@@ -85,12 +80,16 @@ namespace GitHubApplication
 
         private void ForgotYourPasswordButton_Click(object sender, EventArgs e)
         {
-            string enteredEmail = CustomBox.Input();
+            string enteredEmail = CustomBox.Input("Enter your Email");
             if (enteredEmail != null && enteredEmail.Contains('@'))
             {
-                UserService.PasswordRecovery(enteredEmail);
+                if (UserService.PasswordRecovery(enteredEmail))
+                {
+                    CustomBox.Message($"Password successfully sent to: {enteredEmail}");
+                    return;
+                }
             }
-            CustomBox.Message($"Password successfully sent to : {enteredEmail}");
+            CustomBox.Message("Message could not be sent");
         }
 
         private void TopButtons_MouseHover(object sender, EventArgs e)
@@ -109,13 +108,13 @@ namespace GitHubApplication
             }
         }
 
-        private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
-
-        private void CloseButton_Click(object sender, EventArgs e) => Close();
-
         private void TextBoxes_TextChanged(object sender, EventArgs e)
         {
             Validator.ValidateTextBoxes(LabelTextBoxPairs);
         }
+
+        private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private void CloseButton_Click(object sender, EventArgs e) => Close();
     }
 }

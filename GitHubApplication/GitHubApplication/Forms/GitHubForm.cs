@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using GitHubApplication.Common;
 using GitHubApplication.Models;
 using GitHubApplication.Services;
-using System.Threading.Tasks;
 
 namespace GitHubApplication
 {
@@ -50,6 +49,28 @@ namespace GitHubApplication
             }
         }
 
+        private void TrendingRepositoriesButton_Click(object sender, EventArgs e)
+        {
+            if (MainPanel.Controls.Count > 0)
+                MainPanel.Controls.Clear();
+
+            RepositoryControl[] repositoryControls = GitHubService.TrendingRepositories()
+                .Select(r => new RepositoryControl(r)).ToArray();
+
+            MainPanel.Controls.AddRange(repositoryControls);
+        }
+
+        private void TrendingDevelopersButton_Click(object sender, EventArgs e)
+        {
+            if (MainPanel.Controls.Count > 0)
+                MainPanel.Controls.Clear();
+
+            DeveloperControl[] developerControls = GitHubService.TrendingDevelopers()
+                .Select(d => new DeveloperControl(d)).ToArray();
+
+            MainPanel.Controls.AddRange(developerControls);
+        }
+
         public void SuccessfullyLoggedHandler(object sender, User user)
         {
             User = UserService.FindUser(user.UserName);
@@ -57,10 +78,6 @@ namespace GitHubApplication
             if (sender is LoginForm loginForm)
                 loginForm.SuccessfullyLogged -= SuccessfullyLoggedHandler;
         }
-
-        private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
-
-        private void CloseButton_Click(object sender, EventArgs e) => Close();
 
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
@@ -78,22 +95,8 @@ namespace GitHubApplication
             }
         }
 
-        private void TopRepositoriesButton_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
+        private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
-            Task.Run(() =>
-            {
-                RepositoryControl[] repositoryControls = GitHubService.TrendingRepositories().Result?
-                    .Select(r => new RepositoryControl(r)).ToArray();
-
-                MainPanel.Controls.AddRange(repositoryControls);
-            });
-        }
-
-        private void TopDevelopersButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void CloseButton_Click(object sender, EventArgs e) => Close();
     }
 }

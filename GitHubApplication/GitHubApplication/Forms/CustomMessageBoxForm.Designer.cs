@@ -59,16 +59,18 @@
             // 
             // MessageLabel
             // 
-            this.MessageLabel.AutoSize = true;
+            this.MessageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.MessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.MessageLabel.Location = new System.Drawing.Point(36, 83);
+            this.MessageLabel.Location = new System.Drawing.Point(0, 83);
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(0, 17);
+            this.MessageLabel.Size = new System.Drawing.Size(384, 17);
             this.MessageLabel.TabIndex = 21;
+            this.MessageLabel.Text = "your text";
+            this.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // GitMessageBox
+            // CustomMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +82,7 @@
             this.Controls.Add(this.OkButton);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GitMessageBox";
+            this.Name = "CustomMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxForm";
             ((System.ComponentModel.ISupportInitialize)(this.OkButton)).EndInit();

@@ -83,6 +83,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(325, 19);
             this.PasswordTextBox.TabIndex = 17;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // UserNameLabel
@@ -205,7 +206,7 @@
             this.UserNameOrPasswordFailLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserNameOrPasswordFailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameOrPasswordFailLabel.ForeColor = System.Drawing.Color.IndianRed;
-            this.UserNameOrPasswordFailLabel.Location = new System.Drawing.Point(115, 266);
+            this.UserNameOrPasswordFailLabel.Location = new System.Drawing.Point(121, 266);
             this.UserNameOrPasswordFailLabel.Name = "UserNameOrPasswordFailLabel";
             this.UserNameOrPasswordFailLabel.Size = new System.Drawing.Size(223, 18);
             this.UserNameOrPasswordFailLabel.TabIndex = 23;

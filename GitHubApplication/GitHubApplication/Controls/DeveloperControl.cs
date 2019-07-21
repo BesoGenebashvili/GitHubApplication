@@ -1,20 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using GitHubApplication.Models;
 
 namespace GitHubApplication
 {
-    public partial class UsersControl : UserControl
+    public partial class DeveloperControl : UserControl
     {
-        public UsersControl()
+        private User _Developer;
+
+        public User Developer
+        {
+            get => _Developer;
+            set
+            {
+                _Developer = value;
+
+                UserNameLabel.Text = value.UserName;
+                NameLabel.Text = value.Name;
+                BioLabel.Text = value.Bio;
+                LocationLabel.Text = value.Location;
+                EmailLabel.Text = value.Email;
+            }
+        }
+
+        public DeveloperControl(User developer)
         {
             InitializeComponent();
+
+            Developer = developer;
         }
     }
 }

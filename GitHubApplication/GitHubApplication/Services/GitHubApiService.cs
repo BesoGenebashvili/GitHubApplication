@@ -25,19 +25,19 @@ namespace GitHubApplication.Services
             return GetRepositories(repositoriesRootObject);
         }
 
-        public async Task<Repository[]> TrendingRepositories()
+        public Repository[] TrendingRepositories()
         {
-            string defaultDate = DateTime.Now.Subtract(new TimeSpan(10, 0, 0, 0)).ToString("yyyy-MM-dd");
+            string defaultDate = DateTime.Now.Subtract(new TimeSpan(1, 0, 0, 0)).ToString("yyyy-MM-dd");
             string apiUrl = "https://api.github.com/search/repositories?q=created:>" + $"{defaultDate}+&sort=stars&order=desc";
 
-            RepositoriesRootObject repositoriesRootObject = await GetObjectAsync<RepositoriesRootObject>(apiUrl);
+            var repositoriesRootObject = GetObjectAsync<RepositoriesRootObject>(apiUrl).Result;
 
             return GetRepositories(repositoriesRootObject);
         }
 
         private Repository[] GetRepositories(RepositoriesRootObject repositoriesRootObject)
         {
-            return repositoriesRootObject.Repositories
+            return repositoriesRootObject.Items
                 .Select(i =>
                 {
                     return new Repository()
@@ -57,18 +57,18 @@ namespace GitHubApplication.Services
             string apiUrl = "https://api.github.com/search/users?q=+followers:%3E0&sort=followers&order=desc";
 
             UsersRootObject usersRootObject = GetObjectAsync<UsersRootObject>(apiUrl).Result;
-            IEnumerable<string> userUrls = usersRootObject.Users.Select(u => u.url);
-            IEnumerable<UserFromApi> usersFromApi = userUrls.Select(url => GetObjectAsync<UserFromApi>(url).Result);
+            IEnumerable<string> userUrls = usersRootObject.Items.Select(u => u.url);
+            IEnumerable<Task<UserFromApi>> usersFromApi = userUrls.Select(url => GetObjectAsync<UserFromApi>(url));
 
             return usersFromApi.Select(u =>
             {
                 return new User()
                 {
-                    UserName = u.login,
-                    Name = u.name,
-                    Bio = u.bio.ToString(),
-                    Email = u.email.ToString(),
-                    Location = u.location.ToString()
+                    UserName = u.Result.login,
+                    Name = u.Result.name,
+                    Bio = u.Result.bio?.ToString(),
+                    Email = u.Result.email?.ToString(),
+                    Location = u.Result.location?.ToString()
                 };
             }).ToArray();
         }

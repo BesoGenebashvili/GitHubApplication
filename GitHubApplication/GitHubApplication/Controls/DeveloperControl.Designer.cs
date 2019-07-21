@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication
 {
-    partial class UsersControl
+    partial class DeveloperControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserBioLabel = new System.Windows.Forms.Label();
+            this.BioLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.LocationLabel = new System.Windows.Forms.Label();
@@ -46,15 +46,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // UserBioLabel
+            // BioLabel
             // 
-            this.UserBioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.UserBioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.UserBioLabel.Location = new System.Drawing.Point(353, 30);
-            this.UserBioLabel.Name = "UserBioLabel";
-            this.UserBioLabel.Size = new System.Drawing.Size(590, 45);
-            this.UserBioLabel.TabIndex = 14;
-            this.UserBioLabel.Text = "მე მქვია ბესო და დაინტერესებული ვარ კორპუსების მიშენებებით. მე ვარ წინააღმდეგი მი" +
+            this.BioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.BioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.BioLabel.Location = new System.Drawing.Point(353, 30);
+            this.BioLabel.Name = "BioLabel";
+            this.BioLabel.Size = new System.Drawing.Size(590, 45);
+            this.BioLabel.TabIndex = 14;
+            this.BioLabel.Text = "მე მქვია ბესო და დაინტერესებული ვარ კორპუსების მიშენებებით. მე ვარ წინააღმდეგი მი" +
     "შენდეს დიღომში";
             // 
             // NameLabel
@@ -149,6 +149,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(75, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -161,7 +162,7 @@
             this.pictureBox5.TabIndex = 11;
             this.pictureBox5.TabStop = false;
             // 
-            // UsersControl
+            // DeveloperControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,12 +174,12 @@
             this.Controls.Add(this.LocationLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.UserBioLabel);
+            this.Controls.Add(this.BioLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
-            this.Name = "UsersControl";
-            this.Size = new System.Drawing.Size(1007, 125);
+            this.Name = "DeveloperControl";
+            this.Size = new System.Drawing.Size(956, 125);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -192,7 +193,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label UserBioLabel;
+        private System.Windows.Forms.Label BioLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;

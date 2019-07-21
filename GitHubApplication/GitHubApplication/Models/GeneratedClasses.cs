@@ -116,7 +116,7 @@ namespace GitHubApplication.Models
     {
         public int total_count { get; set; }
         public bool incomplete_results { get; set; }
-        public List<RepositoriesFromApi> Repositories { get; set; }
+        public List<RepositoriesFromApi> Items { get; set; }
     }
 
     //-------------------------------------
@@ -148,7 +148,7 @@ namespace GitHubApplication.Models
     {
         public int total_count { get; set; }
         public bool incomplete_results { get; set; }
-        public List<UsersFromApi> Users { get; set; }
+        public List<UsersFromApi> Items { get; set; }
     }
 
     //-------------------------------------

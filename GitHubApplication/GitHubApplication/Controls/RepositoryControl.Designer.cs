@@ -62,7 +62,7 @@
             this.CreatedDateLabel.AutoSize = true;
             this.CreatedDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreatedDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.CreatedDateLabel.Location = new System.Drawing.Point(881, 39);
+            this.CreatedDateLabel.Location = new System.Drawing.Point(781, 39);
             this.CreatedDateLabel.Name = "CreatedDateLabel";
             this.CreatedDateLabel.Size = new System.Drawing.Size(80, 18);
             this.CreatedDateLabel.TabIndex = 3;
@@ -160,7 +160,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ProjectControl
+            // RepositoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,8 +176,8 @@
             this.Controls.Add(this.CreatedDateLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "ProjectControl";
-            this.Size = new System.Drawing.Size(1007, 192);
+            this.Name = "RepositoryControl";
+            this.Size = new System.Drawing.Size(956, 192);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

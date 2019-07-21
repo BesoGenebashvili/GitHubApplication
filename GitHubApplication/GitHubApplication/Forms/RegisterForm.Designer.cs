@@ -45,6 +45,8 @@
             this.TermsAndPoliciesCheckBox = new System.Windows.Forms.CheckBox();
             this.HaveAccountLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.PictureBox();
+            this.EmailFailedLabel = new System.Windows.Forms.Label();
+            this.PasswordsFailedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SignUpButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
@@ -177,6 +179,7 @@
             this.RetypePasswordTextBox.Name = "RetypePasswordTextBox";
             this.RetypePasswordTextBox.Size = new System.Drawing.Size(325, 19);
             this.RetypePasswordTextBox.TabIndex = 10;
+            this.RetypePasswordTextBox.UseSystemPasswordChar = true;
             this.RetypePasswordTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // PasswordLabel
@@ -202,6 +205,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(325, 19);
             this.PasswordTextBox.TabIndex = 8;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // SignUpLabel
@@ -262,6 +266,32 @@
             this.SignInButton.TabStop = false;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
+            // EmailFailedLabel
+            // 
+            this.EmailFailedLabel.AutoSize = true;
+            this.EmailFailedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.EmailFailedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailFailedLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.EmailFailedLabel.Location = new System.Drawing.Point(85, 148);
+            this.EmailFailedLabel.Name = "EmailFailedLabel";
+            this.EmailFailedLabel.Size = new System.Drawing.Size(159, 18);
+            this.EmailFailedLabel.TabIndex = 24;
+            this.EmailFailedLabel.Text = "Email must contain \'@\'";
+            this.EmailFailedLabel.Visible = false;
+            // 
+            // PasswordsFailedLabel
+            // 
+            this.PasswordsFailedLabel.AutoSize = true;
+            this.PasswordsFailedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PasswordsFailedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordsFailedLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.PasswordsFailedLabel.Location = new System.Drawing.Point(167, 318);
+            this.PasswordsFailedLabel.Name = "PasswordsFailedLabel";
+            this.PasswordsFailedLabel.Size = new System.Drawing.Size(179, 18);
+            this.PasswordsFailedLabel.TabIndex = 24;
+            this.PasswordsFailedLabel.Text = "Passwords must be equal";
+            this.PasswordsFailedLabel.Visible = false;
+            // 
             // RegisterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -269,6 +299,8 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.signUp_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(400, 600);
+            this.Controls.Add(this.PasswordsFailedLabel);
+            this.Controls.Add(this.EmailFailedLabel);
             this.Controls.Add(this.SignInButton);
             this.Controls.Add(this.HaveAccountLabel);
             this.Controls.Add(this.TermsAndPoliciesCheckBox);
@@ -320,5 +352,7 @@
         private System.Windows.Forms.CheckBox TermsAndPoliciesCheckBox;
         private System.Windows.Forms.Label HaveAccountLabel;
         private System.Windows.Forms.PictureBox SignInButton;
+        private System.Windows.Forms.Label EmailFailedLabel;
+        private System.Windows.Forms.Label PasswordsFailedLabel;
     }
 }

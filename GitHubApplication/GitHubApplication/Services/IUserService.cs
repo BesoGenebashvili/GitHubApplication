@@ -9,7 +9,7 @@ namespace GitHubApplication.Services
         User RegisterUser(User user);
         User FindUser(string userName);
         User ChangePassword(User user, string newPassword);
-        User PasswordRecovery(string userEmail);
+        bool PasswordRecovery(string userEmail);
         bool DeactivateUser(User user);
         Task<bool> SentMailAsync(User mail, string subject, string body);
     }

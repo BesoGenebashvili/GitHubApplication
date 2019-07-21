@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Net;
+using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
-using GitHubApplication.Common;
-using GitHubApplication.DataBaseContext;
 using GitHubApplication.Models;
+using GitHubApplication.DataBaseContext;
 
 namespace GitHubApplication.Services
 {
@@ -97,23 +96,18 @@ namespace GitHubApplication.Services
                         return true;
                     }
                 }
-                catch (Exception)
-                {
-                    CustomBox.Message("could not be sent");
-                    return false;
-                }
+                catch (Exception) { return false; }
             });
         }
 
-        public User PasswordRecovery(string userEmail)
+        public bool PasswordRecovery(string userEmail)
         {
             User searchResult = DataBase.Users.FirstOrDefault(u => u.Email == userEmail);
 
             if (searchResult == null)
-                return null;
+                return false;
 
-            SentMailAsync(searchResult, "Password Recovery", $"Your password is - {searchResult.Password}");
-            return searchResult;
+            return SentMailAsync(searchResult, "GitHab Application - Password Recovery", $"Your password is - {searchResult.Password}").Result;
         }
     }
 }

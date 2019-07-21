@@ -1,18 +1,11 @@
-﻿using GitHubApplication.Common;
-using GitHubApplication.Forms;
-using GitHubApplication.Models;
-using GitHubApplication.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using GitHubApplication.Models;
+using GitHubApplication.Common;
+using GitHubApplication.Services;
 
 namespace GitHubApplication
 {
@@ -45,7 +38,7 @@ namespace GitHubApplication
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            if (Validator.ValidateTextBoxes(LabelTextBoxPairs) && ValidateEmail() && ValidatePassword())
+            if (Validator.ValidateTextBoxes(LabelTextBoxPairs) & ValidateEmail() & ValidatePassword() & TermsAndPoliciesCheckBox.Checked)
             {
                 User user = new User
                 {
@@ -64,7 +57,7 @@ namespace GitHubApplication
                 User registeredUser = UserService.RegisterUser(newUser);
 
                 if (registeredUser == null)
-                    MessageBox.Show("User Already registered");
+                    MessageBox.Show("User already registered");
 
                 else
                 {
@@ -81,23 +74,47 @@ namespace GitHubApplication
         {
             string confirmationCode = Guid.NewGuid().ToString();
 
-            if (UserService.SentMailAsync(newUser, "Registration", $"Confirmation code - {confirmationCode}").Result)
+            if (UserService.SentMailAsync(newUser, "GitHab Application - Registration", $"Confirmation code - {confirmationCode}").Result)
             {
-                if (CustomBox.Input() == confirmationCode)
+                if (CustomBox.Input($"Confirmation code sent to {newUser.Email}") == confirmationCode)
                     return true;
 
                 else
-                    CustomBox.Message("Confirm Code is Incorect");
+                    CustomBox.Message("Confirmation code is incorrect");
             }
             else
-                CustomBox.Message("The message could not be sent");
+                CustomBox.Message("Message could not be sent");
 
             return false;
         }
 
-        private bool ValidateEmail() => EmailTextBox.Text.Contains('@');
+        private bool ValidateEmail()
+        {
+            if (EmailTextBox.Text.Contains('@'))
+            {
+                EmailFailedLabel.Visible = false;
+                return true;
+            }
+            else
+            {
+                EmailFailedLabel.Visible = true;
+                return false;
+            }
+        }
 
-        private bool ValidatePassword() => PasswordTextBox.Text == RetypePasswordTextBox.Text;
+        private bool ValidatePassword()
+        {
+            if(PasswordTextBox.Text == RetypePasswordTextBox.Text)
+            {
+                PasswordsFailedLabel.Visible = false;
+                return true;
+            }
+            else
+            {
+                PasswordsFailedLabel.Visible = true;
+                return false;
+            }
+        }
 
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
@@ -115,10 +132,10 @@ namespace GitHubApplication
             }
         }
 
+        private void TextBoxes_TextChanged(object sender, EventArgs e) => Validator.ValidateTextBoxes(LabelTextBoxPairs);
+
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
-
-        private void TextBoxes_TextChanged(object sender, EventArgs e) => Validator.ValidateTextBoxes(LabelTextBoxPairs);
     }
 }
