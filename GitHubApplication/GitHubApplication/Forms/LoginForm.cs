@@ -54,7 +54,7 @@ namespace GitHubApplication
 
             if (loggedUser == null)
             {
-                GitMessageBox.Message("user not found");
+                CustomMessageBox.Message("user not found");
             }
             else
             {
@@ -70,12 +70,12 @@ namespace GitHubApplication
         }
         private void ForgotYourPasswordLabel_Click(object sender, EventArgs e)
         {
-            string email = Box.InputBox();
+            string email = CustomBox.Input();
             if (email != null && email.Contains('@'))
             {
-                UserService.RecoveryPassword(email);
+                UserService.PasswordRecovery(email);
             }
-            Box.MessageBox("Password successfully sent");
+            CustomBox.Message("Password successfully sent");
         }
         private void TopButtons_MouseHover(object sender, EventArgs e)
         {
@@ -101,7 +101,5 @@ namespace GitHubApplication
         {
             Validator.ValidateTextBoxes(LabelTextBoxPairs);
         }
-
-       
     }
 }

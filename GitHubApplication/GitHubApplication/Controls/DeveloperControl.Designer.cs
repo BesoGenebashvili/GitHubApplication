@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.UserBioLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.LocationLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.UserNameLabel = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -46,75 +46,75 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // UserBioLabel
             // 
-            this.label2.Font = new System.Drawing.Font("BPG Nino Mtavruli", 9.5F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.label2.Location = new System.Drawing.Point(353, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(590, 45);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "მე მქვია ბესო და დაინტერესებული ვარ კორპუსების მიშენებებით. მე ვარ წინააღმდეგი მი" +
+            this.UserBioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.UserBioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.UserBioLabel.Location = new System.Drawing.Point(353, 30);
+            this.UserBioLabel.Name = "UserBioLabel";
+            this.UserBioLabel.Size = new System.Drawing.Size(590, 45);
+            this.UserBioLabel.TabIndex = 14;
+            this.UserBioLabel.Text = "მე მქვია ბესო და დაინტერესებული ვარ კორპუსების მიშენებებით. მე ვარ წინააღმდეგი მი" +
     "შენდეს დიღომში";
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gotham Rounded Light", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.label1.Location = new System.Drawing.Point(132, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 22);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Genebashvili Besiki";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.NameLabel.Location = new System.Drawing.Point(132, 26);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(167, 22);
+            this.NameLabel.TabIndex = 13;
+            this.NameLabel.Text = "Genebashvili Besiki";
             // 
-            // label6
+            // EmailLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gotham Rounded Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.label6.Location = new System.Drawing.Point(597, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 17);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "BesoBesoKorpusa@mail.ru";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.EmailLabel.Location = new System.Drawing.Point(597, 89);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(181, 17);
+            this.EmailLabel.TabIndex = 19;
+            this.EmailLabel.Text = "BesoBesoKorpusa@mail.ru";
+            this.EmailLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label5
+            // LocationLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gotham Rounded Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.label5.Location = new System.Drawing.Point(478, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Georgia";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LocationLabel.AutoSize = true;
+            this.LocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.LocationLabel.Location = new System.Drawing.Point(478, 88);
+            this.LocationLabel.Name = "LocationLabel";
+            this.LocationLabel.Size = new System.Drawing.Size(59, 17);
+            this.LocationLabel.TabIndex = 17;
+            this.LocationLabel.Text = "Georgia";
+            this.LocationLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gotham Rounded Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
             this.label4.Location = new System.Drawing.Point(376, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 15;
             this.label4.Text = "9 856";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label3
+            // UserNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gotham Rounded Light", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.label3.Location = new System.Drawing.Point(133, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 16);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Korpusa";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UserNameLabel.AutoSize = true;
+            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
+            this.UserNameLabel.Location = new System.Drawing.Point(133, 50);
+            this.UserNameLabel.Name = "UserNameLabel";
+            this.UserNameLabel.Size = new System.Drawing.Size(58, 16);
+            this.UserNameLabel.TabIndex = 21;
+            this.UserNameLabel.Text = "Korpusa";
+            this.UserNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pictureBox4
             // 
@@ -166,15 +166,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.UserNameLabel);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.LocationLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.UserBioLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
             this.Name = "UsersControl";
@@ -192,15 +192,15 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UserBioLabel;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LocationLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label UserNameLabel;
     }
 }

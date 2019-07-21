@@ -1,6 +1,7 @@
 ﻿namespace GitHubApplication.Forms
 {
-    partial class GiInputBoxForm
+    partial class CustomInputBox
+
     {
         /// <summary>
         /// Required designer variable.

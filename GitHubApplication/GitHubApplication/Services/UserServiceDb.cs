@@ -66,15 +66,15 @@ namespace GitHubApplication.Services
            return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
         }
 
-        public bool SentMail(User mail, string subject, string body)
+        public bool SentMail(User user, string subject, string body)
         {
             try
             {
-                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "githubapplicationun");
-                var toAddress = new MailAddress(mail.Email, "Name");
+                var fromAddress = new MailAddress("githubapplicationun@gmail.com", "GitHub Application");
+                var toAddress = new MailAddress(user.Email, "Name");
                 const string fromPassword = "githubapplicationun123";
 
-                var smtp = new SmtpClient
+                SmtpClient smtpClient = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
                     Port = 587,
@@ -83,30 +83,32 @@ namespace GitHubApplication.Services
                     UseDefaultCredentials = false,
                     Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
                 };
-                using (var message = new MailMessage(fromAddress, toAddress)
+
+                using (MailMessage mailMessage = new MailMessage(fromAddress, toAddress)
                 {
                     Subject = subject,
                     Body = body
                 })
                 {
-                    smtp.Send(message);
+                    smtpClient.Send(mailMessage);
                     return true;
                 }
             }
             catch (Exception)
             {
-                Box.MessageBox("could not be sent");
+                CustomBox.Message("could not be sent");
                 return false;
             }
         }
 
-        public User RecoveryPassword(string userEmail)
+        public User PasswordRecovery(string userEmail)
         {
-            User us =  DataBase.Users.FirstOrDefault(u => u.UserName.Equals("halamadriddd", StringComparison.CurrentCultureIgnoreCase));
             User searchResult = DataBase.Users.FirstOrDefault(u => u.Email == userEmail);
+
             if (searchResult == null)
                 return null;
-            SentMail(searchResult, "Recovery Password", $"Your Passwor is - {searchResult.Password}");
+
+            SentMail(searchResult, "Password Recovery", $"Your password is - {searchResult.Password}");
             return searchResult;
         }
     }

@@ -61,12 +61,12 @@ namespace GitHubApplication
             string hash = Guid.NewGuid().ToString();
             if (UserService.SentMail(user, "Registration", $"Confirmation code - {hash}"))
             {
-                if (Box.InputBox() == hash)
+                if (CustomBox.Input() == hash)
                 {
                     User registeredUser = UserService.RegisterUser(user);
                     if (registeredUser == null)
                     {
-                        Box.MessageBox("user not found");
+                        CustomBox.Message("user not found");
                     }
                     else
                     {
@@ -77,13 +77,13 @@ namespace GitHubApplication
                 }
                 else
                 {
-                    Box.MessageBox("Confirm Code is Incorect");
+                    CustomBox.Message("Confirm Code is Incorect");
                 }
 
             }
             else
             {
-                Box.MessageBox("The message could not be sent");
+                CustomBox.Message("The message could not be sent");
             }
         }
         private bool ValidateEmail()

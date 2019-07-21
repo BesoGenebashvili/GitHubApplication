@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GitHubApplication.Forms
 {
-    public partial class GiInputBoxForm : Form
+    public partial class CustomInputBox : Form
     {
-        public GiInputBoxForm()
+        public CustomInputBox()
         {
             InitializeComponent();
         }
+
         public static string InputBox()
         {
-            GiInputBoxForm confirmForm = new GiInputBoxForm();
+            CustomInputBox confirmForm = new CustomInputBox();
             confirmForm.ShowDialog();
             if (!string.IsNullOrWhiteSpace(confirmForm.ConfirmTextBox.Text))
             {

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LogoButton = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.GitHubLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.TopRepositoriesButton = new System.Windows.Forms.Label();
+            this.TopDevelopersButton = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.PictureBox();
+            this.CallendarButton = new System.Windows.Forms.PictureBox();
+            this.UserPictureBox = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.SearchForRepositoryesTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,11 +57,11 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -73,71 +73,72 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel1.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LogoButton
+            // GitHubLogoPictureBox
             // 
-            this.LogoButton.BackColor = System.Drawing.Color.Transparent;
-            this.LogoButton.BackgroundImage = global::GitHubApplication.Properties.Resources.logo;
-            this.LogoButton.Location = new System.Drawing.Point(58, 23);
-            this.LogoButton.Name = "LogoButton";
-            this.LogoButton.Size = new System.Drawing.Size(114, 36);
-            this.LogoButton.TabIndex = 0;
-            this.LogoButton.TabStop = false;
+            this.GitHubLogoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.GitHubLogoPictureBox.BackgroundImage = global::GitHubApplication.Properties.Resources.logo;
+            this.GitHubLogoPictureBox.Location = new System.Drawing.Point(58, 23);
+            this.GitHubLogoPictureBox.Name = "GitHubLogoPictureBox";
+            this.GitHubLogoPictureBox.Size = new System.Drawing.Size(114, 36);
+            this.GitHubLogoPictureBox.TabIndex = 0;
+            this.GitHubLogoPictureBox.TabStop = false;
             // 
-            // label1
+            // TopRepositoriesButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gotham Rounded Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.label1.Location = new System.Drawing.Point(309, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Top Projects";
+            this.TopRepositoriesButton.AutoSize = true;
+            this.TopRepositoriesButton.BackColor = System.Drawing.Color.Transparent;
+            this.TopRepositoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopRepositoriesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.TopRepositoriesButton.Location = new System.Drawing.Point(290, 33);
+            this.TopRepositoriesButton.Name = "TopRepositoriesButton";
+            this.TopRepositoriesButton.Size = new System.Drawing.Size(129, 20);
+            this.TopRepositoriesButton.TabIndex = 1;
+            this.TopRepositoriesButton.Text = "Top Repositories";
             // 
-            // label2
+            // TopDevelopersButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Gotham Rounded Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.label2.Location = new System.Drawing.Point(441, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Top Users";
+            this.TopDevelopersButton.AutoSize = true;
+            this.TopDevelopersButton.BackColor = System.Drawing.Color.Transparent;
+            this.TopDevelopersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopDevelopersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.TopDevelopersButton.Location = new System.Drawing.Point(441, 33);
+            this.TopDevelopersButton.Name = "TopDevelopersButton";
+            this.TopDevelopersButton.Size = new System.Drawing.Size(120, 20);
+            this.TopDevelopersButton.TabIndex = 2;
+            this.TopDevelopersButton.Text = "Top Developers";
             // 
-            // pictureBox2
+            // SearchButton
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::GitHubApplication.Properties.Resources.searchIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(1023, 36);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.SearchButton.BackColor = System.Drawing.Color.Transparent;
+            this.SearchButton.Image = global::GitHubApplication.Properties.Resources.searchIcon;
+            this.SearchButton.Location = new System.Drawing.Point(1023, 36);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(16, 16);
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.TabStop = false;
             // 
-            // pictureBox1
+            // CallendarButton
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::GitHubApplication.Properties.Resources.calendar;
-            this.pictureBox1.Location = new System.Drawing.Point(999, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(17, 17);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.CallendarButton.BackColor = System.Drawing.Color.Transparent;
+            this.CallendarButton.Image = global::GitHubApplication.Properties.Resources.calendar;
+            this.CallendarButton.Location = new System.Drawing.Point(999, 35);
+            this.CallendarButton.Name = "CallendarButton";
+            this.CallendarButton.Size = new System.Drawing.Size(17, 17);
+            this.CallendarButton.TabIndex = 7;
+            this.CallendarButton.TabStop = false;
             // 
-            // pictureBox3
+            // UserPictureBox
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::GitHubApplication.Properties.Resources.userIcon;
-            this.pictureBox3.Location = new System.Drawing.Point(1071, 21);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.UserPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.UserPictureBox.Image = global::GitHubApplication.Properties.Resources.userIcon;
+            this.UserPictureBox.Location = new System.Drawing.Point(1071, 21);
+            this.UserPictureBox.Name = "UserPictureBox";
+            this.UserPictureBox.Size = new System.Drawing.Size(43, 43);
+            this.UserPictureBox.TabIndex = 8;
+            this.UserPictureBox.TabStop = false;
             // 
             // CloseButton
             // 
@@ -173,11 +174,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Gotham Rounded Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.label4.Location = new System.Drawing.Point(272, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 29);
+            this.label4.Size = new System.Drawing.Size(176, 29);
             this.label4.TabIndex = 12;
             this.label4.Text = "Profile Settings";
             // 
@@ -195,11 +196,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Gotham Rounded Light", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.label5.Location = new System.Drawing.Point(34, 308);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 22);
+            this.label5.Size = new System.Drawing.Size(160, 22);
             this.label5.TabIndex = 14;
             this.label5.Text = "Beso Genebashvili";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,26 +209,26 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Gotham Rounded Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
             this.label6.Location = new System.Drawing.Point(54, 336);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 14);
+            this.label6.Size = new System.Drawing.Size(112, 15);
             this.label6.TabIndex = 15;
             this.label6.Text = "C++, C#, JavaScript";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UserNameTextBox
+            // SearchForRepositoryesTextBox
             // 
-            this.UserNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
-            this.UserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameTextBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.UserNameTextBox.Location = new System.Drawing.Point(740, 33);
-            this.UserNameTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(246, 19);
-            this.UserNameTextBox.TabIndex = 17;
+            this.SearchForRepositoryesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
+            this.SearchForRepositoryesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SearchForRepositoryesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchForRepositoryesTextBox.ForeColor = System.Drawing.SystemColors.Control;
+            this.SearchForRepositoryesTextBox.Location = new System.Drawing.Point(740, 33);
+            this.SearchForRepositoryesTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.SearchForRepositoryesTextBox.Name = "SearchForRepositoryesTextBox";
+            this.SearchForRepositoryesTextBox.Size = new System.Drawing.Size(246, 19);
+            this.SearchForRepositoryesTextBox.TabIndex = 17;
             // 
             // pictureBox5
             // 
@@ -253,11 +254,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Gotham Rounded Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
             this.label7.Location = new System.Drawing.Point(940, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 17);
+            this.label7.Size = new System.Drawing.Size(119, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Deactivate Profile";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -393,9 +394,10 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(789, 64);
+            this.monthCalendar1.Location = new System.Drawing.Point(731, 21);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 32;
+            this.monthCalendar1.Visible = false;
             // 
             // panel1
             // 
@@ -420,17 +422,19 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(33, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 10);
+            this.panel1.Size = new System.Drawing.Size(42, 42);
             this.panel1.TabIndex = 33;
             // 
-            // panel2
+            // MainPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::GitHubApplication.Properties.Resources.trendingTabBG;
-            this.panel2.Location = new System.Drawing.Point(96, 102);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1007, 585);
-            this.panel2.TabIndex = 34;
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.MainPanel.BackgroundImage = global::GitHubApplication.Properties.Resources.trendingTabBG;
+            this.MainPanel.Controls.Add(this.monthCalendar1);
+            this.MainPanel.Location = new System.Drawing.Point(96, 102);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1007, 585);
+            this.MainPanel.TabIndex = 34;
             // 
             // GitHubForm
             // 
@@ -439,27 +443,26 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.UserNameTextBox);
+            this.Controls.Add(this.SearchForRepositoryesTextBox);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.MinimizeButton);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LogoButton);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.UserPictureBox);
+            this.Controls.Add(this.CallendarButton);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.TopDevelopersButton);
+            this.Controls.Add(this.TopRepositoriesButton);
+            this.Controls.Add(this.GitHubLogoPictureBox);
+            this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GitHubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub";
             this.TransparencyKey = System.Drawing.SystemColors.InactiveBorder;
-            ((System.ComponentModel.ISupportInitialize)(this.LogoButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -472,6 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,19 +483,19 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox LogoButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox GitHubLogoPictureBox;
+        private System.Windows.Forms.Label TopRepositoriesButton;
+        private System.Windows.Forms.Label TopDevelopersButton;
+        private System.Windows.Forms.PictureBox SearchButton;
+        private System.Windows.Forms.PictureBox CallendarButton;
+        private System.Windows.Forms.PictureBox UserPictureBox;
         private System.Windows.Forms.PictureBox CloseButton;
         private System.Windows.Forms.PictureBox MinimizeButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox UserNameTextBox;
+        private System.Windows.Forms.TextBox SearchForRepositoryesTextBox;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label7;
@@ -508,6 +512,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GitHubApplication.Forms
 {
-    partial class GitMessageBox
+    partial class CustomMessageBox
     {
         /// <summary>
         /// Required designer variable.
