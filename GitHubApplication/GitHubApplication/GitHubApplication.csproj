@@ -160,6 +160,12 @@
     <Compile Include="Common\CustomBox.cs" />
     <Compile Include="Common\ServiceManager.cs" />
     <Compile Include="Common\Validator.cs" />
+    <Compile Include="Controls\RepositoriesComparisonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RepositoriesComparisonControl.Designer.cs">
+      <DependentUpon>RepositoriesComparisonControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UserRoomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     <Compile Include="Controls\DeveloperControl.Designer.cs">
       <DependentUpon>DeveloperControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\RepositoriesComparisonControl.resx">
+      <DependentUpon>RepositoriesComparisonControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserRoomControl.resx">
       <DependentUpon>UserRoomControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,7 +308,9 @@
   <ItemGroup>
     <None Include="Assets\signUpButton.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Assets\vs-BG.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Assets\mainformBG.png" />
   </ItemGroup>
@@ -395,6 +406,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\trendingTabBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\CPlusPlus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\C-Sharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Css.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Html.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Java.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\JavaScript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Php.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Python.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Swift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\SearchButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.14\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.14\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

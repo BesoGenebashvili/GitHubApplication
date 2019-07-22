@@ -38,7 +38,8 @@
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
             this.SearchForRepositoryesTextBox = new System.Windows.Forms.TextBox();
             this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.UserRoomPanel = new System.Windows.Forms.Panel();
+            this.ComparisonPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).BeginInit();
@@ -118,7 +119,7 @@
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
             this.CloseButton.Image = global::GitHubApplication.Properties.Resources.close;
-            this.CloseButton.Location = new System.Drawing.Point(1158, 16);
+            this.CloseButton.Location = new System.Drawing.Point(1165, 14);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Padding = new System.Windows.Forms.Padding(3);
             this.CloseButton.Size = new System.Drawing.Size(19, 19);
@@ -133,7 +134,7 @@
             this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
             this.MinimizeButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
             this.MinimizeButton.Image = global::GitHubApplication.Properties.Resources.minimise;
-            this.MinimizeButton.Location = new System.Drawing.Point(1136, 16);
+            this.MinimizeButton.Location = new System.Drawing.Point(1143, 14);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Padding = new System.Windows.Forms.Padding(3);
             this.MinimizeButton.Size = new System.Drawing.Size(19, 19);
@@ -159,18 +160,27 @@
             // 
             this.MainPanel.AutoScroll = true;
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MainPanel.Location = new System.Drawing.Point(114, 102);
+            this.MainPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MainPanel.Location = new System.Drawing.Point(106, 102);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(956, 585);
+            this.MainPanel.Size = new System.Drawing.Size(1000, 585);
             this.MainPanel.TabIndex = 33;
             // 
-            // panel1
+            // UserRoomPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(25, 90);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1143, 597);
-            this.panel1.TabIndex = 33;
+            this.UserRoomPanel.BackColor = System.Drawing.Color.Transparent;
+            this.UserRoomPanel.Location = new System.Drawing.Point(25, 90);
+            this.UserRoomPanel.Name = "UserRoomPanel";
+            this.UserRoomPanel.Size = new System.Drawing.Size(1152, 618);
+            this.UserRoomPanel.TabIndex = 33;
+            // 
+            // ComparisonPanel
+            // 
+            this.ComparisonPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ComparisonPanel.Location = new System.Drawing.Point(96, 140);
+            this.ComparisonPanel.Name = "ComparisonPanel";
+            this.ComparisonPanel.Size = new System.Drawing.Size(1018, 538);
+            this.ComparisonPanel.TabIndex = 0;
             // 
             // GitHubForm
             // 
@@ -179,6 +189,7 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.ComparisonPanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SearchForRepositoryesTextBox);
             this.Controls.Add(this.CloseButton);
@@ -189,7 +200,7 @@
             this.Controls.Add(this.TrendingDevelopersButton);
             this.Controls.Add(this.TrendingRepositoriesButton);
             this.Controls.Add(this.GitHubLogoPictureBox);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.UserRoomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GitHubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -219,6 +230,7 @@
         private System.Windows.Forms.PictureBox MinimizeButton;
         private System.Windows.Forms.TextBox SearchForRepositoryesTextBox;
         private System.Windows.Forms.FlowLayoutPanel MainPanel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel UserRoomPanel;
+        private System.Windows.Forms.Panel ComparisonPanel;
     }
 }
