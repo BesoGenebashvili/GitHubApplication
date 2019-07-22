@@ -160,6 +160,12 @@
     <Compile Include="Common\CustomBox.cs" />
     <Compile Include="Common\ServiceManager.cs" />
     <Compile Include="Common\Validator.cs" />
+    <Compile Include="Controls\UserRoomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserRoomControl.Designer.cs">
+      <DependentUpon>UserRoomControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseContext\GitHubDataBaseContext.cs" />
     <Compile Include="Forms\CustomInputBoxForm.cs">
       <SubType>Form</SubType>
@@ -212,6 +218,9 @@
     <Compile Include="Controls\DeveloperControl.Designer.cs">
       <DependentUpon>DeveloperControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\UserRoomControl.resx">
+      <DependentUpon>UserRoomControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomInputBoxForm.resx">
       <DependentUpon>CustomInputBoxForm.cs</DependentUpon>
     </EmbeddedResource>
