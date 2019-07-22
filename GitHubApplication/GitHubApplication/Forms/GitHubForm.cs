@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using GitHubApplication.Common;
 using GitHubApplication.Models;
 using GitHubApplication.Services;
+using System.Threading.Tasks;
 
 namespace GitHubApplication
 {
@@ -54,8 +55,11 @@ namespace GitHubApplication
             if (MainPanel.Controls.Count > 0)
                 MainPanel.Controls.Clear();
 
-            RepositoryControl[] repositoryControls = GitHubService.TrendingRepositories()
-                .Select(r => new RepositoryControl(r)).ToArray();
+            RepositoryControl[] repositoryControls = Task.Run(() =>
+            {
+                return GitHubService.TrendingRepositories()
+                    .Select(r => new RepositoryControl(r)).ToArray();
+            }).Result;
 
             MainPanel.Controls.AddRange(repositoryControls);
         }
@@ -65,8 +69,11 @@ namespace GitHubApplication
             if (MainPanel.Controls.Count > 0)
                 MainPanel.Controls.Clear();
 
-            DeveloperControl[] developerControls = GitHubService.TrendingDevelopers()
-                .Select(d => new DeveloperControl(d)).ToArray();
+            var developerControls = Task.Run(() =>
+            {
+                return GitHubService.TrendingDevelopers()
+                   .Select(d => new DeveloperControl(d)).ToArray();
+            }).Result;
 
             MainPanel.Controls.AddRange(developerControls);
         }
@@ -98,5 +105,6 @@ namespace GitHubApplication
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
+
     }
 }

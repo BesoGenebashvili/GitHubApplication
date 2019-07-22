@@ -413,9 +413,9 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(12, 90);
+            this.panel1.Location = new System.Drawing.Point(12, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(68, 74);
+            this.panel1.Size = new System.Drawing.Size(68, 45);
             this.panel1.TabIndex = 33;
             // 
             // MainPanel
@@ -434,8 +434,8 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SearchForRepositoryesTextBox);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.MinimizeButton);

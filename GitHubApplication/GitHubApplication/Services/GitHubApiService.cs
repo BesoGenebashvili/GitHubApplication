@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
+using System.Linq;
 using System.Threading.Tasks;
 using GitHubApplication.Models;
+using System.Collections.Generic;
 
 namespace GitHubApplication.Services
 {
