@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using GitHubApplication.Models;
+using GitHub.Core.Models;
 
-namespace GitHubApplication.Services
+namespace GitHub.Core.Services.Abstractions
 {
-    public interface IUserService
+    public interface IUserManager
     {
         User LoginUser(User user);
         User RegisterUser(User user);

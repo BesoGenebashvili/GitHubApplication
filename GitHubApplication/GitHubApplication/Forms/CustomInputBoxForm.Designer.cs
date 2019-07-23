@@ -64,7 +64,7 @@
             // OkButton
             // 
             this.OkButton.BackColor = System.Drawing.Color.Transparent;
-            this.OkButton.Image = global::GitHubApplication.Properties.Resources.confirm_button;
+            this.OkButton.Image = global::GitHubCore.Properties.Resources.confirm_button;
             this.OkButton.Location = new System.Drawing.Point(139, 141);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(107, 35);
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GitHubApplication.Properties.Resources.MessageBoxForm;
+            this.BackgroundImage = global::GitHubCore.Properties.Resources.MessageBoxForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(384, 187);
             this.Controls.Add(this.TextLabel);

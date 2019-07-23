@@ -189,7 +189,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
-            this.pictureBox11.Image = global::GitHubApplication.Properties.Resources.uploadButton;
+            this.pictureBox11.Image = global::GitHubCore.Properties.Resources.uploadButton;
             this.pictureBox11.Location = new System.Drawing.Point(826, 248);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(107, 35);
@@ -199,7 +199,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Image = global::GitHubApplication.Properties.Resources.profilePictureUpload;
+            this.pictureBox10.Image = global::GitHubCore.Properties.Resources.profilePictureUpload;
             this.pictureBox10.Location = new System.Drawing.Point(805, 109);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(150, 150);
@@ -209,7 +209,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Image = global::GitHubApplication.Properties.Resources.saveButton;
+            this.pictureBox9.Image = global::GitHubCore.Properties.Resources.saveButton;
             this.pictureBox9.Location = new System.Drawing.Point(671, 515);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(107, 35);
@@ -219,7 +219,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::GitHubApplication.Properties.Resources.resetButton;
+            this.pictureBox8.Image = global::GitHubCore.Properties.Resources.resetButton;
             this.pictureBox8.Location = new System.Drawing.Point(530, 515);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(107, 35);
@@ -229,7 +229,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::GitHubApplication.Properties.Resources.ProfileSettingsTab;
+            this.pictureBox7.Image = global::GitHubCore.Properties.Resources.ProfileSettingsTab;
             this.pictureBox7.Location = new System.Drawing.Point(260, 59);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(802, 520);
@@ -239,7 +239,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::GitHubApplication.Properties.Resources.cautionIcon;
+            this.pictureBox6.Image = global::GitHubCore.Properties.Resources.cautionIcon;
             this.pictureBox6.Location = new System.Drawing.Point(914, 27);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(13, 12);
@@ -249,7 +249,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::GitHubApplication.Properties.Resources.logOutButton;
+            this.pictureBox5.Image = global::GitHubCore.Properties.Resources.logOutButton;
             this.pictureBox5.Location = new System.Drawing.Point(56, 373);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(107, 35);
@@ -259,7 +259,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::GitHubApplication.Properties.Resources.circleUnderImage;
+            this.pictureBox4.Image = global::GitHubCore.Properties.Resources.circleUnderImage;
             this.pictureBox4.Location = new System.Drawing.Point(49, 184);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(121, 121);

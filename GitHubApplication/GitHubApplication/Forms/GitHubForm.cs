@@ -4,16 +4,15 @@ using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using GitHubApplication.Common;
-using GitHubApplication.Models;
-using GitHubApplication.Services;
 using System.Threading.Tasks;
-using GitHubApplication.Controls;
+using GitHub.Core.Services.Abstractions;
+using GitHub.Core.Models;
 
 namespace GitHubApplication
 {
     public partial class GitHubForm : Form
     {
-        private readonly IUserService UserService;
+        private readonly IUserManager UserService;
         private readonly IGitHubApiService GitHubService;
 
         private User _User;
@@ -27,7 +26,7 @@ namespace GitHubApplication
             }
         }
 
-        public GitHubForm(IGitHubApiService gitHubService, IUserService userService)
+        public GitHubForm(IGitHubApiService gitHubService, IUserManager userService)
         {
             InitializeComponent();
 
@@ -51,32 +50,39 @@ namespace GitHubApplication
             }
         }
 
-        private void TrendingRepositoriesButton_Click(object sender, EventArgs e)
+        private async void TrendingRepositoriesButton_Click(object sender, EventArgs e)
         {
             if (MainPanel.Controls.Count > 0)
                 MainPanel.Controls.Clear();
 
-            RepositoryControl[] repositoryControls = Task.Run(() =>
-            {
-                return GitHubService.TrendingRepositories()
-                    .Select(r => new RepositoryControl(r)).ToArray();
-            }).Result;
-
-            MainPanel.Controls.AddRange(repositoryControls);
+            var repositories = await GitHubService.TrendingRepositories();
+            var controls = await GetRepositoryControls(repositories);
+            MainPanel.Controls.AddRange(controls);
         }
 
-        private void TrendingDevelopersButton_Click(object sender, EventArgs e)
+        private async void TrendingDevelopersButton_Click(object sender, EventArgs e)
         {
             if (MainPanel.Controls.Count > 0)
                 MainPanel.Controls.Clear();
 
-            var developerControls = Task.Run(() =>
-            {
-                return GitHubService.TrendingDevelopers()
-                   .Select(d => new DeveloperControl(d)).ToArray();
-            }).Result;
+            var developers = await GitHubService.TrendingDevelopers();
+            var controls = await GetDeveloperControls(developers);
+            MainPanel.Controls.AddRange(controls);
+        }
 
-            MainPanel.Controls.AddRange(developerControls);
+        private Task<TControl[]> GetControls<Tsource, TControl>(Tsource[] repositories, Func<Tsource, TControl> creator)  
+        {
+            return Task.Run(() => repositories.Select(creator).ToArray());
+        }
+
+        private Task<RepositoryControl[]> GetRepositoryControls(Repository[] repositories)
+        {
+            return Task.Run(() => repositories.Select(r => new RepositoryControl(r)).ToArray());
+        }
+
+        private Task<DeveloperControl[]> GetDeveloperControls(User[] developers)
+        {
+            return Task.Run(() => developers.Select(u => new DeveloperControl(u)).ToArray());
         }
 
         public void SuccessfullyLoggedHandler(object sender, User user)
@@ -106,16 +112,5 @@ namespace GitHubApplication
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
-
-        private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
-        {
-           
-            MainPanel.Visible = false;
-            UserRoomPanel.Visible = false;
-
-
-            RepositoriesComparisonControl repositoriesComparisonControl = new RepositoriesComparisonControl();
-            ComparisonPanel.Controls.Add(repositoriesComparisonControl);
-        }
     }
 }
