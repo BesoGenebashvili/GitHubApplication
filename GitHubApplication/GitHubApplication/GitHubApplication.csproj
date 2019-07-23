@@ -166,7 +166,6 @@
     <Compile Include="Controls\UserRoomControl.Designer.cs">
       <DependentUpon>UserRoomControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseContext\GitHubDataBaseContext.cs" />
     <Compile Include="Forms\CustomInputBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +190,6 @@
     <Compile Include="Forms\CustomMessageBoxForm.Designer.cs">
       <DependentUpon>CustomMessageBoxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedClasses.cs" />
-    <Compile Include="Models\Repository.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\RegisterForm.cs">
@@ -202,10 +198,6 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\GitHubApiService.cs" />
-    <Compile Include="Services\IGitHubApiService.cs" />
-    <Compile Include="Services\IUserService.cs" />
-    <Compile Include="Services\UserServiceDb.cs" />
     <Compile Include="Controls\RepositoryControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,7 +291,12 @@
   <ItemGroup>
     <None Include="Assets\signUpButton.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Github.Core\Github.Core.csproj">
+      <Project>{e4c1f465-cfb6-480d-aea8-ab3b586dc16c}</Project>
+      <Name>Github.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Assets\mainformBG.png" />
   </ItemGroup>

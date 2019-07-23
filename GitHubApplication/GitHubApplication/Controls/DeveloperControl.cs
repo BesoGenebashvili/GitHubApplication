@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using GitHubApplication.Models;
+using GitHub.Core.Models;
 
 namespace GitHubApplication
 {

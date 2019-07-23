@@ -114,8 +114,8 @@
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
-            this.CloseButton.Image = global::GitHubApplication.Properties.Resources.close;
+            this.CloseButton.ErrorImage = global::GitHubCore.Properties.Resources.minimise;
+            this.CloseButton.Image = global::GitHubCore.Properties.Resources.close;
             this.CloseButton.Location = new System.Drawing.Point(370, 16);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Padding = new System.Windows.Forms.Padding(3);
@@ -129,8 +129,8 @@
             // MinimizeButton
             // 
             this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MinimizeButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
-            this.MinimizeButton.Image = global::GitHubApplication.Properties.Resources.minimise;
+            this.MinimizeButton.ErrorImage = global::GitHubCore.Properties.Resources.minimise;
+            this.MinimizeButton.Image = global::GitHubCore.Properties.Resources.minimise;
             this.MinimizeButton.Location = new System.Drawing.Point(349, 16);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Padding = new System.Windows.Forms.Padding(3);
@@ -145,7 +145,7 @@
             // 
             this.SignUpButton.BackColor = System.Drawing.Color.Transparent;
             this.SignUpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SignUpButton.Image = global::GitHubApplication.Properties.Resources.signUpButton;
+            this.SignUpButton.Image = global::GitHubCore.Properties.Resources.signUpButton;
             this.SignUpButton.Location = new System.Drawing.Point(28, 358);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(344, 39);
@@ -168,7 +168,7 @@
             // line
             // 
             this.line.BackColor = System.Drawing.Color.Transparent;
-            this.line.Image = global::GitHubApplication.Properties.Resources.Intermittent_line;
+            this.line.Image = global::GitHubCore.Properties.Resources.Intermittent_line;
             this.line.Location = new System.Drawing.Point(26, 313);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(347, 2);
@@ -192,7 +192,7 @@
             // 
             this.SignInButton.BackColor = System.Drawing.Color.Transparent;
             this.SignInButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SignInButton.Image = global::GitHubApplication.Properties.Resources.signInButton;
+            this.SignInButton.Image = global::GitHubCore.Properties.Resources.signInButton;
             this.SignInButton.Location = new System.Drawing.Point(28, 256);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(84, 39);
@@ -216,7 +216,7 @@
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::GitHubApplication.Properties.Resources.signInBG;
+            this.BackgroundImage = global::GitHubCore.Properties.Resources.signInBG;
             this.ClientSize = new System.Drawing.Size(400, 424);
             this.Controls.Add(this.SignInButton);
             this.Controls.Add(this.UserNameOrPasswordFailLabel);

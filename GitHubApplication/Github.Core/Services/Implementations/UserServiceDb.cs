@@ -3,16 +3,17 @@ using System.Net;
 using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
-using GitHubApplication.Models;
-using GitHubApplication.DataBaseContext;
+using GitHub.Core.Models;
+using GitHub.Core.DataBaseContext;
+using GitHub.Core.Services.Abstractions;
 
-namespace GitHubApplication.Services
+namespace GitHub.Core.Services.Implementations
 {
-    public class UserServiceDb : IUserService
+    public class UserManger : IUserManager
     {
         private readonly GitHubDataBaseContext DataBase;
 
-        public UserServiceDb(GitHubDataBaseContext dataBase)
+        public UserManger(GitHubDataBaseContext dataBase)
         {
             DataBase = dataBase;
         }
@@ -72,9 +73,9 @@ namespace GitHubApplication.Services
             {
                 try
                 {
-                    var fromAddress = new MailAddress("githubapplicationun@gmail.com", "GitHub Application");
+                    var fromAddress = new MailAddress("GitHub.Coreun@gmail.com", "GitHub Application");
                     var toAddress = new MailAddress(user.Email, "Name");
-                    const string fromPassword = "githubapplicationun123";
+                    const string fromPassword = "GitHub.Coreun123";
 
                     SmtpClient smtpClient = new SmtpClient
                     {

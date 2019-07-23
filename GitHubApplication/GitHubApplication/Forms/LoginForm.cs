@@ -3,10 +3,10 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
-using GitHubApplication.Models;
 using GitHubApplication.Common;
 using System.Collections.Generic;
-using GitHubApplication.Services;
+using GitHub.Core.Services.Abstractions;
+using GitHub.Core.Models;
 
 namespace GitHubApplication
 {
@@ -14,9 +14,9 @@ namespace GitHubApplication
     {
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
-        private readonly IUserService UserService;
+        private readonly IUserManager UserService;
         public event EventHandler<User> SuccessfullyLogged;
-        public LoginForm(IUserService userService)
+        public LoginForm(IUserManager userService)
         {
             InitializeComponent();
 

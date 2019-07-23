@@ -50,7 +50,7 @@
             // GitHubLogoPictureBox
             // 
             this.GitHubLogoPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.GitHubLogoPictureBox.BackgroundImage = global::GitHubApplication.Properties.Resources.logo;
+            this.GitHubLogoPictureBox.BackgroundImage = global::GitHubCore.Properties.Resources.logo;
             this.GitHubLogoPictureBox.Location = new System.Drawing.Point(58, 23);
             this.GitHubLogoPictureBox.Name = "GitHubLogoPictureBox";
             this.GitHubLogoPictureBox.Size = new System.Drawing.Size(114, 36);
@@ -86,7 +86,7 @@
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.Transparent;
-            this.SearchButton.Image = global::GitHubApplication.Properties.Resources.searchIcon;
+            this.SearchButton.Image = global::GitHubCore.Properties.Resources.searchIcon;
             this.SearchButton.Location = new System.Drawing.Point(1023, 36);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(16, 16);
@@ -96,7 +96,7 @@
             // CallendarButton
             // 
             this.CallendarButton.BackColor = System.Drawing.Color.Transparent;
-            this.CallendarButton.Image = global::GitHubApplication.Properties.Resources.calendar;
+            this.CallendarButton.Image = global::GitHubCore.Properties.Resources.calendar;
             this.CallendarButton.Location = new System.Drawing.Point(999, 35);
             this.CallendarButton.Name = "CallendarButton";
             this.CallendarButton.Size = new System.Drawing.Size(17, 17);
@@ -106,7 +106,7 @@
             // UserPictureBox
             // 
             this.UserPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.UserPictureBox.Image = global::GitHubApplication.Properties.Resources.userIcon;
+            this.UserPictureBox.Image = global::GitHubCore.Properties.Resources.userIcon;
             this.UserPictureBox.Location = new System.Drawing.Point(1071, 21);
             this.UserPictureBox.Name = "UserPictureBox";
             this.UserPictureBox.Size = new System.Drawing.Size(43, 43);
@@ -116,8 +116,8 @@
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
-            this.CloseButton.Image = global::GitHubApplication.Properties.Resources.close;
+            this.CloseButton.ErrorImage = global::GitHubCore.Properties.Resources.minimise;
+            this.CloseButton.Image = global::GitHubCore.Properties.Resources.close;
             this.CloseButton.Location = new System.Drawing.Point(1158, 16);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Padding = new System.Windows.Forms.Padding(3);
@@ -131,8 +131,8 @@
             // MinimizeButton
             // 
             this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MinimizeButton.ErrorImage = global::GitHubApplication.Properties.Resources.minimise;
-            this.MinimizeButton.Image = global::GitHubApplication.Properties.Resources.minimise;
+            this.MinimizeButton.ErrorImage = global::GitHubCore.Properties.Resources.minimise;
+            this.MinimizeButton.Image = global::GitHubCore.Properties.Resources.minimise;
             this.MinimizeButton.Location = new System.Drawing.Point(1136, 16);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Padding = new System.Windows.Forms.Padding(3);
@@ -176,7 +176,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
+            this.BackgroundImage = global::GitHubCore.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.MainPanel);
