@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomInputBox));
             this.ConfirmTextBox = new System.Windows.Forms.TextBox();
             this.MessageboxLabel = new System.Windows.Forms.Label();
             this.OkButton = new System.Windows.Forms.PictureBox();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.ConfirmTextBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomInputBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmForm";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GitHubForm));
             this.GitHubLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.TrendingRepositoriesButton = new System.Windows.Forms.Label();
             this.TrendingDevelopersButton = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.UserRoomPanel = new System.Windows.Forms.Panel();
             this.ComparisonPanel = new System.Windows.Forms.Panel();
+            this.ComparisionRepositoriesButton = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).BeginInit();
@@ -62,26 +64,26 @@
             // 
             this.TrendingRepositoriesButton.AutoSize = true;
             this.TrendingRepositoriesButton.BackColor = System.Drawing.Color.Transparent;
-            this.TrendingRepositoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrendingRepositoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrendingRepositoriesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.TrendingRepositoriesButton.Location = new System.Drawing.Point(268, 33);
+            this.TrendingRepositoriesButton.Location = new System.Drawing.Point(216, 34);
             this.TrendingRepositoriesButton.Name = "TrendingRepositoriesButton";
-            this.TrendingRepositoriesButton.Size = new System.Drawing.Size(164, 20);
+            this.TrendingRepositoriesButton.Size = new System.Drawing.Size(122, 18);
             this.TrendingRepositoriesButton.TabIndex = 1;
-            this.TrendingRepositoriesButton.Text = "Trending Repositories";
+            this.TrendingRepositoriesButton.Text = "Top Repositories";
             this.TrendingRepositoriesButton.Click += new System.EventHandler(this.TrendingRepositoriesButton_Click);
             // 
             // TrendingDevelopersButton
             // 
             this.TrendingDevelopersButton.AutoSize = true;
             this.TrendingDevelopersButton.BackColor = System.Drawing.Color.Transparent;
-            this.TrendingDevelopersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrendingDevelopersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrendingDevelopersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.TrendingDevelopersButton.Location = new System.Drawing.Point(466, 32);
+            this.TrendingDevelopersButton.Location = new System.Drawing.Point(369, 34);
             this.TrendingDevelopersButton.Name = "TrendingDevelopersButton";
-            this.TrendingDevelopersButton.Size = new System.Drawing.Size(155, 20);
+            this.TrendingDevelopersButton.Size = new System.Drawing.Size(113, 18);
             this.TrendingDevelopersButton.TabIndex = 2;
-            this.TrendingDevelopersButton.Text = "Trending Developers";
+            this.TrendingDevelopersButton.Text = "Top Developers";
             this.TrendingDevelopersButton.Click += new System.EventHandler(this.TrendingDevelopersButton_Click);
             // 
             // SearchButton
@@ -182,6 +184,19 @@
             this.ComparisonPanel.Size = new System.Drawing.Size(1018, 538);
             this.ComparisonPanel.TabIndex = 0;
             // 
+            // ComparisionRepositoriesButton
+            // 
+            this.ComparisionRepositoriesButton.AutoSize = true;
+            this.ComparisionRepositoriesButton.BackColor = System.Drawing.Color.Transparent;
+            this.ComparisionRepositoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisionRepositoriesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.ComparisionRepositoriesButton.Location = new System.Drawing.Point(512, 34);
+            this.ComparisionRepositoriesButton.Name = "ComparisionRepositoriesButton";
+            this.ComparisionRepositoriesButton.Size = new System.Drawing.Size(173, 18);
+            this.ComparisionRepositoriesButton.TabIndex = 34;
+            this.ComparisionRepositoriesButton.Text = "Comparision Repositoris";
+            this.ComparisionRepositoriesButton.Click += new System.EventHandler(this.ComparisionRepositoriesButton_Click);
+            // 
             // GitHubForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -189,6 +204,7 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.ComparisionRepositoriesButton);
             this.Controls.Add(this.ComparisonPanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SearchForRepositoryesTextBox);
@@ -202,6 +218,7 @@
             this.Controls.Add(this.GitHubLogoPictureBox);
             this.Controls.Add(this.UserRoomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GitHubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub";
@@ -232,5 +249,6 @@
         private System.Windows.Forms.FlowLayoutPanel MainPanel;
         private System.Windows.Forms.Panel UserRoomPanel;
         private System.Windows.Forms.Panel ComparisonPanel;
+        private System.Windows.Forms.Label ComparisionRepositoriesButton;
     }
 }

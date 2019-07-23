@@ -7,6 +7,7 @@ using GitHubApplication.Common;
 using GitHubApplication.Models;
 using GitHubApplication.Services;
 using System.Threading.Tasks;
+using GitHubApplication.Controls;
 
 namespace GitHubApplication
 {
@@ -106,5 +107,15 @@ namespace GitHubApplication
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
 
+        private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
+        {
+           
+            MainPanel.Visible = false;
+            UserRoomPanel.Visible = false;
+
+
+            RepositoriesComparisonControl repositoriesComparisonControl = new RepositoriesComparisonControl();
+            ComparisonPanel.Controls.Add(repositoriesComparisonControl);
+        }
     }
 }

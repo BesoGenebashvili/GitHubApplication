@@ -16,7 +16,20 @@ namespace GitHubApplication.Controls
         {
             InitializeComponent();
         }
-
-       
+        bool FirstrClick = true;
+        private void LanguageClick(object sender, EventArgs e)
+        {
+            if (FirstrClick)
+            {
+                ComparisonLanguageOneLabel.Text = (sender as Label).Text;
+                (sender as Label).ForeColor = Color.Gray;
+                FirstrClick = false;
+            }
+            else
+            {
+                ComparisonLanguageTwoLabel.Text = (sender as Label).Text;
+                (sender as Label).ForeColor = Color.Gray;
+            }
+        }
     }
 }

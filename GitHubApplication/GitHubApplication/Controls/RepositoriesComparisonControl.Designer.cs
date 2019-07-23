@@ -28,273 +28,277 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.RepositorOneCountLabel = new System.Windows.Forms.Label();
+            this.StarOneCountLabel = new System.Windows.Forms.Label();
+            this.ForkOneCountLabel = new System.Windows.Forms.Label();
+            this.ForkTwoCountLabel = new System.Windows.Forms.Label();
+            this.StarTwoCountLabel = new System.Windows.Forms.Label();
+            this.RepositorTwoCountLabel = new System.Windows.Forms.Label();
+            this.ComparisonLanguageTwoLabel = new System.Windows.Forms.Label();
+            this.LanguageTwoColorpictureBox = new System.Windows.Forms.PictureBox();
+            this.LanguageOneColorpictureBox = new System.Windows.Forms.PictureBox();
+            this.ComparisonLanguageOneLabel = new System.Windows.Forms.Label();
+            this.ComparisionButton = new System.Windows.Forms.PictureBox();
+            this.ComparisonCLabel = new System.Windows.Forms.Label();
+            this.ComparisonCsharpLabel = new System.Windows.Forms.Label();
+            this.ComparisonCPlusLabel = new System.Windows.Forms.Label();
+            this.ComparisonJavascriptLabel = new System.Windows.Forms.Label();
+            this.ComparisonPhpLabel = new System.Windows.Forms.Label();
+            this.ComparisonJavaLabel = new System.Windows.Forms.Label();
+            this.ComparisonCssLabel = new System.Windows.Forms.Label();
+            this.ComparisonPythonLabel = new System.Windows.Forms.Label();
+            this.ComparisonHtmlLabel = new System.Windows.Forms.Label();
+            this.ComparisonSwiftLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // RepositorOneCountLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(105, 282);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "2 564";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RepositorOneCountLabel.AutoSize = true;
+            this.RepositorOneCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepositorOneCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.RepositorOneCountLabel.Location = new System.Drawing.Point(116, 282);
+            this.RepositorOneCountLabel.Name = "RepositorOneCountLabel";
+            this.RepositorOneCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.RepositorOneCountLabel.TabIndex = 0;
+            this.RepositorOneCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // StarOneCountLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(223, 282);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "2 564";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.StarOneCountLabel.AutoSize = true;
+            this.StarOneCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StarOneCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.StarOneCountLabel.Location = new System.Drawing.Point(223, 282);
+            this.StarOneCountLabel.Name = "StarOneCountLabel";
+            this.StarOneCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.StarOneCountLabel.TabIndex = 1;
+            this.StarOneCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // ForkOneCountLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(339, 282);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "2 564";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ForkOneCountLabel.AutoSize = true;
+            this.ForkOneCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForkOneCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.ForkOneCountLabel.Location = new System.Drawing.Point(339, 282);
+            this.ForkOneCountLabel.Name = "ForkOneCountLabel";
+            this.ForkOneCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.ForkOneCountLabel.TabIndex = 2;
+            this.ForkOneCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
+            // ForkTwoCountLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(846, 282);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "2 564";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ForkTwoCountLabel.AutoSize = true;
+            this.ForkTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForkTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.ForkTwoCountLabel.Location = new System.Drawing.Point(846, 282);
+            this.ForkTwoCountLabel.Name = "ForkTwoCountLabel";
+            this.ForkTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.ForkTwoCountLabel.TabIndex = 5;
+            this.ForkTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label5
+            // StarTwoCountLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(730, 282);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "2 564";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.StarTwoCountLabel.AutoSize = true;
+            this.StarTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StarTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.StarTwoCountLabel.Location = new System.Drawing.Point(730, 282);
+            this.StarTwoCountLabel.Name = "StarTwoCountLabel";
+            this.StarTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.StarTwoCountLabel.TabIndex = 4;
+            this.StarTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label6
+            // RepositorTwoCountLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(612, 282);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "2 564";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RepositorTwoCountLabel.AutoSize = true;
+            this.RepositorTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepositorTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
+            this.RepositorTwoCountLabel.Location = new System.Drawing.Point(623, 282);
+            this.RepositorTwoCountLabel.Name = "RepositorTwoCountLabel";
+            this.RepositorTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.RepositorTwoCountLabel.TabIndex = 3;
+            this.RepositorTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label7
+            // ComparisonLanguageTwoLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkGray;
-            this.label7.Location = new System.Drawing.Point(639, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 26);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "C#";
+            this.ComparisonLanguageTwoLabel.AutoSize = true;
+            this.ComparisonLanguageTwoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonLanguageTwoLabel.ForeColor = System.Drawing.Color.DarkGray;
+            this.ComparisonLanguageTwoLabel.Location = new System.Drawing.Point(639, 62);
+            this.ComparisonLanguageTwoLabel.Name = "ComparisonLanguageTwoLabel";
+            this.ComparisonLanguageTwoLabel.Size = new System.Drawing.Size(40, 26);
+            this.ComparisonLanguageTwoLabel.TabIndex = 6;
+            this.ComparisonLanguageTwoLabel.Text = "C#";
             // 
-            // pictureBox1
+            // LanguageTwoColorpictureBox
             // 
-            this.pictureBox1.Image = global::GitHubApplication.Properties.Resources.C_Sharp;
-            this.pictureBox1.Location = new System.Drawing.Point(618, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(11, 11);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.LanguageTwoColorpictureBox.Image = global::GitHubApplication.Properties.Resources.C_Sharp;
+            this.LanguageTwoColorpictureBox.Location = new System.Drawing.Point(618, 69);
+            this.LanguageTwoColorpictureBox.Name = "LanguageTwoColorpictureBox";
+            this.LanguageTwoColorpictureBox.Size = new System.Drawing.Size(11, 11);
+            this.LanguageTwoColorpictureBox.TabIndex = 7;
+            this.LanguageTwoColorpictureBox.TabStop = false;
             // 
-            // pictureBox2
+            // LanguageOneColorpictureBox
             // 
-            this.pictureBox2.Image = global::GitHubApplication.Properties.Resources.Swift;
-            this.pictureBox2.Location = new System.Drawing.Point(381, 69);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(11, 11);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.LanguageOneColorpictureBox.Image = global::GitHubApplication.Properties.Resources.Swift;
+            this.LanguageOneColorpictureBox.Location = new System.Drawing.Point(381, 69);
+            this.LanguageOneColorpictureBox.Name = "LanguageOneColorpictureBox";
+            this.LanguageOneColorpictureBox.Size = new System.Drawing.Size(11, 11);
+            this.LanguageOneColorpictureBox.TabIndex = 8;
+            this.LanguageOneColorpictureBox.TabStop = false;
             // 
-            // label8
+            // ComparisonLanguageOneLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkGray;
-            this.label8.Location = new System.Drawing.Point(313, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 26);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Swift";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonLanguageOneLabel.AutoSize = true;
+            this.ComparisonLanguageOneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonLanguageOneLabel.ForeColor = System.Drawing.Color.DarkGray;
+            this.ComparisonLanguageOneLabel.Location = new System.Drawing.Point(313, 62);
+            this.ComparisonLanguageOneLabel.Name = "ComparisonLanguageOneLabel";
+            this.ComparisonLanguageOneLabel.Size = new System.Drawing.Size(60, 26);
+            this.ComparisonLanguageOneLabel.TabIndex = 9;
+            this.ComparisonLanguageOneLabel.Text = "Swift";
+            this.ComparisonLanguageOneLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pictureBox3
+            // ComparisionButton
             // 
-            this.pictureBox3.Image = global::GitHubApplication.Properties.Resources.SearchButton;
-            this.pictureBox3.Location = new System.Drawing.Point(451, 371);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(107, 35);
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
+            this.ComparisionButton.Image = global::GitHubApplication.Properties.Resources.CompareButton;
+            this.ComparisionButton.Location = new System.Drawing.Point(451, 371);
+            this.ComparisionButton.Name = "ComparisionButton";
+            this.ComparisionButton.Size = new System.Drawing.Size(107, 35);
+            this.ComparisionButton.TabIndex = 10;
+            this.ComparisionButton.TabStop = false;
             // 
-            // label9
+            // ComparisonCLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label9.Location = new System.Drawing.Point(263, 143);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "C";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCLabel.AutoSize = true;
+            this.ComparisonCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonCLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonCLabel.Location = new System.Drawing.Point(263, 143);
+            this.ComparisonCLabel.Name = "ComparisonCLabel";
+            this.ComparisonCLabel.Size = new System.Drawing.Size(20, 20);
+            this.ComparisonCLabel.TabIndex = 11;
+            this.ComparisonCLabel.Text = "C";
+            this.ComparisonCLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label10
+            // ComparisonCsharpLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label10.Location = new System.Drawing.Point(362, 143);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "C#";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCsharpLabel.AutoSize = true;
+            this.ComparisonCsharpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonCsharpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonCsharpLabel.Location = new System.Drawing.Point(362, 143);
+            this.ComparisonCsharpLabel.Name = "ComparisonCsharpLabel";
+            this.ComparisonCsharpLabel.Size = new System.Drawing.Size(29, 20);
+            this.ComparisonCsharpLabel.TabIndex = 12;
+            this.ComparisonCsharpLabel.Text = "C#";
+            this.ComparisonCsharpLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCsharpLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label11
+            // ComparisonCPlusLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label11.Location = new System.Drawing.Point(305, 143);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "C++";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCPlusLabel.AutoSize = true;
+            this.ComparisonCPlusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonCPlusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonCPlusLabel.Location = new System.Drawing.Point(305, 143);
+            this.ComparisonCPlusLabel.Name = "ComparisonCPlusLabel";
+            this.ComparisonCPlusLabel.Size = new System.Drawing.Size(38, 20);
+            this.ComparisonCPlusLabel.TabIndex = 13;
+            this.ComparisonCPlusLabel.Text = "C++";
+            this.ComparisonCPlusLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCPlusLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label12
+            // ComparisonJavascriptLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label12.Location = new System.Drawing.Point(480, 143);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 20);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "JavaScript";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonJavascriptLabel.AutoSize = true;
+            this.ComparisonJavascriptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonJavascriptLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonJavascriptLabel.Location = new System.Drawing.Point(480, 143);
+            this.ComparisonJavascriptLabel.Name = "ComparisonJavascriptLabel";
+            this.ComparisonJavascriptLabel.Size = new System.Drawing.Size(83, 20);
+            this.ComparisonJavascriptLabel.TabIndex = 16;
+            this.ComparisonJavascriptLabel.Text = "JavaScript";
+            this.ComparisonJavascriptLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonJavascriptLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label13
+            // ComparisonPhpLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label13.Location = new System.Drawing.Point(586, 143);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 20);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "PHP";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonPhpLabel.AutoSize = true;
+            this.ComparisonPhpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonPhpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonPhpLabel.Location = new System.Drawing.Point(586, 143);
+            this.ComparisonPhpLabel.Name = "ComparisonPhpLabel";
+            this.ComparisonPhpLabel.Size = new System.Drawing.Size(41, 20);
+            this.ComparisonPhpLabel.TabIndex = 15;
+            this.ComparisonPhpLabel.Text = "PHP";
+            this.ComparisonPhpLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonPhpLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label14
+            // ComparisonJavaLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label14.Location = new System.Drawing.Point(415, 143);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 20);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Java";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonJavaLabel.AutoSize = true;
+            this.ComparisonJavaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonJavaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonJavaLabel.Location = new System.Drawing.Point(415, 143);
+            this.ComparisonJavaLabel.Name = "ComparisonJavaLabel";
+            this.ComparisonJavaLabel.Size = new System.Drawing.Size(42, 20);
+            this.ComparisonJavaLabel.TabIndex = 14;
+            this.ComparisonJavaLabel.Text = "Java";
+            this.ComparisonJavaLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonJavaLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label15
+            // ComparisonCssLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label15.Location = new System.Drawing.Point(720, 143);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 20);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "CSS";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCssLabel.AutoSize = true;
+            this.ComparisonCssLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonCssLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonCssLabel.Location = new System.Drawing.Point(720, 143);
+            this.ComparisonCssLabel.Name = "ComparisonCssLabel";
+            this.ComparisonCssLabel.Size = new System.Drawing.Size(42, 20);
+            this.ComparisonCssLabel.TabIndex = 20;
+            this.ComparisonCssLabel.Text = "CSS";
+            this.ComparisonCssLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonCssLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label16
+            // ComparisonPythonLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label16.Location = new System.Drawing.Point(185, 143);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 20);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "Python";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonPythonLabel.AutoSize = true;
+            this.ComparisonPythonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonPythonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonPythonLabel.Location = new System.Drawing.Point(185, 143);
+            this.ComparisonPythonLabel.Name = "ComparisonPythonLabel";
+            this.ComparisonPythonLabel.Size = new System.Drawing.Size(58, 20);
+            this.ComparisonPythonLabel.TabIndex = 19;
+            this.ComparisonPythonLabel.Text = "Python";
+            this.ComparisonPythonLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonPythonLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label17
+            // ComparisonHtmlLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label17.Location = new System.Drawing.Point(650, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 20);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "HTML";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonHtmlLabel.AutoSize = true;
+            this.ComparisonHtmlLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonHtmlLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonHtmlLabel.Location = new System.Drawing.Point(650, 143);
+            this.ComparisonHtmlLabel.Name = "ComparisonHtmlLabel";
+            this.ComparisonHtmlLabel.Size = new System.Drawing.Size(52, 20);
+            this.ComparisonHtmlLabel.TabIndex = 18;
+            this.ComparisonHtmlLabel.Text = "HTML";
+            this.ComparisonHtmlLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonHtmlLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
-            // label18
+            // ComparisonSwiftLabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.label18.Location = new System.Drawing.Point(779, 143);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 20);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Swift";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonSwiftLabel.AutoSize = true;
+            this.ComparisonSwiftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComparisonSwiftLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.ComparisonSwiftLabel.Location = new System.Drawing.Point(779, 143);
+            this.ComparisonSwiftLabel.Name = "ComparisonSwiftLabel";
+            this.ComparisonSwiftLabel.Size = new System.Drawing.Size(44, 20);
+            this.ComparisonSwiftLabel.TabIndex = 17;
+            this.ComparisonSwiftLabel.Text = "Swift";
+            this.ComparisonSwiftLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonSwiftLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
             // RepositoriesComparisonControl
             // 
@@ -303,32 +307,32 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.vs_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ComparisonCssLabel);
+            this.Controls.Add(this.ComparisonPythonLabel);
+            this.Controls.Add(this.ComparisonHtmlLabel);
+            this.Controls.Add(this.ComparisonSwiftLabel);
+            this.Controls.Add(this.ComparisonJavascriptLabel);
+            this.Controls.Add(this.ComparisonPhpLabel);
+            this.Controls.Add(this.ComparisonJavaLabel);
+            this.Controls.Add(this.ComparisonCPlusLabel);
+            this.Controls.Add(this.ComparisonCsharpLabel);
+            this.Controls.Add(this.ComparisonCLabel);
+            this.Controls.Add(this.ComparisionButton);
+            this.Controls.Add(this.ComparisonLanguageOneLabel);
+            this.Controls.Add(this.LanguageOneColorpictureBox);
+            this.Controls.Add(this.LanguageTwoColorpictureBox);
+            this.Controls.Add(this.ComparisonLanguageTwoLabel);
+            this.Controls.Add(this.ForkTwoCountLabel);
+            this.Controls.Add(this.StarTwoCountLabel);
+            this.Controls.Add(this.RepositorTwoCountLabel);
+            this.Controls.Add(this.ForkOneCountLabel);
+            this.Controls.Add(this.StarOneCountLabel);
+            this.Controls.Add(this.RepositorOneCountLabel);
             this.Name = "RepositoriesComparisonControl";
             this.Size = new System.Drawing.Size(1008, 528);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,26 +340,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label RepositorOneCountLabel;
+        private System.Windows.Forms.Label StarOneCountLabel;
+        private System.Windows.Forms.Label ForkOneCountLabel;
+        private System.Windows.Forms.Label ForkTwoCountLabel;
+        private System.Windows.Forms.Label StarTwoCountLabel;
+        private System.Windows.Forms.Label RepositorTwoCountLabel;
+        private System.Windows.Forms.Label ComparisonLanguageTwoLabel;
+        private System.Windows.Forms.PictureBox LanguageTwoColorpictureBox;
+        private System.Windows.Forms.PictureBox LanguageOneColorpictureBox;
+        private System.Windows.Forms.Label ComparisonLanguageOneLabel;
+        private System.Windows.Forms.PictureBox ComparisionButton;
+        private System.Windows.Forms.Label ComparisonCLabel;
+        private System.Windows.Forms.Label ComparisonCsharpLabel;
+        private System.Windows.Forms.Label ComparisonCPlusLabel;
+        private System.Windows.Forms.Label ComparisonJavascriptLabel;
+        private System.Windows.Forms.Label ComparisonPhpLabel;
+        private System.Windows.Forms.Label ComparisonJavaLabel;
+        private System.Windows.Forms.Label ComparisonCssLabel;
+        private System.Windows.Forms.Label ComparisonPythonLabel;
+        private System.Windows.Forms.Label ComparisonHtmlLabel;
+        private System.Windows.Forms.Label ComparisonSwiftLabel;
     }
 }
