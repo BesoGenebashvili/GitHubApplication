@@ -110,7 +110,9 @@
     <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.1.14.520, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.14\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
@@ -170,6 +172,12 @@
     <Compile Include="Controls\RepositoriesComparisonControl.Designer.cs">
       <DependentUpon>RepositoriesComparisonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SearchLanguageCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchLanguageCategoriesControl.Designer.cs">
+      <DependentUpon>SearchLanguageCategoriesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UserRoomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +230,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\RepositoriesComparisonControl.resx">
       <DependentUpon>RepositoriesComparisonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchLanguageCategoriesControl.resx">
+      <DependentUpon>SearchLanguageCategoriesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserRoomControl.resx">
       <DependentUpon>UserRoomControl.cs</DependentUpon>
@@ -443,6 +454,10 @@
     <None Include="Assets\loadanimation.gif" />
     <None Include="Assets\Blankcircle.png" />
     <None Include="Assets\LoadingAnimationForComparisonPage.gif" />
+    <None Include="Assets\arrowDown.png" />
+    <None Include="Assets\none.png" />
+    <None Include="Assets\searchItemTopLine.png" />
+    <None Include="Assets\searchPanelBG.png" />
     <Content Include="github.ico" />
   </ItemGroup>
   <ItemGroup>
