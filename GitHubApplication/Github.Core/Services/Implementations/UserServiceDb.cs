@@ -73,9 +73,9 @@ namespace GitHub.Core.Services.Implementations
             {
                 try
                 {
-                    var fromAddress = new MailAddress("GitHub.Coreun@gmail.com", "GitHub Application");
+                    var fromAddress = new MailAddress("githubapplicationun@gmail.com", "GitHub Application");
                     var toAddress = new MailAddress(user.Email, "Name");
-                    const string fromPassword = "GitHub.Coreun123";
+                    const string fromPassword = "githubapplicationun123";
 
                     SmtpClient smtpClient = new SmtpClient
                     {

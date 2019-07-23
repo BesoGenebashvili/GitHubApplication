@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GitHubCore.Properties {
+namespace GitHubApplication.Properties {
     using System;
     
     
