@@ -121,11 +121,11 @@
   <data name="circleUnderImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\circleUnderImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="signUpButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\signUpButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loadanimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\loadanimation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="short-blue-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\short-blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CompareButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\CompareButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="uploadImage-120x120" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\uploadImage-120x120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +138,9 @@
   </data>
   <data name="CPlusPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\CPlusPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="short-blue-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\short-blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="star-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\star-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,8 @@
   <data name="long-gray-label" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\long-gray-label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Blankcircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Blankcircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="signInButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\signInButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +183,9 @@
   </data>
   <data name="followers-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\followers-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingAnimationForComparisonPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\LoadingAnimationForComparisonPage.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Java" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Java.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +229,9 @@
   <data name="fork-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\fork-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="signUpButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\signUpButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ConfirmForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,6 +268,9 @@
   <data name="star-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\star-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="saveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\saveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -289,7 +301,7 @@
   <data name="OkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CompareButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\CompareButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LoadingAnimationForComparisonPage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\LoadingAnimationForComparisonPage.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

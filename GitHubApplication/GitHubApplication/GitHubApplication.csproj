@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CustomBox.cs" />
+    <Compile Include="Common\LanguageColor.cs" />
     <Compile Include="Common\ServiceManager.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Controls\RepositoriesComparisonControl.cs">
@@ -439,6 +440,9 @@
     <None Include="Assets\CompareButton.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\loadanimation.gif" />
+    <None Include="Assets\Blankcircle.png" />
+    <None Include="Assets\LoadingAnimationForComparisonPage.gif" />
     <Content Include="github.ico" />
   </ItemGroup>
   <ItemGroup>

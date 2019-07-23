@@ -73,6 +73,16 @@ namespace GitHubApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blankcircle {
+            get {
+                object obj = ResourceManager.GetObject("Blankcircle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap C {
             get {
                 object obj = ResourceManager.GetObject("C", resourceCulture);
@@ -296,6 +306,36 @@ namespace GitHubApplication.Properties {
         internal static System.Drawing.Bitmap left_down_green {
             get {
                 object obj = ResourceManager.GetObject("left-down-green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loadanimation {
+            get {
+                object obj = ResourceManager.GetObject("loadanimation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingAnimationForComparisonPage {
+            get {
+                object obj = ResourceManager.GetObject("LoadingAnimationForComparisonPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingAnimationForComparisonPage1 {
+            get {
+                object obj = ResourceManager.GetObject("LoadingAnimationForComparisonPage1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -7,6 +7,7 @@ using GitHubApplication.Common;
 using System.Threading.Tasks;
 using GitHub.Core.Services.Abstractions;
 using GitHub.Core.Models;
+using GitHubApplication.Controls;
 
 namespace GitHubApplication
 {
@@ -114,5 +115,12 @@ namespace GitHubApplication
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
+
+        private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = false;
+            UserRoomPanel.Visible = false;
+            ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
+        }
     }
 }

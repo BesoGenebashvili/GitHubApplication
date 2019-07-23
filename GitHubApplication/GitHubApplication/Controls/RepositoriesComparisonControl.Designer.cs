@@ -49,9 +49,11 @@
             this.ComparisonPythonLabel = new System.Windows.Forms.Label();
             this.ComparisonHtmlLabel = new System.Windows.Forms.Label();
             this.ComparisonSwiftLabel = new System.Windows.Forms.Label();
+            this.LoadAnimation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // RepositorOneCountLabel
@@ -67,58 +69,53 @@
             // 
             // StarOneCountLabel
             // 
-            this.StarOneCountLabel.AutoSize = true;
             this.StarOneCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StarOneCountLabel.ForeColor = System.Drawing.Color.Silver;
-            this.StarOneCountLabel.Location = new System.Drawing.Point(223, 282);
+            this.StarOneCountLabel.Location = new System.Drawing.Point(215, 282);
             this.StarOneCountLabel.Name = "StarOneCountLabel";
-            this.StarOneCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.StarOneCountLabel.Size = new System.Drawing.Size(70, 25);
             this.StarOneCountLabel.TabIndex = 1;
-            this.StarOneCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.StarOneCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForkOneCountLabel
             // 
-            this.ForkOneCountLabel.AutoSize = true;
             this.ForkOneCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForkOneCountLabel.ForeColor = System.Drawing.Color.Silver;
-            this.ForkOneCountLabel.Location = new System.Drawing.Point(339, 282);
+            this.ForkOneCountLabel.Location = new System.Drawing.Point(338, 282);
             this.ForkOneCountLabel.Name = "ForkOneCountLabel";
-            this.ForkOneCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.ForkOneCountLabel.Size = new System.Drawing.Size(64, 25);
             this.ForkOneCountLabel.TabIndex = 2;
-            this.ForkOneCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ForkOneCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForkTwoCountLabel
             // 
-            this.ForkTwoCountLabel.AutoSize = true;
             this.ForkTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForkTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
-            this.ForkTwoCountLabel.Location = new System.Drawing.Point(846, 282);
+            this.ForkTwoCountLabel.Location = new System.Drawing.Point(847, 282);
             this.ForkTwoCountLabel.Name = "ForkTwoCountLabel";
-            this.ForkTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.ForkTwoCountLabel.Size = new System.Drawing.Size(61, 25);
             this.ForkTwoCountLabel.TabIndex = 5;
-            this.ForkTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ForkTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StarTwoCountLabel
             // 
-            this.StarTwoCountLabel.AutoSize = true;
             this.StarTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StarTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
-            this.StarTwoCountLabel.Location = new System.Drawing.Point(730, 282);
+            this.StarTwoCountLabel.Location = new System.Drawing.Point(731, 282);
             this.StarTwoCountLabel.Name = "StarTwoCountLabel";
-            this.StarTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.StarTwoCountLabel.Size = new System.Drawing.Size(54, 25);
             this.StarTwoCountLabel.TabIndex = 4;
-            this.StarTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.StarTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RepositorTwoCountLabel
             // 
-            this.RepositorTwoCountLabel.AutoSize = true;
             this.RepositorTwoCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RepositorTwoCountLabel.ForeColor = System.Drawing.Color.Silver;
-            this.RepositorTwoCountLabel.Location = new System.Drawing.Point(623, 282);
+            this.RepositorTwoCountLabel.Location = new System.Drawing.Point(610, 282);
             this.RepositorTwoCountLabel.Name = "RepositorTwoCountLabel";
-            this.RepositorTwoCountLabel.Size = new System.Drawing.Size(0, 25);
+            this.RepositorTwoCountLabel.Size = new System.Drawing.Size(59, 25);
             this.RepositorTwoCountLabel.TabIndex = 3;
-            this.RepositorTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RepositorTwoCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ComparisonLanguageTwoLabel
             // 
@@ -127,13 +124,12 @@
             this.ComparisonLanguageTwoLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.ComparisonLanguageTwoLabel.Location = new System.Drawing.Point(639, 62);
             this.ComparisonLanguageTwoLabel.Name = "ComparisonLanguageTwoLabel";
-            this.ComparisonLanguageTwoLabel.Size = new System.Drawing.Size(40, 26);
+            this.ComparisonLanguageTwoLabel.Size = new System.Drawing.Size(0, 26);
             this.ComparisonLanguageTwoLabel.TabIndex = 6;
-            this.ComparisonLanguageTwoLabel.Text = "C#";
             // 
             // LanguageTwoColorpictureBox
             // 
-            this.LanguageTwoColorpictureBox.Image = global::GitHubApplication.Properties.Resources.C_Sharp;
+            this.LanguageTwoColorpictureBox.BackgroundImage = global::GitHubApplication.Properties.Resources.Blankcircle;
             this.LanguageTwoColorpictureBox.Location = new System.Drawing.Point(618, 69);
             this.LanguageTwoColorpictureBox.Name = "LanguageTwoColorpictureBox";
             this.LanguageTwoColorpictureBox.Size = new System.Drawing.Size(11, 11);
@@ -142,7 +138,7 @@
             // 
             // LanguageOneColorpictureBox
             // 
-            this.LanguageOneColorpictureBox.Image = global::GitHubApplication.Properties.Resources.Swift;
+            this.LanguageOneColorpictureBox.Image = global::GitHubApplication.Properties.Resources.Blankcircle;
             this.LanguageOneColorpictureBox.Location = new System.Drawing.Point(381, 69);
             this.LanguageOneColorpictureBox.Name = "LanguageOneColorpictureBox";
             this.LanguageOneColorpictureBox.Size = new System.Drawing.Size(11, 11);
@@ -151,15 +147,14 @@
             // 
             // ComparisonLanguageOneLabel
             // 
-            this.ComparisonLanguageOneLabel.AutoSize = true;
+            this.ComparisonLanguageOneLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ComparisonLanguageOneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComparisonLanguageOneLabel.ForeColor = System.Drawing.Color.DarkGray;
-            this.ComparisonLanguageOneLabel.Location = new System.Drawing.Point(313, 62);
+            this.ComparisonLanguageOneLabel.Location = new System.Drawing.Point(252, 62);
             this.ComparisonLanguageOneLabel.Name = "ComparisonLanguageOneLabel";
-            this.ComparisonLanguageOneLabel.Size = new System.Drawing.Size(60, 26);
+            this.ComparisonLanguageOneLabel.Size = new System.Drawing.Size(121, 26);
             this.ComparisonLanguageOneLabel.TabIndex = 9;
-            this.ComparisonLanguageOneLabel.Text = "Swift";
-            this.ComparisonLanguageOneLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ComparisonLanguageOneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ComparisionButton
             // 
@@ -169,6 +164,7 @@
             this.ComparisionButton.Size = new System.Drawing.Size(107, 35);
             this.ComparisionButton.TabIndex = 10;
             this.ComparisionButton.TabStop = false;
+            this.ComparisionButton.Click += new System.EventHandler(this.ComparisionButton_ClickAsync);
             // 
             // ComparisonCLabel
             // 
@@ -300,6 +296,16 @@
             this.ComparisonSwiftLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.ComparisonSwiftLabel.Click += new System.EventHandler(this.LanguageClick);
             // 
+            // LoadAnimation
+            // 
+            this.LoadAnimation.Image = global::GitHubApplication.Properties.Resources.LoadingAnimationForComparisonPage1;
+            this.LoadAnimation.Location = new System.Drawing.Point(462, 201);
+            this.LoadAnimation.Name = "LoadAnimation";
+            this.LoadAnimation.Size = new System.Drawing.Size(85, 157);
+            this.LoadAnimation.TabIndex = 21;
+            this.LoadAnimation.TabStop = false;
+            this.LoadAnimation.Visible = false;
+            // 
             // RepositoriesComparisonControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +313,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.vs_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.LoadAnimation);
             this.Controls.Add(this.ComparisonCssLabel);
             this.Controls.Add(this.ComparisonPythonLabel);
             this.Controls.Add(this.ComparisonHtmlLabel);
@@ -333,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadAnimation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +369,6 @@
         private System.Windows.Forms.Label ComparisonPythonLabel;
         private System.Windows.Forms.Label ComparisonHtmlLabel;
         private System.Windows.Forms.Label ComparisonSwiftLabel;
+        private System.Windows.Forms.PictureBox LoadAnimation;
     }
 }
