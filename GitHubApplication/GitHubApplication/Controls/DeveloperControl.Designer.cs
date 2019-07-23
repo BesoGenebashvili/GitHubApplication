@@ -118,7 +118,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::GitHubCore.Properties.Resources.email_icon;
+            this.pictureBox4.Image = global::GitHubApplication.Properties.Resources.email_icon;
             this.pictureBox4.Location = new System.Drawing.Point(580, 93);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(13, 10);
@@ -127,7 +127,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::GitHubCore.Properties.Resources.location_icon;
+            this.pictureBox3.Image = global::GitHubApplication.Properties.Resources.location_icon;
             this.pictureBox3.Location = new System.Drawing.Point(458, 90);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(10, 13);
@@ -136,7 +136,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GitHubCore.Properties.Resources.followers_icon;
+            this.pictureBox2.Image = global::GitHubApplication.Properties.Resources.followers_icon;
             this.pictureBox2.Location = new System.Drawing.Point(356, 91);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(14, 11);
@@ -145,7 +145,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GitHubCore.Properties.Resources.avatar_image;
+            this.pictureBox1.Image = global::GitHubApplication.Properties.Resources.avatar_image;
             this.pictureBox1.Location = new System.Drawing.Point(75, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -155,7 +155,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::GitHubCore.Properties.Resources.long_line;
+            this.pictureBox5.Image = global::GitHubApplication.Properties.Resources.long_line;
             this.pictureBox5.Location = new System.Drawing.Point(0, 122);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(1007, 2);

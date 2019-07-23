@@ -195,7 +195,6 @@
             this.ComparisionRepositoriesButton.Size = new System.Drawing.Size(173, 18);
             this.ComparisionRepositoriesButton.TabIndex = 34;
             this.ComparisionRepositoriesButton.Text = "Comparision Repositoris";
-            this.ComparisionRepositoriesButton.Click += new System.EventHandler(this.ComparisionRepositoriesButton_Click);
             // 
             // GitHubForm
             // 

@@ -109,6 +109,8 @@ namespace GitHubApplication
             }
         }
 
+
+
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
