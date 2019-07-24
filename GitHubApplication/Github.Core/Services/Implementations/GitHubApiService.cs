@@ -14,7 +14,7 @@ namespace GitHub.Core.Services.Implementations
 {
     public class GitHubApiService : IGitHubApiService
     {
-        public async Task<Repository[]> SearchForRepositories(string languageName, DateTime dateTime)
+        public async Task<Repository[]> SearchForRepositories(string languageName, DateTime dateTime, string repositoryName = "")
         {
             if (dateTime == default || dateTime == DateTime.Now)
                 dateTime = DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0));
@@ -22,8 +22,16 @@ namespace GitHub.Core.Services.Implementations
             languageName = languageName == "c++" || languageName == "C++" ? "c%2b%2b" : languageName;
             languageName = languageName == "c#" || languageName == "C#" ? "c%23" : languageName;
 
-            string generatedUrl = "https://api.github.com/search/repositories?q=created:>"
-                + dateTime.ToString("yyyy-MM-dd") + "+language:" + languageName + "+&sort=stars&order=desc";
+            string generatedUrl;
+
+            // if repository name was passed
+            if (!string.IsNullOrEmpty(repositoryName))
+                generatedUrl = "https://api.github.com/search/repositories?q="
+                    + repositoryName + "+language:+" + languageName + "&sort=stars&order=desc";
+
+            else
+                generatedUrl = "https://api.github.com/search/repositories?q=created:>"
+                    + dateTime.ToString("yyyy-MM-dd") + "+language:" + languageName + "+&sort=stars&order=desc";
 
             var repositoriesRootObject = await GetObjectAsync<RepositoriesRootObject>(generatedUrl);
             var result = await GetRepositoriesAsync(repositoriesRootObject.Items);

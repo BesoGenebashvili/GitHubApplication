@@ -163,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CustomBox.cs" />
+    <Compile Include="Toolboxs\CustomLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Common\LanguageColor.cs" />
     <Compile Include="Common\ServiceManager.cs" />
     <Compile Include="Common\Validator.cs" />

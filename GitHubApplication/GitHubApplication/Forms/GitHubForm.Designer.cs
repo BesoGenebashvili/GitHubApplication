@@ -39,12 +39,12 @@
             this.UserRoomPanel = new System.Windows.Forms.Panel();
             this.ComparisonPanel = new System.Windows.Forms.Panel();
             this.ComparisionRepositoriesButton = new System.Windows.Forms.Label();
-            this.SearchItemsPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ChooseLanguageButton = new System.Windows.Forms.Label();
             this.CallendarButton = new System.Windows.Forms.PictureBox();
             this.SearchButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SearchForRepositoryesTextBox = new System.Windows.Forms.TextBox();
+            this.LanguageComboBoxPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
@@ -164,33 +164,24 @@
             this.ComparisionRepositoriesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.ComparisionRepositoriesButton.Location = new System.Drawing.Point(498, 34);
             this.ComparisionRepositoriesButton.Name = "ComparisionRepositoriesButton";
-            this.ComparisionRepositoriesButton.Size = new System.Drawing.Size(173, 18);
+            this.ComparisionRepositoriesButton.Size = new System.Drawing.Size(161, 18);
             this.ComparisionRepositoriesButton.TabIndex = 34;
-            this.ComparisionRepositoriesButton.Text = "Comparision Repositoris";
+            this.ComparisionRepositoriesButton.Text = "Language Comparision";
             this.ComparisionRepositoriesButton.Click += new System.EventHandler(this.ComparisionRepositoriesButton_Click);
             // 
-            // SearchItemsPanel
+            // ChooseLanguageButton
             // 
-            this.SearchItemsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchItemsPanel.BackgroundImage = global::GitHubApplication.Properties.Resources.searchPanelBG;
-            this.SearchItemsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchItemsPanel.Location = new System.Drawing.Point(866, 59);
-            this.SearchItemsPanel.Name = "SearchItemsPanel";
-            this.SearchItemsPanel.Size = new System.Drawing.Size(120, 240);
-            this.SearchItemsPanel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(902, 29);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 4, 10, 4);
-            this.label1.Size = new System.Drawing.Size(82, 26);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Language";
+            this.ChooseLanguageButton.BackColor = System.Drawing.Color.Transparent;
+            this.ChooseLanguageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChooseLanguageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.ChooseLanguageButton.Location = new System.Drawing.Point(902, 29);
+            this.ChooseLanguageButton.Name = "ChooseLanguageButton";
+            this.ChooseLanguageButton.Padding = new System.Windows.Forms.Padding(0, 4, 10, 4);
+            this.ChooseLanguageButton.Size = new System.Drawing.Size(84, 26);
+            this.ChooseLanguageButton.TabIndex = 38;
+            this.ChooseLanguageButton.Text = "Language";
+            this.ChooseLanguageButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ChooseLanguageButton.Click += new System.EventHandler(this.ChooseLanguageButton_Click);
             // 
             // CallendarButton
             // 
@@ -213,10 +204,12 @@
             this.SearchButton.Size = new System.Drawing.Size(27, 30);
             this.SearchButton.TabIndex = 36;
             this.SearchButton.TabStop = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GitHubApplication.Properties.Resources.arrowDown;
             this.pictureBox1.Location = new System.Drawing.Point(977, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(7, 4);
@@ -235,6 +228,16 @@
             this.SearchForRepositoryesTextBox.Size = new System.Drawing.Size(203, 16);
             this.SearchForRepositoryesTextBox.TabIndex = 40;
             // 
+            // LanguageComboBoxPanel
+            // 
+            this.LanguageComboBoxPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LanguageComboBoxPanel.BackgroundImage = global::GitHubApplication.Properties.Resources.searchPanelBG;
+            this.LanguageComboBoxPanel.Location = new System.Drawing.Point(866, 57);
+            this.LanguageComboBoxPanel.Name = "LanguageComboBoxPanel";
+            this.LanguageComboBoxPanel.Size = new System.Drawing.Size(119, 240);
+            this.LanguageComboBoxPanel.TabIndex = 41;
+            this.LanguageComboBoxPanel.Visible = false;
+            // 
             // GitHubForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -242,10 +245,10 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.LanguageComboBoxPanel);
             this.Controls.Add(this.SearchForRepositoryesTextBox);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.SearchItemsPanel);
+            this.Controls.Add(this.ChooseLanguageButton);
             this.Controls.Add(this.CallendarButton);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SearchButton);
@@ -289,11 +292,11 @@
         private System.Windows.Forms.Panel UserRoomPanel;
         private System.Windows.Forms.Panel ComparisonPanel;
         private System.Windows.Forms.Label ComparisionRepositoriesButton;
-        private System.Windows.Forms.Panel SearchItemsPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ChooseLanguageButton;
         private System.Windows.Forms.PictureBox CallendarButton;
         private System.Windows.Forms.PictureBox SearchButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox SearchForRepositoryesTextBox;
+        private System.Windows.Forms.FlowLayoutPanel LanguageComboBoxPanel;
     }
 }

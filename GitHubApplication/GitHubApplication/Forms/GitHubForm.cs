@@ -2,12 +2,12 @@
 using System;
 using System.Linq;
 using System.Drawing;
-using System.Windows.Forms;
-using GitHubApplication.Common;
-using System.Threading.Tasks;
-using GitHub.Core.Services.Abstractions;
 using GitHub.Core.Models;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using GitHubApplication.Common;
 using GitHubApplication.Controls;
+using GitHub.Core.Services.Abstractions;
 
 namespace GitHubApplication
 {
@@ -15,6 +15,7 @@ namespace GitHubApplication
     {
         private readonly IUserManager UserService;
         private readonly IGitHubApiService GitHubService;
+        private readonly SearchLanguageCategoriesControl[] LanguageComboBoxControls;
 
         private User _User;
         public User User
@@ -33,6 +34,23 @@ namespace GitHubApplication
 
             GitHubService = gitHubService;
             UserService = userService;
+
+            // შესაცვლელია
+            LanguageComboBoxControls = new SearchLanguageCategoriesControl[]
+            {
+                new SearchLanguageCategoriesControl("C",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("C++",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("C#",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("Java",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("Python",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("Swift",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("JavaScript",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("PHP",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("HTML",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("CSS",LanguageButtonClickHandler)
+            };
+
+            LanguageComboBoxPanel.Controls.AddRange(LanguageComboBoxControls);
         }
 
         private void GitHubForm_Load(object sender, EventArgs e)
@@ -48,6 +66,28 @@ namespace GitHubApplication
             else
             {
                 // თუ რამე უნდა ჩაიტვირთოს ავტომატურად შესვლისთანავე ვტვირთავთ აქ.
+            }
+        }
+
+        // ცოტა შესაცვლელია
+        private void LanguageButtonClickHandler(object sender, string languageName)
+        {
+            ChooseLanguageButton.Text = languageName;
+            LanguageChoosen = true;
+            LanguageComboBoxPanel.Visible = false;
+        }
+
+        private bool LanguageChoosen = false; // ესეც შესაცვლელია.
+        private async void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (MainPanel.Controls.Count > 0)
+                MainPanel.Controls.Clear();
+
+            if (!string.IsNullOrEmpty(SearchForRepositoryesTextBox.Text) && LanguageChoosen)
+            {
+                var repositories = await GitHubService.SearchForRepositories(ChooseLanguageButton.Text, default(DateTime), SearchForRepositoryesTextBox.Text);
+                var controls = await GetRepositoryControls(repositories);
+                MainPanel.Controls.AddRange(controls);
             }
         }
 
@@ -72,7 +112,7 @@ namespace GitHubApplication
         }
 
         // ამას არ ვიყენებთ მარა იყოს.
-        private Task<TControl[]> GetControls<Tsource, TControl>(Tsource[] repositories, Func<Tsource, TControl> creator)  
+        private Task<TControl[]> GetControls<Tsource, TControl>(Tsource[] repositories, Func<Tsource, TControl> creator)
         {
             return Task.Run(() => repositories.Select(creator).ToArray());
         }
@@ -92,6 +132,11 @@ namespace GitHubApplication
             MainPanel.Visible = false;
             UserRoomPanel.Visible = false;
             ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
+        }
+
+        private void ChooseLanguageButton_Click(object sender, EventArgs e)
+        {
+            LanguageComboBoxPanel.Visible = !LanguageComboBoxPanel.Visible;
         }
 
         public void SuccessfullyLoggedHandler(object sender, User user)
@@ -121,6 +166,5 @@ namespace GitHubApplication
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
-
     }
 }
