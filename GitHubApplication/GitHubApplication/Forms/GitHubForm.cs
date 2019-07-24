@@ -28,6 +28,35 @@ namespace GitHubApplication
             }
         }
 
+        // პანელების დაფარვა და გამოჩენა, შეიძლება ამის შეცვლა.
+        private bool ShowMainPanel
+        {
+            set
+            {
+                MainPanel.Visible = value;
+                UserRoomPanel.Visible = false;
+                ComparisonPanel.Visible = false;
+            }
+        }
+        private bool ShowUserRoomPanel
+        {
+            set
+            {
+                UserRoomPanel.Visible = value;
+                MainPanel.Visible = false;
+                ComparisonPanel.Visible = false;
+            }
+        }
+        private bool ShowComparisonPanel
+        {
+            set
+            {
+                ComparisonPanel.Visible = value;
+                MainPanel.Visible = false;
+                UserRoomPanel.Visible = false;
+            }
+        }
+
         public GitHubForm(IGitHubApiService gitHubService, IUserManager userService)
         {
             InitializeComponent();
@@ -80,24 +109,24 @@ namespace GitHubApplication
         private bool LanguageChoosen = false; // ესეც შესაცვლელია.
         private async void SearchButton_Click(object sender, EventArgs e)
         {
-            MainPanel.Visible = true;
-            UserRoomPanel.Visible = false;
-            ComparisonPanel.Visible = false;
-            if (MainPanel.Controls.Count > 0)
-                MainPanel.Controls.Clear();
+            ShowMainPanel = true;
+
+            ClearPanelControls(MainPanel);
 
             if (!string.IsNullOrEmpty(SearchForRepositoryesTextBox.Text) && LanguageChoosen)
             {
                 var repositories = await GitHubService.SearchForRepositories(ChooseLanguageButton.Text, default(DateTime), SearchForRepositoryesTextBox.Text);
                 var controls = await GetRepositoryControls(repositories);
+
                 MainPanel.Controls.AddRange(controls);
             }
         }
 
         private async void TrendingRepositoriesButton_Click(object sender, EventArgs e)
         {
-            if (MainPanel.Controls.Count > 0)
-                MainPanel.Controls.Clear();
+            ShowMainPanel = true;
+
+            ClearPanelControls(MainPanel);
 
             var repositories = await GitHubService.TrendingRepositories();
             var controls = await GetRepositoryControls(repositories);
@@ -106,12 +135,19 @@ namespace GitHubApplication
 
         private async void TrendingDevelopersButton_Click(object sender, EventArgs e)
         {
-            if (MainPanel.Controls.Count > 0)
-                MainPanel.Controls.Clear();
+            ShowMainPanel = true;
+
+            ClearPanelControls(MainPanel);
 
             var developers = await GitHubService.TrendingDevelopers();
             var controls = await GetDeveloperControls(developers);
             MainPanel.Controls.AddRange(controls);
+        }
+
+        private void ClearPanelControls(Panel panel) // ...
+        {
+            if (panel.Controls.Count > 0)
+                panel.Controls.Clear();
         }
 
         // ამას არ ვიყენებთ მარა იყოს.
@@ -132,9 +168,9 @@ namespace GitHubApplication
 
         private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
         {
-            MainPanel.Visible = false;
-            UserRoomPanel.Visible = false;
-            ComparisonPanel.Visible = true;
+            ShowComparisonPanel = true;
+            ClearPanelControls(ComparisonPanel);
+
             ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
         }
 
@@ -173,10 +209,33 @@ namespace GitHubApplication
 
         private void UserPictureBox_Click(object sender, EventArgs e)
         {
-            MainPanel.Visible = false;
-            ComparisonPanel.Visible = false;
-            UserRoomPanel.Visible = true;
+            ShowUserRoomPanel = true;
+            ClearPanelControls(UserRoomPanel);
+
             UserRoomPanel.Controls.Add(new UserRoomControl(UserService, User));
         }
+
+
+        // ესენი მისაბმელია.
+        private bool mouseDown = false;
+        private Point lastFormLocation;
+        private void BankForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastFormLocation = e.Location;
+        }
+
+        private void BankForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                Location = new Point(
+                    (Location.X - lastFormLocation.X) + e.X,
+                    (Location.Y - lastFormLocation.Y) + e.Y);
+                Update();
+            }
+        }
+
+        private void BankForm_MouseUp(object sender, MouseEventArgs e) => mouseDown = false;
     }
 }

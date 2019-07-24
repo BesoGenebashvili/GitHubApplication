@@ -17,7 +17,7 @@ namespace GitHub.Core.Services.Implementations
         public async Task<Repository[]> SearchForRepositories(string languageName, DateTime dateTime, string repositoryName = "")
         {
             if (dateTime == default || dateTime == DateTime.Now)
-                dateTime = DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0));
+                dateTime = DateTime.Now.Subtract(new TimeSpan(7, 0, 0, 0));
 
             languageName = languageName == "c++" || languageName == "C++" ? "c%2b%2b" : languageName;
             languageName = languageName == "c#" || languageName == "C#" ? "c%23" : languageName;
@@ -27,7 +27,7 @@ namespace GitHub.Core.Services.Implementations
             // if repository name was passed
             if (!string.IsNullOrEmpty(repositoryName))
                 generatedUrl = "https://api.github.com/search/repositories?q="
-                    + repositoryName + "+language:+" + languageName + "&sort=stars&order=desc";
+                    + repositoryName + "+language:" + languageName + "&sort=stars&order=desc";
 
             else
                 generatedUrl = "https://api.github.com/search/repositories?q=created:>"
@@ -40,7 +40,7 @@ namespace GitHub.Core.Services.Implementations
 
         public async Task<Repository[]> TrendingRepositories()
         {
-            string defaultDate = DateTime.Now.Subtract(new TimeSpan(1, 0, 0, 0)).ToString("yyyy-MM-dd");
+            string defaultDate = DateTime.Now.Subtract(new TimeSpan(7, 0, 0, 0)).ToString("yyyy-MM-dd");
             string apiUrl = "https://api.github.com/search/repositories?q=created:>" + $"{defaultDate}+&sort=stars&order=desc";
 
             var repositoriesRootObject = await GetObjectAsync<RepositoriesRootObject>(apiUrl);
