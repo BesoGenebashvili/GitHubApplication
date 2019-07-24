@@ -36,7 +36,7 @@
             this.RepositorTwoCountLabel = new System.Windows.Forms.Label();
             this.ComparisonLanguageTwoLabel = new System.Windows.Forms.Label();
             this.LanguageTwoColorpictureBox = new System.Windows.Forms.PictureBox();
-            this.LanguageOneColorpictureBox = new System.Windows.Forms.PictureBox();
+            this.LanguageOneColorPictureBox = new System.Windows.Forms.PictureBox();
             this.ComparisonLanguageOneLabel = new System.Windows.Forms.Label();
             this.ComparisionButton = new System.Windows.Forms.PictureBox();
             this.ComparisonCLabel = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.ComparisonSwiftLabel = new System.Windows.Forms.Label();
             this.LoadAnimation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadAnimation)).BeginInit();
             this.SuspendLayout();
@@ -136,14 +136,14 @@
             this.LanguageTwoColorpictureBox.TabIndex = 7;
             this.LanguageTwoColorpictureBox.TabStop = false;
             // 
-            // LanguageOneColorpictureBox
+            // LanguageOneColorPictureBox
             // 
-            this.LanguageOneColorpictureBox.Image = global::GitHubApplication.Properties.Resources.Blankcircle;
-            this.LanguageOneColorpictureBox.Location = new System.Drawing.Point(381, 69);
-            this.LanguageOneColorpictureBox.Name = "LanguageOneColorpictureBox";
-            this.LanguageOneColorpictureBox.Size = new System.Drawing.Size(11, 11);
-            this.LanguageOneColorpictureBox.TabIndex = 8;
-            this.LanguageOneColorpictureBox.TabStop = false;
+            this.LanguageOneColorPictureBox.Image = global::GitHubApplication.Properties.Resources.Blankcircle;
+            this.LanguageOneColorPictureBox.Location = new System.Drawing.Point(381, 69);
+            this.LanguageOneColorPictureBox.Name = "LanguageOneColorPictureBox";
+            this.LanguageOneColorPictureBox.Size = new System.Drawing.Size(11, 11);
+            this.LanguageOneColorPictureBox.TabIndex = 8;
+            this.LanguageOneColorPictureBox.TabStop = false;
             // 
             // ComparisonLanguageOneLabel
             // 
@@ -326,7 +326,7 @@
             this.Controls.Add(this.ComparisonCLabel);
             this.Controls.Add(this.ComparisionButton);
             this.Controls.Add(this.ComparisonLanguageOneLabel);
-            this.Controls.Add(this.LanguageOneColorpictureBox);
+            this.Controls.Add(this.LanguageOneColorPictureBox);
             this.Controls.Add(this.LanguageTwoColorpictureBox);
             this.Controls.Add(this.ComparisonLanguageTwoLabel);
             this.Controls.Add(this.ForkTwoCountLabel);
@@ -338,7 +338,7 @@
             this.Name = "RepositoriesComparisonControl";
             this.Size = new System.Drawing.Size(1008, 528);
             ((System.ComponentModel.ISupportInitialize)(this.LanguageTwoColorpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LanguageOneColorPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComparisionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadAnimation)).EndInit();
             this.ResumeLayout(false);
@@ -356,7 +356,7 @@
         private System.Windows.Forms.Label RepositorTwoCountLabel;
         private System.Windows.Forms.Label ComparisonLanguageTwoLabel;
         private System.Windows.Forms.PictureBox LanguageTwoColorpictureBox;
-        private System.Windows.Forms.PictureBox LanguageOneColorpictureBox;
+        private System.Windows.Forms.PictureBox LanguageOneColorPictureBox;
         private System.Windows.Forms.Label ComparisonLanguageOneLabel;
         private System.Windows.Forms.PictureBox ComparisionButton;
         private System.Windows.Forms.Label ComparisonCLabel;

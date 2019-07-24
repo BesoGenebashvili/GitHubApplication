@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GitHub.Core.Services.Abstractions;
-using GitHub.Core.Models;
 using GitHubApplication.Common;
 
 namespace GitHubApplication.Controls
@@ -16,41 +10,43 @@ namespace GitHubApplication.Controls
     public partial class RepositoriesComparisonControl : UserControl
     {
         private readonly IGitHubApiService GitHubService;
+
         public RepositoriesComparisonControl(IGitHubApiService gitHubService)
         {
             InitializeComponent();
             GitHubService = gitHubService;
-
         }
+
         enum ClickCounter
         {
-            firstclic,
-            secondclick,
-            thirdclick
+            firstClick,
+            secondClick,
+            thirdClick
         }
-        ClickCounter clickCounter = ClickCounter.firstclic;
+
+        ClickCounter clickCounter = ClickCounter.firstClick;
 
         private void LanguageClick(object sender, EventArgs e)
         {
-            Label clickedlabel = (sender as Label);
-
-            CheckLanguageLabel(clickedlabel);
+            if (sender is Label clickedLanguage)
+                CheckLanguageLabel(clickedLanguage);
         }
-
-      
 
         private async void ComparisionButton_ClickAsync(object sender, EventArgs e)
         {
-            if (ComparisonLanguageOneLabel.Text == "" || ComparisonLanguageTwoLabel.Text == "")
+            if(string.IsNullOrEmpty(ComparisonLanguageOneLabel.Text) || string.IsNullOrEmpty(ComparisonLanguageTwoLabel.Text))
             {
                 CustomBox.Message("Select both languages");
                 return;
             }
+
             LoadAnimation.Visible = true;
             var languageonerepositories = await GitHubService.SearchForRepositories(ComparisonLanguageOneLabel.Text, DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0)));
             var languagetworepositories = await GitHubService.SearchForRepositories(ComparisonLanguageTwoLabel.Text, DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0)));
+
             if (languageonerepositories == null || languagetworepositories == null)
                 return;
+
             LoadAnimation.Visible = false;
 
             RepositorOneCountLabel.Text = languageonerepositories.Length.ToString();
@@ -62,14 +58,14 @@ namespace GitHubApplication.Controls
         }
         private void CheckLanguageLabel(Label clickedlabel)
         {
-            if (ClickCounter.secondclick == clickCounter)
+            if (ClickCounter.secondClick == clickCounter)
             {
                 if (ComparisonLanguageOneLabel.Text == clickedlabel.Text)
                 {
                     ComparisonLanguageOneLabel.Text = "";
                     clickedlabel.ForeColor = Color.FromArgb(94, 94, 94);
-                    LanguageOneColorpictureBox.Image = Properties.Resources.Blankcircle;
-                    clickCounter = ClickCounter.firstclic;
+                    LanguageOneColorPictureBox.Image = Properties.Resources.Blankcircle;
+                    clickCounter = ClickCounter.firstClick;
                     return;
                 }
                 else if (ComparisonLanguageTwoLabel.Text == "" && clickedlabel.Text != ComparisonLanguageOneLabel.Text)
@@ -77,25 +73,25 @@ namespace GitHubApplication.Controls
                     ComparisonLanguageTwoLabel.Text = clickedlabel.Text;
                     clickedlabel.ForeColor = Color.Gray;
                     LanguageTwoColorpictureBox.Image = LanguageColor.GetColor(ComparisonLanguageTwoLabel.Text);
-                    clickCounter = ClickCounter.thirdclick;
+                    clickCounter = ClickCounter.thirdClick;
                     return;
                 }
 
             }
-            if (ClickCounter.firstclic == clickCounter && clickedlabel.Text != ComparisonLanguageTwoLabel.Text)
+            if (ClickCounter.firstClick == clickCounter && clickedlabel.Text != ComparisonLanguageTwoLabel.Text)
             {
                 ComparisonLanguageOneLabel.Text = clickedlabel.Text;
                 clickedlabel.ForeColor = Color.Gray;
-                LanguageOneColorpictureBox.Image = LanguageColor.GetColor(ComparisonLanguageOneLabel.Text);
-                clickCounter = ClickCounter.secondclick;
+                LanguageOneColorPictureBox.Image = LanguageColor.GetColor(ComparisonLanguageOneLabel.Text);
+                clickCounter = ClickCounter.secondClick;
                 return;
             }
             if (ComparisonLanguageOneLabel.Text == clickedlabel.Text)
             {
                 ComparisonLanguageOneLabel.Text = "";
                 clickedlabel.ForeColor = Color.FromArgb(94, 94, 94);
-                LanguageOneColorpictureBox.Image = Properties.Resources.Blankcircle;
-                clickCounter = ClickCounter.firstclic;
+                LanguageOneColorPictureBox.Image = Properties.Resources.Blankcircle;
+                clickCounter = ClickCounter.firstClick;
             }
             if (ComparisonLanguageTwoLabel.Text == clickedlabel.Text)
             {
@@ -105,14 +101,14 @@ namespace GitHubApplication.Controls
                     LanguageTwoColorpictureBox.Image = Properties.Resources.Blankcircle;
 
                     clickedlabel.ForeColor = Color.FromArgb(94, 94, 94);
-                    clickCounter = ClickCounter.firstclic;
+                    clickCounter = ClickCounter.firstClick;
                 }
                 else
                 {
                     ComparisonLanguageTwoLabel.Text = "";
                     LanguageTwoColorpictureBox.Image = Properties.Resources.Blankcircle;
                     clickedlabel.ForeColor = Color.FromArgb(94, 94, 94);
-                    clickCounter = ClickCounter.secondclick;
+                    clickCounter = ClickCounter.secondClick;
                 }
             }
         }

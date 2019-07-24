@@ -60,7 +60,6 @@ namespace GitHub.Core.Services.Implementations
             string apiUrl = "https://api.github.com/search/users?q=+followers:%3E0&sort=followers&order=desc";
 
             UsersRootObject usersRootObject = await GetObjectAsync<UsersRootObject>(apiUrl);
-
             var usersTasks = usersRootObject.Items.Select(u => GetObjectAsync<UserFromApi>(u.url)).ToArray();
 
             var users = await Task.WhenAll(usersTasks);

@@ -71,6 +71,7 @@ namespace GitHubApplication
             MainPanel.Controls.AddRange(controls);
         }
 
+        // ამას არ ვიყენებთ მარა იყოს.
         private Task<TControl[]> GetControls<Tsource, TControl>(Tsource[] repositories, Func<Tsource, TControl> creator)  
         {
             return Task.Run(() => repositories.Select(creator).ToArray());
@@ -84,6 +85,13 @@ namespace GitHubApplication
         private Task<DeveloperControl[]> GetDeveloperControls(User[] developers)
         {
             return Task.Run(() => developers.Select(u => new DeveloperControl(u)).ToArray());
+        }
+
+        private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = false;
+            UserRoomPanel.Visible = false;
+            ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
         }
 
         public void SuccessfullyLoggedHandler(object sender, User user)
@@ -110,17 +118,9 @@ namespace GitHubApplication
             }
         }
 
-
-
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
 
-        private void ComparisionRepositoriesButton_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = false;
-            UserRoomPanel.Visible = false;
-            ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
-        }
     }
 }
