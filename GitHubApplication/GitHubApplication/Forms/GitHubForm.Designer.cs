@@ -99,6 +99,7 @@
             this.UserPictureBox.Size = new System.Drawing.Size(43, 43);
             this.UserPictureBox.TabIndex = 8;
             this.UserPictureBox.TabStop = false;
+            this.UserPictureBox.Click += new System.EventHandler(this.UserPictureBox_Click);
             // 
             // CloseButton
             // 

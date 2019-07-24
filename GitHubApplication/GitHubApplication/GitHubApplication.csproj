@@ -461,6 +461,7 @@
     <None Include="Assets\none.png" />
     <None Include="Assets\searchItemTopLine.png" />
     <None Include="Assets\searchPanelBG.png" />
+    <None Include="Assets\DefaultLogo.png" />
     <Content Include="github.ico" />
   </ItemGroup>
   <ItemGroup>

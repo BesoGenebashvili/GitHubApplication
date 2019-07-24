@@ -45,6 +45,7 @@ namespace GitHubApplication
                     UserName = UserNameTextBox.Text,
                     Email = EmailTextBox.Text,
                     Password = PasswordTextBox.Text,
+                    ProfileImage = "../../Assets/DefaultLogo.png"
                 };
                 SignUpUser(user);
             }

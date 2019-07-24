@@ -80,6 +80,9 @@ namespace GitHubApplication
         private bool LanguageChoosen = false; // ესეც შესაცვლელია.
         private async void SearchButton_Click(object sender, EventArgs e)
         {
+            MainPanel.Visible = true;
+            UserRoomPanel.Visible = false;
+            ComparisonPanel.Visible = false;
             if (MainPanel.Controls.Count > 0)
                 MainPanel.Controls.Clear();
 
@@ -131,6 +134,7 @@ namespace GitHubApplication
         {
             MainPanel.Visible = false;
             UserRoomPanel.Visible = false;
+            ComparisonPanel.Visible = true;
             ComparisonPanel.Controls.Add(new RepositoriesComparisonControl(GitHubService));
         }
 
@@ -166,5 +170,13 @@ namespace GitHubApplication
         private void MinimizeButton_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
+
+        private void UserPictureBox_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = false;
+            ComparisonPanel.Visible = false;
+            UserRoomPanel.Visible = true;
+            UserRoomPanel.Controls.Add(new UserRoomControl(UserService, User));
+        }
     }
 }
