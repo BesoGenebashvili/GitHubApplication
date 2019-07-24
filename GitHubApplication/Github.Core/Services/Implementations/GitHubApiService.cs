@@ -8,6 +8,7 @@ using GitHub.Core.Models;
 using System.Collections.Generic;
 using GitHub.Core.Dtos;
 using GitHub.Core.Services.Abstractions;
+using Github.Core.Exceptions;
 
 namespace GitHub.Core.Services.Implementations
 {
@@ -15,7 +16,7 @@ namespace GitHub.Core.Services.Implementations
     {
         public async Task<Repository[]> SearchForRepositories(string languageName, DateTime dateTime)
         {
-            if (dateTime == null || dateTime == DateTime.Now)
+            if (dateTime == default || dateTime == DateTime.Now)
                 dateTime = DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0));
 
             languageName = languageName == "c++" || languageName == "C++" ? "c%2b%2b" : languageName;
@@ -42,6 +43,11 @@ namespace GitHub.Core.Services.Implementations
 
         private Task<Repository[]> GetRepositoriesAsync(IEnumerable<RepositoriesFromApi> repositoriesFromApi)
         {
+            if (repositoriesFromApi == null)
+            {
+                throw new RepositoriesNotFoundException(nameof(repositoriesFromApi));
+            }
+
             return Task.Run(() => repositoriesFromApi
                        .Select(i => new Repository()
                        {

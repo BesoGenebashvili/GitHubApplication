@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using GitHub.Core.Models;
 using GitHub.Core.Services.Abstractions;
 using GitHubApplication.Common;
 
@@ -32,30 +34,48 @@ namespace GitHubApplication.Controls
                 CheckLanguageLabel(clickedLanguage);
         }
 
-        private async void ComparisionButton_ClickAsync(object sender, EventArgs e)
+        bool ValidateChosenLanguages()
         {
-            if(string.IsNullOrEmpty(ComparisonLanguageOneLabel.Text) || string.IsNullOrEmpty(ComparisonLanguageTwoLabel.Text))
+            if (string.IsNullOrEmpty(ComparisonLanguageOneLabel.Text) || string.IsNullOrEmpty(ComparisonLanguageTwoLabel.Text))
             {
                 CustomBox.Message("Select both languages");
-                return;
+                return false;
             }
+            return true;
+        }
+
+        private async void ComparisionButton_ClickAsync(object sender, EventArgs e)
+        {
+            await CompareChosenLanguages();
+        }
+
+        private async Task CompareChosenLanguages()
+        {
+            if (!ValidateChosenLanguages()) return;
 
             LoadAnimation.Visible = true;
-            var languageonerepositories = await GitHubService.SearchForRepositories(ComparisonLanguageOneLabel.Text, DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0)));
-            var languagetworepositories = await GitHubService.SearchForRepositories(ComparisonLanguageTwoLabel.Text, DateTime.Now.Subtract(new TimeSpan(3, 0, 0, 0)));
 
-            if (languageonerepositories == null || languagetworepositories == null)
-                return;
+            var languageRepositories = await Task.WhenAll(
+                   GitHubService.SearchForRepositories(ComparisonLanguageOneLabel.Text),
+                   GitHubService.SearchForRepositories(ComparisonLanguageTwoLabel.Text));
 
             LoadAnimation.Visible = false;
 
-            RepositorOneCountLabel.Text = languageonerepositories.Length.ToString();
-            RepositorTwoCountLabel.Text = languagetworepositories.Length.ToString();
-            StarOneCountLabel.Text = languageonerepositories.Sum(x => x.StarCount).ToString();
-            StarTwoCountLabel.Text = languagetworepositories.Sum(x => x.StarCount).ToString();
-            ForkOneCountLabel.Text = StarOneCountLabel.Text = languageonerepositories.Sum(x => x.ForkCount).ToString();
-            ForkTwoCountLabel.Text = StarOneCountLabel.Text = languagetworepositories.Sum(x => x.ForkCount).ToString();
+            ShowComparison(languageRepositories);
         }
+
+        private void ShowComparison(Repository[][] languageRepositories)
+        {
+            if (languageRepositories.Length < 2 || languageRepositories.Any(r => r == null)) return;
+
+            RepositorOneCountLabel.Text = languageRepositories[0].Length.ToString();
+            RepositorTwoCountLabel.Text = languageRepositories[1].Length.ToString();
+            StarOneCountLabel.Text = languageRepositories[0].Sum(x => x.StarCount).ToString();
+            StarTwoCountLabel.Text = languageRepositories[1].Sum(x => x.StarCount).ToString();
+            ForkOneCountLabel.Text = StarOneCountLabel.Text = languageRepositories[0].Sum(x => x.ForkCount).ToString();
+            ForkTwoCountLabel.Text = StarOneCountLabel.Text = languageRepositories[1].Sum(x => x.ForkCount).ToString();
+        }
+
         private void CheckLanguageLabel(Label clickedlabel)
         {
             if (ClickCounter.secondClick == clickCounter)
