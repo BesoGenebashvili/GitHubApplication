@@ -7,6 +7,7 @@ namespace GitHub.Core.Services.Abstractions
     {
         User LoginUser(User user);
         User RegisterUser(User user);
+        User EditUser(User user);
         User FindUser(string userName);
         User ChangePassword(User user, string newPassword);
         bool PasswordRecovery(string userEmail);

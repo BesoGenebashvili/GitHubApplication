@@ -7,10 +7,12 @@ namespace GitHubApplication.Common
     public class Validator
     {
         private readonly Color DefaultColor;
+        private readonly Color AttentionColor;
 
-        public Validator(Color defaultColor)
+        public Validator(Color defaultColor, Color attentionColor)
         {
             DefaultColor = defaultColor;
+            AttentionColor = attentionColor;
         }
 
         public bool ValidateTextBoxes(Dictionary<Label, TextBox> LabelTextBoxPairs)
@@ -30,7 +32,7 @@ namespace GitHubApplication.Common
 
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
-                label.ForeColor = Color.IndianRed;
+                label.ForeColor = AttentionColor;
                 return false;
             }
             else

@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GitHub.Core.Models;
 using GitHub.Core.Services.Abstractions;
 using System.IO;
 using GitHubApplication.Common;
+using System.Threading.Tasks;
 
 namespace GitHubApplication.Controls
 {
     public partial class UserRoomControl : UserControl
     {
+        private readonly IUserManager UserManager;
+        public event EventHandler<User> UserDeactivated;
+
         private User _User;
         public User User
         {
@@ -23,76 +20,139 @@ namespace GitHubApplication.Controls
             set
             {
                 _User = value;
+                UpdateUserInfo = value;
             }
         }
-        private readonly IUserManager userManager;
+
+        private User UpdateUserInfo
+        {
+            set
+            {
+                NameTextBox.Text = value.Name;
+                LastNameTextBox.Text = value.LastName;
+                InteresteLabel.Text = value.Interest;
+                InterestTextBox.Text = value.Interest;
+                BioTextBox.Text = value.Bio;
+                FullNameLabel.Text = value.Name + " " + value.LastName;
+
+                if (!string.IsNullOrWhiteSpace(value.Image))
+                    UserImagePictureBox.Load(value.Image);
+            }
+        }
 
         public UserRoomControl(IUserManager userManager, User user)
         {
             InitializeComponent();
-            this.userManager = userManager;
+
+            UserManager = userManager;
             User = user;
-            LoadInformation(user);
         }
 
-      
-        private void UploadPictureBox_Click(object sender, EventArgs e)
+        private void UploadImageButton_Click(object sender, EventArgs e)
         {
-            ChangeLogo();
-        }
-
-        private void ChangeLogo()
-        {
-            OpenFileDialog OpenIMage = new OpenFileDialog();
-            OpenIMage.Filter = "image files (*.jpg, *.jpeg,*.png)|*.jpg; *.jpeg;*.png";
-            OpenIMage.InitialDirectory = @"C:\";
-            OpenIMage.Title = "Please select an image file to encrypt.";
-
-            if (OpenIMage.ShowDialog() == DialogResult.OK)
+            try
             {
-                File.Copy(OpenIMage.FileName, "../../Assets/UserImage" + Path.GetExtension(OpenIMage.FileName),true);
-                User.ProfileImage = "../../Assets/UserImage" + Path.GetExtension(OpenIMage.FileName);
-                DefaultUserImagePictureBox.Load(User.ProfileImage);
+                UploadImage();
+            }
+            catch
+            {
+                CustomBox.Message($"something went wrong.");
             }
         }
 
-      
-
-        private void SavePictureBox_Click(object sender, EventArgs e)
+        private async void UploadImage()
         {
-            User changeduser = SaveChanges();
-            if (changeduser == null) return;
-            CustomBox.Message("information updated successfully");
-            LoadInformation(changeduser);
+            using (OpenFileDialog fileDialog = new OpenFileDialog())
+            {
+                fileDialog.Filter = "image files (*.jpg, *.jpeg,*.png)|*.jpg; *.jpeg;*.png";
+                fileDialog.InitialDirectory = @"C:\";
+                fileDialog.Title = "Please select an image";
+
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string newImagePath = $"../../Assets/ProfileImage_{Guid.NewGuid()}{Path.GetExtension(fileDialog.FileName)}";
+                    File.Copy(fileDialog.FileName, newImagePath, true);
+
+                    UserImagePictureBox.LoadAsync(newImagePath);
+                    User.Image = newImagePath;
+                }
+            }
         }
 
-        private User SaveChanges()
+        public async Task CopyFileAsync(string sourcePath, string destinationPath)
         {
-            User TempUser = new User
+            using (Stream source = File.Open(sourcePath, FileMode.Open))
+            {
+                using (Stream destination = File.Create(destinationPath))
+                {
+                    await source.CopyToAsync(destination);
+                }
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e) => SaveData();
+
+        private void SaveData()
+        {
+            User tempUser = new User()
             {
                 Id = User.Id,
                 Name = NameTextBox.Text,
                 LastName = LastNameTextBox.Text,
-                Location = User.Location,
-                Bio = AboutMeTextBox.Text,
                 Interest = InterestTextBox.Text,
-                UserName = User.UserName,
-                Email = User.Email,
-                Password = User.Password,
-                ProfileImage = User.ProfileImage,
+                Bio = BioTextBox.Text,
+                Image = User.Image
             };
-            userManager.DeactivateUser(User);
-           return  userManager.RegisterUser(TempUser);
+
+            User resultUser = UserManager.EditUser(tempUser);
+
+            if (resultUser != null)
+            {
+                User = resultUser;
+                CustomBox.Message("information updated successfully");
+            }
+
+            if (ChangePassword())
+                CustomBox.Message("password changed succesfully");
+
+            CurrentPasswordTextBox.Clear();
+            NewPasswordTextBox.Clear();
         }
-        private void LoadInformation(User user)
+
+        private bool ChekPassword()
         {
-            NameTextBox.Text = user.Name;
-            LastNameTextBox.Text = user.LastName;
-            InterestTextBox.Text = user.Interest;
-            AboutMeTextBox.Text = user.Bio;
-            FullNameLabel.Text = user.Name + " " + user.LastName;
-            InteresteLabel.Text = user.Interest;
-            UserImagePictureBox.Load(user.ProfileImage);
+            if (string.IsNullOrWhiteSpace(NewPasswordTextBox.Text))
+                return false;
+
+            if (!string.IsNullOrWhiteSpace(CurrentPasswordTextBox.Text))
+            {
+                if (CurrentPasswordTextBox.Text == User.Password)
+                {
+                    CurrentPasswordFailedLabel.Visible = false;
+                    return true;
+                }
+                else
+                {
+                    CurrentPasswordFailedLabel.Visible = true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool ChangePassword()
+        {
+            if (ChekPassword())
+            {
+                User resultUser = UserManager.ChangePassword(User, NewPasswordTextBox.Text);
+                return resultUser != null;
+            }
+            return false;
+        }
+
+        private void DeactivateProfileButton_Click(object sender, EventArgs e)
+        {
+            UserDeactivated?.Invoke(this, User);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GitHub.Core.Models;
 using GitHub.Core.DataBaseContext;
 using GitHub.Core.Services.Abstractions;
+using Github.Core.Services.Abstractions;
 
 namespace GitHub.Core.Services.Implementations
 {
@@ -37,6 +38,24 @@ namespace GitHub.Core.Services.Implementations
             return user;
         }
 
+        public User EditUser(User user)
+        {
+            var searchResult = DataBase.Users.Find(user.Id);
+
+            if (searchResult == null)
+                return null;
+
+            searchResult.Name = user.Name;
+            searchResult.LastName = user.LastName;
+            searchResult.Bio = user.Bio;
+            searchResult.Interest = user.Interest;
+            searchResult.Image = user.Image;
+
+            DataBase.SaveChanges();
+
+            return searchResult;
+        }
+
         public User ChangePassword(User user, string newPassword)
         {
             User searchResult = DataBase.Users.FirstOrDefault(u => u.UserName.Equals(user.UserName, StringComparison.CurrentCultureIgnoreCase));
@@ -51,8 +70,7 @@ namespace GitHub.Core.Services.Implementations
 
         public bool DeactivateUser(User user)
         {
-            User searchResult = DataBase.Users.FirstOrDefault(u => u.UserName.Equals(user.UserName, StringComparison.CurrentCultureIgnoreCase)
-                && u.Password == user.Password);
+            User searchResult = DataBase.Users.Find(user.Id);
 
             if (searchResult == null)
                 return false;

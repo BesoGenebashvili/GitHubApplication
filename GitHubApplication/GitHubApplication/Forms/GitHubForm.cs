@@ -7,13 +7,15 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 using GitHubApplication.Common;
 using GitHubApplication.Controls;
+using GitHubApplication.Properties;
 using GitHub.Core.Services.Abstractions;
+using Unity.Resolution;
 
 namespace GitHubApplication
 {
     public partial class GitHubForm : Form
     {
-        private readonly IUserManager UserService;
+        private readonly IUserManager UserManager;
         private readonly IGitHubApiService GitHubService;
         private readonly SearchLanguageCategoriesControl[] LanguageComboBoxControls;
 
@@ -57,17 +59,17 @@ namespace GitHubApplication
             }
         }
 
-        public GitHubForm(IGitHubApiService gitHubService, IUserManager userService)
+        public GitHubForm(IGitHubApiService gitHubService, IUserManager userManager)
         {
             InitializeComponent();
 
             GitHubService = gitHubService;
-            UserService = userService;
+            UserManager = userManager;
 
-            // შესაცვლელია
+            // TODO: ენები ბაზაში უნდა დაემატოს და მერე LINQ-ით ამოიღებ და შექმნი
             LanguageComboBoxControls = new SearchLanguageCategoriesControl[]
             {
-                new SearchLanguageCategoriesControl("C",LanguageButtonClickHandler),
+                new SearchLanguageCategoriesControl("C", LanguageButtonClickHandler),
                 new SearchLanguageCategoriesControl("C++",LanguageButtonClickHandler),
                 new SearchLanguageCategoriesControl("C#",LanguageButtonClickHandler),
                 new SearchLanguageCategoriesControl("Java",LanguageButtonClickHandler),
@@ -84,6 +86,11 @@ namespace GitHubApplication
 
         private void GitHubForm_Load(object sender, EventArgs e)
         {
+            TransferToLoginForm();
+        }
+
+        private void TransferToLoginForm()
+        {
             var loginFrom = ServiceManager.Instance.Container.Resolve<LoginForm>();
             loginFrom.SuccessfullyLogged += SuccessfullyLoggedHandler;
 
@@ -98,7 +105,7 @@ namespace GitHubApplication
             }
         }
 
-        // ცოტა შესაცვლელია
+        //TODO: ცოტა შესაცვლელია
         private void LanguageButtonClickHandler(object sender, string languageName)
         {
             ChooseLanguageButton.Text = languageName;
@@ -106,7 +113,7 @@ namespace GitHubApplication
             LanguageComboBoxPanel.Visible = false;
         }
 
-        private bool LanguageChoosen = false; // ესეც შესაცვლელია.
+        private bool LanguageChoosen = false; //TODO ესეც შესაცვლელია.
         private async void SearchButton_Click(object sender, EventArgs e)
         {
             ShowMainPanel = true;
@@ -124,6 +131,9 @@ namespace GitHubApplication
 
         private async void TrendingRepositoriesButton_Click(object sender, EventArgs e)
         {
+            LoadingPictureBox.Image = Resources.LoadingAnimationForRepositories;
+            LoadingPictureBox.Visible = true;
+
             ShowMainPanel = true;
 
             ClearPanelControls(MainPanel);
@@ -131,10 +141,15 @@ namespace GitHubApplication
             var repositories = await GitHubService.TrendingRepositories();
             var controls = await GetRepositoryControls(repositories);
             MainPanel.Controls.AddRange(controls);
+
+            LoadingPictureBox.Visible = false;
         }
 
         private async void TrendingDevelopersButton_Click(object sender, EventArgs e)
         {
+            LoadingPictureBox.Image = Resources.LoadingAnimationForDevelopers;
+            LoadingPictureBox.Visible = true;
+
             ShowMainPanel = true;
 
             ClearPanelControls(MainPanel);
@@ -142,6 +157,8 @@ namespace GitHubApplication
             var developers = await GitHubService.TrendingDevelopers();
             var controls = await GetDeveloperControls(developers);
             MainPanel.Controls.AddRange(controls);
+
+            LoadingPictureBox.Visible = false;
         }
 
         private void ClearPanelControls(Panel panel) // ...
@@ -181,7 +198,7 @@ namespace GitHubApplication
 
         public void SuccessfullyLoggedHandler(object sender, User user)
         {
-            User = UserService.FindUser(user.UserName);
+            User = UserManager.FindUser(user.UserName);
 
             if (sender is LoginForm loginForm)
                 loginForm.SuccessfullyLogged -= SuccessfullyLoggedHandler;
@@ -207,12 +224,23 @@ namespace GitHubApplication
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();
 
-        private void UserPictureBox_Click(object sender, EventArgs e)
+        private void UserRoomButton_Click(object sender, EventArgs e)
         {
             ShowUserRoomPanel = true;
             ClearPanelControls(UserRoomPanel);
 
-            UserRoomPanel.Controls.Add(new UserRoomControl(UserService, User));
+            var userRoom = ServiceManager.Instance.Container.Resolve<UserRoomControl>(new ParameterOverride("user", User));
+            userRoom.UserDeactivated += UserDeactivatedHandler;
+            UserRoomPanel.Controls.Add(userRoom);
+        }
+
+        public void UserDeactivatedHandler(object sender, User user)
+        {
+            UserManager.DeactivateUser(user);
+            TransferToLoginForm();
+
+            if (sender is UserRoomControl userRoomControl)
+                userRoomControl.UserDeactivated -= UserDeactivatedHandler;
         }
 
 

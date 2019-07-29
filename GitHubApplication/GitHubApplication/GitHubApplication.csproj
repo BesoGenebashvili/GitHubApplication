@@ -454,6 +454,15 @@
     <None Include="Assets\CompareButton.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\saveGif2.gif" />
+    <None Include="Resources\saveGif.gif" />
+    <None Include="Resources\LabelBackground3.jpg" />
+    <None Include="Resources\LabelBackground2.png" />
+    <None Include="Resources\LabelBackground.png" />
+    <None Include="Resources\LoadingAnimationForRepositories1.gif" />
+    <None Include="Resources\LoadingAnimationForDevelopers1.gif" />
+    <None Include="Resources\LoadingAnimationForRepositories.gif" />
+    <None Include="Resources\LoadingAnimationForDevelopers.gif" />
     <None Include="Assets\loadanimation.gif" />
     <None Include="Assets\Blankcircle.png" />
     <None Include="Assets\LoadingAnimationForComparisonPage.gif" />

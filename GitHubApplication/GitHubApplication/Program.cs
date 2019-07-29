@@ -18,6 +18,7 @@ namespace GitHubApplication
             Application.SetCompatibleTextRenderingDefault(false);
 
             ServiceManager.Instance.Container.RegisterType<GitHubDataBaseContext>(new ContainerControlledLifetimeManager());
+
             ServiceManager.Instance.Container.RegisterType<IGitHubApiService, GitHubApiService>();
             ServiceManager.Instance.Container.RegisterType<IUserManager, UserManger>();
 

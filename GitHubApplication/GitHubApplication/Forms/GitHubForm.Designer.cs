@@ -32,11 +32,12 @@
             this.GitHubLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.TrendingRepositoriesButton = new System.Windows.Forms.Label();
             this.TrendingDevelopersButton = new System.Windows.Forms.Label();
-            this.UserPictureBox = new System.Windows.Forms.PictureBox();
+            this.UserRoomButton = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.UserRoomPanel = new System.Windows.Forms.Panel();
+            this.LoadingPictureBox = new System.Windows.Forms.PictureBox();
             this.ComparisonPanel = new System.Windows.Forms.Panel();
             this.ComparisionRepositoriesButton = new System.Windows.Forms.Label();
             this.ChooseLanguageButton = new System.Windows.Forms.Label();
@@ -46,9 +47,10 @@
             this.SearchForRepositoryesTextBox = new System.Windows.Forms.TextBox();
             this.LanguageComboBoxPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserRoomButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,16 +92,16 @@
             this.TrendingDevelopersButton.Text = "Top Developers";
             this.TrendingDevelopersButton.Click += new System.EventHandler(this.TrendingDevelopersButton_Click);
             // 
-            // UserPictureBox
+            // UserRoomButton
             // 
-            this.UserPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.UserPictureBox.Image = global::GitHubApplication.Properties.Resources.userIcon;
-            this.UserPictureBox.Location = new System.Drawing.Point(1071, 21);
-            this.UserPictureBox.Name = "UserPictureBox";
-            this.UserPictureBox.Size = new System.Drawing.Size(43, 43);
-            this.UserPictureBox.TabIndex = 8;
-            this.UserPictureBox.TabStop = false;
-            this.UserPictureBox.Click += new System.EventHandler(this.UserPictureBox_Click);
+            this.UserRoomButton.BackColor = System.Drawing.Color.Transparent;
+            this.UserRoomButton.Image = global::GitHubApplication.Properties.Resources.userIcon;
+            this.UserRoomButton.Location = new System.Drawing.Point(1071, 21);
+            this.UserRoomButton.Name = "UserRoomButton";
+            this.UserRoomButton.Size = new System.Drawing.Size(43, 43);
+            this.UserRoomButton.TabIndex = 8;
+            this.UserRoomButton.TabStop = false;
+            this.UserRoomButton.Click += new System.EventHandler(this.UserRoomButton_Click);
             // 
             // CloseButton
             // 
@@ -148,6 +150,19 @@
             this.UserRoomPanel.Name = "UserRoomPanel";
             this.UserRoomPanel.Size = new System.Drawing.Size(1152, 618);
             this.UserRoomPanel.TabIndex = 33;
+            // 
+            // LoadingPictureBox
+            // 
+            this.LoadingPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.LoadingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoadingPictureBox.Image")));
+            this.LoadingPictureBox.InitialImage = null;
+            this.LoadingPictureBox.Location = new System.Drawing.Point(558, 351);
+            this.LoadingPictureBox.Name = "LoadingPictureBox";
+            this.LoadingPictureBox.Size = new System.Drawing.Size(85, 97);
+            this.LoadingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoadingPictureBox.TabIndex = 0;
+            this.LoadingPictureBox.TabStop = false;
+            this.LoadingPictureBox.Visible = false;
             // 
             // ComparisonPanel
             // 
@@ -246,6 +261,7 @@
             this.BackgroundImage = global::GitHubApplication.Properties.Resources.mainformBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.LoadingPictureBox);
             this.Controls.Add(this.LanguageComboBoxPanel);
             this.Controls.Add(this.SearchForRepositoryesTextBox);
             this.Controls.Add(this.pictureBox1);
@@ -257,7 +273,7 @@
             this.Controls.Add(this.ComparisonPanel);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.MinimizeButton);
-            this.Controls.Add(this.UserPictureBox);
+            this.Controls.Add(this.UserRoomButton);
             this.Controls.Add(this.TrendingDevelopersButton);
             this.Controls.Add(this.TrendingRepositoriesButton);
             this.Controls.Add(this.GitHubLogoPictureBox);
@@ -270,9 +286,10 @@
             this.TransparencyKey = System.Drawing.SystemColors.InactiveBorder;
             this.Load += new System.EventHandler(this.GitHubForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GitHubLogoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserRoomButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CallendarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -286,7 +303,7 @@
         private System.Windows.Forms.PictureBox GitHubLogoPictureBox;
         private System.Windows.Forms.Label TrendingRepositoriesButton;
         private System.Windows.Forms.Label TrendingDevelopersButton;
-        private System.Windows.Forms.PictureBox UserPictureBox;
+        private System.Windows.Forms.PictureBox UserRoomButton;
         private System.Windows.Forms.PictureBox CloseButton;
         private System.Windows.Forms.PictureBox MinimizeButton;
         private System.Windows.Forms.FlowLayoutPanel MainPanel;
@@ -299,5 +316,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox SearchForRepositoryesTextBox;
         private System.Windows.Forms.FlowLayoutPanel LanguageComboBoxPanel;
+        private System.Windows.Forms.PictureBox LoadingPictureBox;
     }
 }

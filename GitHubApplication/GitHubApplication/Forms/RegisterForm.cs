@@ -13,15 +13,15 @@ namespace GitHubApplication
     {
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
-        private readonly IUserManager UserService;
+        private readonly IUserManager UserManager;
         public event EventHandler<User> SuccessfullyRegistered;
 
-        public RegisterForm(IUserManager userService)
+        public RegisterForm(IUserManager userManager)
         {
             InitializeComponent();
 
-            UserService = userService;
-            Validator = new Validator(UserNameLabel.ForeColor);
+            UserManager = userManager;
+            Validator = new Validator(UserNameLabel.ForeColor, Color.IndianRed);
             LabelTextBoxPairs = new Dictionary<Label, TextBox>()
             {
                 [UserNameLabel] = UserNameTextBox,
@@ -45,7 +45,7 @@ namespace GitHubApplication
                     UserName = UserNameTextBox.Text,
                     Email = EmailTextBox.Text,
                     Password = PasswordTextBox.Text,
-                    ProfileImage = "../../Assets/DefaultLogo.png"
+                    Image = "../../Assets/DefaultLogo.png"
                 };
                 SignUpUser(user);
             }
@@ -55,7 +55,7 @@ namespace GitHubApplication
         {
             if (SentConfirmationCode(newUser))
             {
-                User registeredUser = UserService.RegisterUser(newUser);
+                User registeredUser = UserManager.RegisterUser(newUser);
 
                 if (registeredUser == null)
                     MessageBox.Show("User already registered");
@@ -75,7 +75,7 @@ namespace GitHubApplication
         {
             string confirmationCode = Guid.NewGuid().ToString();
 
-            if (UserService.SentMailAsync(newUser, "GitHab Application - Registration", $"Confirmation code - {confirmationCode}").Result)
+            if (UserManager.SentMailAsync(newUser, "GitHab Application - Registration", $"Confirmation code - {confirmationCode}").Result)
             {
                 if (CustomBox.Input($"Confirmation code sent to {newUser.Email}") == confirmationCode)
                     return true;
@@ -105,7 +105,7 @@ namespace GitHubApplication
 
         private bool ValidatePassword()
         {
-            if(PasswordTextBox.Text == RetypePasswordTextBox.Text)
+            if (PasswordTextBox.Text == RetypePasswordTextBox.Text)
             {
                 PasswordsFailedLabel.Visible = false;
                 return true;

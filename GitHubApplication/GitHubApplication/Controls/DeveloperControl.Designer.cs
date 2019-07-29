@@ -73,7 +73,7 @@
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(186)))), ((int)(((byte)(186)))));
-            this.EmailLabel.Location = new System.Drawing.Point(597, 89);
+            this.EmailLabel.Location = new System.Drawing.Point(738, 89);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(181, 17);
             this.EmailLabel.TabIndex = 19;
@@ -119,7 +119,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::GitHubApplication.Properties.Resources.email_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(580, 93);
+            this.pictureBox4.Location = new System.Drawing.Point(721, 93);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(13, 10);
             this.pictureBox4.TabIndex = 20;

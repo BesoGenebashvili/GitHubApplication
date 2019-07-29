@@ -28,70 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TwoPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.OnePasswordTextBox = new System.Windows.Forms.TextBox();
-            this.AboutMeTextBox = new System.Windows.Forms.TextBox();
+            this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.CurrentPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.BioTextBox = new System.Windows.Forms.TextBox();
             this.InterestTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.DeactivateLabel = new System.Windows.Forms.Label();
+            this.DeactivateProfileButton = new System.Windows.Forms.Label();
             this.InteresteLabel = new System.Windows.Forms.Label();
             this.FullNameLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.UploadPictureBox = new System.Windows.Forms.PictureBox();
-            this.DefaultUserImagePictureBox = new System.Windows.Forms.PictureBox();
-            this.SavePictureBox = new System.Windows.Forms.PictureBox();
+            this.CurrentPasswordFailedLabel = new System.Windows.Forms.Label();
+            this.UploadImageButton = new System.Windows.Forms.PictureBox();
+            this.DefaultImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.SaveButton = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.LogOutPictureBox = new System.Windows.Forms.PictureBox();
+            this.LogOutButton = new System.Windows.Forms.PictureBox();
             this.UserImagePictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.UploadPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DefaultUserImagePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SavePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadImageButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DefaultImagePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogOutPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogOutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // TwoPasswordTextBox
+            // NewPasswordTextBox
             // 
-            this.TwoPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
-            this.TwoPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TwoPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TwoPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.TwoPasswordTextBox.Location = new System.Drawing.Point(790, 451);
-            this.TwoPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.TwoPasswordTextBox.Name = "TwoPasswordTextBox";
-            this.TwoPasswordTextBox.Size = new System.Drawing.Size(224, 16);
-            this.TwoPasswordTextBox.TabIndex = 49;
-            this.TwoPasswordTextBox.UseSystemPasswordChar = true;
+            this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
+            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(790, 451);
+            this.NewPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.NewPasswordTextBox.Name = "NewPasswordTextBox";
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 16);
+            this.NewPasswordTextBox.TabIndex = 49;
+            this.NewPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // OnePasswordTextBox
+            // CurrentPasswordTextBox
             // 
-            this.OnePasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
-            this.OnePasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OnePasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OnePasswordTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.OnePasswordTextBox.Location = new System.Drawing.Point(491, 451);
-            this.OnePasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.OnePasswordTextBox.Name = "OnePasswordTextBox";
-            this.OnePasswordTextBox.Size = new System.Drawing.Size(229, 16);
-            this.OnePasswordTextBox.TabIndex = 48;
-            this.OnePasswordTextBox.UseSystemPasswordChar = true;
+            this.CurrentPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
+            this.CurrentPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CurrentPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.CurrentPasswordTextBox.Location = new System.Drawing.Point(491, 451);
+            this.CurrentPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.CurrentPasswordTextBox.Name = "CurrentPasswordTextBox";
+            this.CurrentPasswordTextBox.Size = new System.Drawing.Size(229, 16);
+            this.CurrentPasswordTextBox.TabIndex = 48;
+            this.CurrentPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // AboutMeTextBox
+            // BioTextBox
             // 
-            this.AboutMeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
-            this.AboutMeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AboutMeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutMeTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.AboutMeTextBox.Location = new System.Drawing.Point(309, 322);
-            this.AboutMeTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.AboutMeTextBox.Multiline = true;
-            this.AboutMeTextBox.Name = "AboutMeTextBox";
-            this.AboutMeTextBox.Size = new System.Drawing.Size(703, 69);
-            this.AboutMeTextBox.TabIndex = 47;
+            this.BioTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
+            this.BioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BioTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.BioTextBox.Location = new System.Drawing.Point(309, 322);
+            this.BioTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.BioTextBox.Multiline = true;
+            this.BioTextBox.Name = "BioTextBox";
+            this.BioTextBox.Size = new System.Drawing.Size(703, 69);
+            this.BioTextBox.TabIndex = 47;
             // 
             // InterestTextBox
             // 
@@ -129,18 +130,19 @@
             this.NameTextBox.Size = new System.Drawing.Size(364, 16);
             this.NameTextBox.TabIndex = 44;
             // 
-            // DeactivateLabel
+            // DeactivateProfileButton
             // 
-            this.DeactivateLabel.AutoSize = true;
-            this.DeactivateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DeactivateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeactivateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.DeactivateLabel.Location = new System.Drawing.Point(931, 24);
-            this.DeactivateLabel.Name = "DeactivateLabel";
-            this.DeactivateLabel.Size = new System.Drawing.Size(119, 17);
-            this.DeactivateLabel.TabIndex = 38;
-            this.DeactivateLabel.Text = "Deactivate Profile";
-            this.DeactivateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DeactivateProfileButton.AutoSize = true;
+            this.DeactivateProfileButton.BackColor = System.Drawing.Color.Transparent;
+            this.DeactivateProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeactivateProfileButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.DeactivateProfileButton.Location = new System.Drawing.Point(931, 24);
+            this.DeactivateProfileButton.Name = "DeactivateProfileButton";
+            this.DeactivateProfileButton.Size = new System.Drawing.Size(119, 17);
+            this.DeactivateProfileButton.TabIndex = 38;
+            this.DeactivateProfileButton.Text = "Deactivate Profile";
+            this.DeactivateProfileButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DeactivateProfileButton.Click += new System.EventHandler(this.DeactivateProfileButton_Click);
             // 
             // InteresteLabel
             // 
@@ -178,38 +180,52 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Profile Settings";
             // 
-            // UploadPictureBox
+            // CurrentPasswordFailedLabel
             // 
-            this.UploadPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
-            this.UploadPictureBox.Image = global::GitHubApplication.Properties.Resources.uploadButton;
-            this.UploadPictureBox.Location = new System.Drawing.Point(826, 248);
-            this.UploadPictureBox.Name = "UploadPictureBox";
-            this.UploadPictureBox.Size = new System.Drawing.Size(107, 35);
-            this.UploadPictureBox.TabIndex = 43;
-            this.UploadPictureBox.TabStop = false;
-            this.UploadPictureBox.Click += new System.EventHandler(this.UploadPictureBox_Click);
+            this.CurrentPasswordFailedLabel.AutoSize = true;
+            this.CurrentPasswordFailedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
+            this.CurrentPasswordFailedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentPasswordFailedLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.CurrentPasswordFailedLabel.Location = new System.Drawing.Point(488, 424);
+            this.CurrentPasswordFailedLabel.Name = "CurrentPasswordFailedLabel";
+            this.CurrentPasswordFailedLabel.Size = new System.Drawing.Size(155, 17);
+            this.CurrentPasswordFailedLabel.TabIndex = 38;
+            this.CurrentPasswordFailedLabel.Text = "Password is not correct";
+            this.CurrentPasswordFailedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CurrentPasswordFailedLabel.Visible = false;
             // 
-            // DefaultUserImagePictureBox
+            // UploadImageButton
             // 
-            this.DefaultUserImagePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.DefaultUserImagePictureBox.Image = global::GitHubApplication.Properties.Resources.profilePictureUpload;
-            this.DefaultUserImagePictureBox.Location = new System.Drawing.Point(805, 109);
-            this.DefaultUserImagePictureBox.Name = "DefaultUserImagePictureBox";
-            this.DefaultUserImagePictureBox.Size = new System.Drawing.Size(150, 150);
-            this.DefaultUserImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DefaultUserImagePictureBox.TabIndex = 42;
-            this.DefaultUserImagePictureBox.TabStop = false;
+            this.UploadImageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
+            this.UploadImageButton.Image = global::GitHubApplication.Properties.Resources.uploadButton;
+            this.UploadImageButton.Location = new System.Drawing.Point(826, 271);
+            this.UploadImageButton.Name = "UploadImageButton";
+            this.UploadImageButton.Size = new System.Drawing.Size(107, 35);
+            this.UploadImageButton.TabIndex = 43;
+            this.UploadImageButton.TabStop = false;
+            this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
             // 
-            // SavePictureBox
+            // DefaultImagePictureBox
             // 
-            this.SavePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.SavePictureBox.Image = global::GitHubApplication.Properties.Resources.saveButton;
-            this.SavePictureBox.Location = new System.Drawing.Point(609, 514);
-            this.SavePictureBox.Name = "SavePictureBox";
-            this.SavePictureBox.Size = new System.Drawing.Size(107, 35);
-            this.SavePictureBox.TabIndex = 41;
-            this.SavePictureBox.TabStop = false;
-            this.SavePictureBox.Click += new System.EventHandler(this.SavePictureBox_Click);
+            this.DefaultImagePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.DefaultImagePictureBox.Image = global::GitHubApplication.Properties.Resources.profilePictureUpload;
+            this.DefaultImagePictureBox.Location = new System.Drawing.Point(805, 109);
+            this.DefaultImagePictureBox.Name = "DefaultImagePictureBox";
+            this.DefaultImagePictureBox.Size = new System.Drawing.Size(150, 150);
+            this.DefaultImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DefaultImagePictureBox.TabIndex = 42;
+            this.DefaultImagePictureBox.TabStop = false;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
+            this.SaveButton.Image = global::GitHubApplication.Properties.Resources.saveButton;
+            this.SaveButton.Location = new System.Drawing.Point(609, 514);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(107, 35);
+            this.SaveButton.TabIndex = 41;
+            this.SaveButton.TabStop = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // pictureBox7
             // 
@@ -231,23 +247,24 @@
             this.pictureBox6.TabIndex = 37;
             this.pictureBox6.TabStop = false;
             // 
-            // LogOutPictureBox
+            // LogOutButton
             // 
-            this.LogOutPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutPictureBox.Image = global::GitHubApplication.Properties.Resources.logOutButton;
-            this.LogOutPictureBox.Location = new System.Drawing.Point(56, 373);
-            this.LogOutPictureBox.Name = "LogOutPictureBox";
-            this.LogOutPictureBox.Size = new System.Drawing.Size(107, 35);
-            this.LogOutPictureBox.TabIndex = 36;
-            this.LogOutPictureBox.TabStop = false;
+            this.LogOutButton.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutButton.Image = global::GitHubApplication.Properties.Resources.logOutButton;
+            this.LogOutButton.Location = new System.Drawing.Point(56, 373);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(107, 35);
+            this.LogOutButton.TabIndex = 36;
+            this.LogOutButton.TabStop = false;
             // 
             // UserImagePictureBox
             // 
             this.UserImagePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.UserImagePictureBox.Image = global::GitHubApplication.Properties.Resources.profilePictureUpload;
             this.UserImagePictureBox.Location = new System.Drawing.Point(49, 184);
             this.UserImagePictureBox.Name = "UserImagePictureBox";
             this.UserImagePictureBox.Size = new System.Drawing.Size(121, 121);
-            this.UserImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserImagePictureBox.TabIndex = 33;
             this.UserImagePictureBox.TabStop = false;
             // 
@@ -256,31 +273,32 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.TwoPasswordTextBox);
-            this.Controls.Add(this.OnePasswordTextBox);
-            this.Controls.Add(this.AboutMeTextBox);
+            this.Controls.Add(this.CurrentPasswordFailedLabel);
+            this.Controls.Add(this.NewPasswordTextBox);
+            this.Controls.Add(this.CurrentPasswordTextBox);
+            this.Controls.Add(this.BioTextBox);
             this.Controls.Add(this.InterestTextBox);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.UploadPictureBox);
-            this.Controls.Add(this.DefaultUserImagePictureBox);
-            this.Controls.Add(this.SavePictureBox);
+            this.Controls.Add(this.UploadImageButton);
+            this.Controls.Add(this.DefaultImagePictureBox);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.DeactivateLabel);
+            this.Controls.Add(this.DeactivateProfileButton);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.LogOutPictureBox);
+            this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.InteresteLabel);
             this.Controls.Add(this.FullNameLabel);
             this.Controls.Add(this.UserImagePictureBox);
             this.Controls.Add(this.label4);
             this.Name = "UserRoomControl";
             this.Size = new System.Drawing.Size(1143, 597);
-            ((System.ComponentModel.ISupportInitialize)(this.UploadPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DefaultUserImagePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SavePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadImageButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DefaultImagePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogOutPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogOutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserImagePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,22 +307,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox TwoPasswordTextBox;
-        private System.Windows.Forms.TextBox OnePasswordTextBox;
-        private System.Windows.Forms.TextBox AboutMeTextBox;
+        private System.Windows.Forms.TextBox NewPasswordTextBox;
+        private System.Windows.Forms.TextBox CurrentPasswordTextBox;
+        private System.Windows.Forms.TextBox BioTextBox;
         private System.Windows.Forms.TextBox InterestTextBox;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.PictureBox UploadPictureBox;
-        private System.Windows.Forms.PictureBox DefaultUserImagePictureBox;
-        private System.Windows.Forms.PictureBox SavePictureBox;
+        private System.Windows.Forms.PictureBox UploadImageButton;
+        private System.Windows.Forms.PictureBox DefaultImagePictureBox;
+        private System.Windows.Forms.PictureBox SaveButton;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label DeactivateLabel;
+        private System.Windows.Forms.Label DeactivateProfileButton;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox LogOutPictureBox;
+        private System.Windows.Forms.PictureBox LogOutButton;
         private System.Windows.Forms.Label InteresteLabel;
         private System.Windows.Forms.Label FullNameLabel;
         private System.Windows.Forms.PictureBox UserImagePictureBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label CurrentPasswordFailedLabel;
     }
 }

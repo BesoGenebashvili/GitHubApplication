@@ -14,14 +14,14 @@ namespace GitHubApplication
     {
         private readonly Validator Validator;
         private readonly Dictionary<Label, TextBox> LabelTextBoxPairs;
-        private readonly IUserManager UserService;
+        private readonly IUserManager UserManager;
         public event EventHandler<User> SuccessfullyLogged;
-        public LoginForm(IUserManager userService)
+        public LoginForm(IUserManager userManager)
         {
             InitializeComponent();
 
-            UserService = userService;
-            Validator = new Validator(UserNameLabel.ForeColor);
+            UserManager = userManager;
+            Validator = new Validator(UserNameLabel.ForeColor, Color.IndianRed);
             LabelTextBoxPairs = new Dictionary<Label, TextBox>()
             {
                 [UserNameLabel] = UserNameTextBox,
@@ -48,7 +48,7 @@ namespace GitHubApplication
 
         private void SignInUser(User user)
         {
-            var result = UserService.LoginUser(user);
+            var result = UserManager.LoginUser(user);
             if (result != null)
             {
                 UserNameOrPasswordFailLabel.Visible = false;
@@ -81,9 +81,10 @@ namespace GitHubApplication
         private void ForgotYourPasswordButton_Click(object sender, EventArgs e)
         {
             string enteredEmail = CustomBox.Input("Enter your Email");
+
             if (enteredEmail != null && enteredEmail.Contains('@'))
             {
-                if (UserService.PasswordRecovery(enteredEmail))
+                if (UserManager.PasswordRecovery(enteredEmail))
                 {
                     CustomBox.Message($"Password successfully sent to: {enteredEmail}");
                     return;

@@ -373,6 +373,26 @@ namespace GitHubApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LoadingAnimationForDevelopers {
+            get {
+                object obj = ResourceManager.GetObject("LoadingAnimationForDevelopers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingAnimationForRepositories {
+            get {
+                object obj = ResourceManager.GetObject("LoadingAnimationForRepositories", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap location_icon {
             get {
                 object obj = ResourceManager.GetObject("location-icon", resourceCulture);
@@ -576,6 +596,26 @@ namespace GitHubApplication.Properties {
         internal static System.Drawing.Bitmap saveButton {
             get {
                 object obj = ResourceManager.GetObject("saveButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveGif {
+            get {
+                object obj = ResourceManager.GetObject("saveGif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveGif2 {
+            get {
+                object obj = ResourceManager.GetObject("saveGif2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
