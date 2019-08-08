@@ -19,8 +19,9 @@ namespace GitHubApplication
 
             ServiceManager.Instance.Container.RegisterType<GitHubDataBaseContext>(new ContainerControlledLifetimeManager());
 
-            ServiceManager.Instance.Container.RegisterType<IGitHubApiService, GitHubApiService>();
-            ServiceManager.Instance.Container.RegisterType<IUserManager, UserManger>();
+            ServiceManager.Instance.Container.RegisterType<IPasswordEncryptor, PasswordEncryptor>(new ContainerControlledLifetimeManager());
+            ServiceManager.Instance.Container.RegisterType<IGitHubApiService, GitHubApiService>(new ContainerControlledLifetimeManager());
+            ServiceManager.Instance.Container.RegisterType<IUserManager, UserManger>(new ContainerControlledLifetimeManager());
 
             GitHubForm gitHubForm = ServiceManager.Instance.Container.Resolve<GitHubForm>();
             Application.Run(gitHubForm);

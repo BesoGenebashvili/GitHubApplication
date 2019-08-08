@@ -1,4 +1,4 @@
-﻿namespace Github.Core.Services.Abstractions
+﻿namespace GitHub.Core.Services.Abstractions
 {
     public interface IPasswordEncryptor
     {

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.RetypeNewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.CurrentPasswordTextBox = new System.Windows.Forms.TextBox();
             this.BioTextBox = new System.Windows.Forms.TextBox();
             this.InterestTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
@@ -38,7 +38,6 @@
             this.InteresteLabel = new System.Windows.Forms.Label();
             this.FullNameLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.CurrentPasswordFailedLabel = new System.Windows.Forms.Label();
             this.UploadImageButton = new System.Windows.Forms.PictureBox();
             this.DefaultImagePictureBox = new System.Windows.Forms.PictureBox();
             this.SaveButton = new System.Windows.Forms.PictureBox();
@@ -46,6 +45,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.LogOutButton = new System.Windows.Forms.PictureBox();
             this.UserImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.PasswordsFailedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UploadImageButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultImagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).BeginInit();
@@ -55,31 +55,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // RetypeNewPasswordTextBox
+            // 
+            this.RetypeNewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
+            this.RetypeNewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RetypeNewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RetypeNewPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.RetypeNewPasswordTextBox.Location = new System.Drawing.Point(790, 451);
+            this.RetypeNewPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.RetypeNewPasswordTextBox.Name = "RetypeNewPasswordTextBox";
+            this.RetypeNewPasswordTextBox.Size = new System.Drawing.Size(224, 16);
+            this.RetypeNewPasswordTextBox.TabIndex = 49;
+            this.RetypeNewPasswordTextBox.UseSystemPasswordChar = true;
+            // 
             // NewPasswordTextBox
             // 
             this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
             this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.NewPasswordTextBox.Location = new System.Drawing.Point(790, 451);
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(491, 451);
             this.NewPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
-            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 16);
-            this.NewPasswordTextBox.TabIndex = 49;
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(229, 16);
+            this.NewPasswordTextBox.TabIndex = 48;
             this.NewPasswordTextBox.UseSystemPasswordChar = true;
-            // 
-            // CurrentPasswordTextBox
-            // 
-            this.CurrentPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
-            this.CurrentPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CurrentPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.CurrentPasswordTextBox.Location = new System.Drawing.Point(491, 451);
-            this.CurrentPasswordTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.CurrentPasswordTextBox.Name = "CurrentPasswordTextBox";
-            this.CurrentPasswordTextBox.Size = new System.Drawing.Size(229, 16);
-            this.CurrentPasswordTextBox.TabIndex = 48;
-            this.CurrentPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // BioTextBox
             // 
@@ -180,20 +180,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Profile Settings";
             // 
-            // CurrentPasswordFailedLabel
-            // 
-            this.CurrentPasswordFailedLabel.AutoSize = true;
-            this.CurrentPasswordFailedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
-            this.CurrentPasswordFailedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentPasswordFailedLabel.ForeColor = System.Drawing.Color.IndianRed;
-            this.CurrentPasswordFailedLabel.Location = new System.Drawing.Point(488, 424);
-            this.CurrentPasswordFailedLabel.Name = "CurrentPasswordFailedLabel";
-            this.CurrentPasswordFailedLabel.Size = new System.Drawing.Size(155, 17);
-            this.CurrentPasswordFailedLabel.TabIndex = 38;
-            this.CurrentPasswordFailedLabel.Text = "Password is not correct";
-            this.CurrentPasswordFailedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CurrentPasswordFailedLabel.Visible = false;
-            // 
             // UploadImageButton
             // 
             this.UploadImageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
@@ -268,14 +254,27 @@
             this.UserImagePictureBox.TabIndex = 33;
             this.UserImagePictureBox.TabStop = false;
             // 
+            // PasswordsFailedLabel
+            // 
+            this.PasswordsFailedLabel.AutoSize = true;
+            this.PasswordsFailedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(54)))));
+            this.PasswordsFailedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordsFailedLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.PasswordsFailedLabel.Location = new System.Drawing.Point(785, 423);
+            this.PasswordsFailedLabel.Name = "PasswordsFailedLabel";
+            this.PasswordsFailedLabel.Size = new System.Drawing.Size(179, 18);
+            this.PasswordsFailedLabel.TabIndex = 50;
+            this.PasswordsFailedLabel.Text = "Passwords must be equal";
+            this.PasswordsFailedLabel.Visible = false;
+            // 
             // UserRoomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.CurrentPasswordFailedLabel);
+            this.Controls.Add(this.PasswordsFailedLabel);
+            this.Controls.Add(this.RetypeNewPasswordTextBox);
             this.Controls.Add(this.NewPasswordTextBox);
-            this.Controls.Add(this.CurrentPasswordTextBox);
             this.Controls.Add(this.BioTextBox);
             this.Controls.Add(this.InterestTextBox);
             this.Controls.Add(this.LastNameTextBox);
@@ -307,8 +306,8 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox RetypeNewPasswordTextBox;
         private System.Windows.Forms.TextBox NewPasswordTextBox;
-        private System.Windows.Forms.TextBox CurrentPasswordTextBox;
         private System.Windows.Forms.TextBox BioTextBox;
         private System.Windows.Forms.TextBox InterestTextBox;
         private System.Windows.Forms.TextBox LastNameTextBox;
@@ -324,6 +323,6 @@
         private System.Windows.Forms.Label FullNameLabel;
         private System.Windows.Forms.PictureBox UserImagePictureBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label CurrentPasswordFailedLabel;
+        private System.Windows.Forms.Label PasswordsFailedLabel;
     }
 }

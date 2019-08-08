@@ -12,6 +12,8 @@
         public string Password { get; set; }
         public string Image { get; set; }
 
+        public object ShallowCopy() => MemberwiseClone();
+
         public int Id { get; set; }
     }
 }

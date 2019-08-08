@@ -1,7 +1,5 @@
 ﻿namespace GitHub.Core.Dtos
 {
-    //-------------------------------------
-
     public class UsersFromApi
     {
         public string login { get; set; }

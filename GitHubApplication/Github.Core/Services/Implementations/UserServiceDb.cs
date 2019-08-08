@@ -6,36 +6,45 @@ using System.Threading.Tasks;
 using GitHub.Core.Models;
 using GitHub.Core.DataBaseContext;
 using GitHub.Core.Services.Abstractions;
-using Github.Core.Services.Abstractions;
 
 namespace GitHub.Core.Services.Implementations
 {
     public class UserManger : IUserManager
     {
         private readonly GitHubDataBaseContext DataBase;
+        private readonly IPasswordEncryptor PasswordEncryptor;
 
-        public UserManger(GitHubDataBaseContext dataBase)
+        public UserManger(GitHubDataBaseContext dataBase, IPasswordEncryptor passwordEncryptor)
         {
             DataBase = dataBase;
+            PasswordEncryptor = passwordEncryptor;
         }
 
         public User LoginUser(User user)
         {
             return DataBase.Users.FirstOrDefault(u => u.UserName.Equals(user.UserName, StringComparison.CurrentCultureIgnoreCase)
-                && u.Password == user.Password);
+                && PasswordEncryptor.DecryptPassword(u.Password) == user.Password);
         }
 
         public User RegisterUser(User user)
         {
             if (DataBase.Users.Any(u => u.UserName.Equals(user.UserName, StringComparison.CurrentCultureIgnoreCase)
-                 && u.Password == user.Password))
+                 && PasswordEncryptor.DecryptPassword(u.Password) == user.Password))
             {
                 return null;
             }
 
+            user.Password = PasswordEncryptor.EncryptPassword(user.Password);
             DataBase.Users.Add(user);
             DataBase.SaveChanges();
-            return user;
+
+            //TODO: სატესტოდ. თუ იმ იუზერის პაროლს შევცვლი რომელიც ბაზაში ჩავწერე
+            // ლოგინის დროს ბაზიდან წამოიღებს შეცვლილს. ამიტომაც ვაკეთებთ კოპირებას.
+
+            var copiedUser = user.ShallowCopy() as User;
+            copiedUser.Password = PasswordEncryptor.DecryptPassword(user.Password);
+
+            return copiedUser;
         }
 
         public User EditUser(User user)
@@ -58,12 +67,14 @@ namespace GitHub.Core.Services.Implementations
 
         public User ChangePassword(User user, string newPassword)
         {
-            User searchResult = DataBase.Users.FirstOrDefault(u => u.UserName.Equals(user.UserName, StringComparison.CurrentCultureIgnoreCase));
+            User searchResult = DataBase.Users.Find(user.Id);
 
             if (searchResult == null)
                 return null;
 
-            searchResult.Password = newPassword;
+            var encryptedPassword = PasswordEncryptor.EncryptPassword(newPassword);
+            searchResult.Password = encryptedPassword;
+
             DataBase.SaveChanges();
             return searchResult;
         }
@@ -126,7 +137,9 @@ namespace GitHub.Core.Services.Implementations
             if (searchResult == null)
                 return false;
 
-            return SentMailAsync(searchResult, "GitHab Application - Password Recovery", $"Your password is - {searchResult.Password}").Result;
+            var decryptedPassword = PasswordEncryptor.DecryptPassword(searchResult.Password);
+
+            return SentMailAsync(searchResult, "GitHab Application - Password Recovery", $"Your password is - {decryptedPassword}").Result;
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-
-
 namespace GitHub.Core.Dtos
 {
     public class RepositoriesRootObject

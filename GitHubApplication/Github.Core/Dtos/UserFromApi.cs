@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace GitHub.Core.Dtos
 {
     public class UserFromApi

@@ -58,7 +58,7 @@ namespace GitHubApplication
                 User registeredUser = UserManager.RegisterUser(newUser);
 
                 if (registeredUser == null)
-                    MessageBox.Show("User already registered");
+                    CustomBox.Message("username or password already used");
 
                 else
                 {

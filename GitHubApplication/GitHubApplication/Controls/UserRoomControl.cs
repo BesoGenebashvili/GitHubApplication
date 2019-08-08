@@ -60,7 +60,7 @@ namespace GitHubApplication.Controls
             }
         }
 
-        private async void UploadImage()
+        private void UploadImage()
         {
             using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
@@ -94,6 +94,12 @@ namespace GitHubApplication.Controls
 
         private void SaveData()
         {
+            if (!ChangePassword())
+            {
+                CustomBox.Message("something went wrong please try again");
+                return;
+            }
+
             User tempUser = new User()
             {
                 Id = User.Id,
@@ -111,43 +117,45 @@ namespace GitHubApplication.Controls
                 User = resultUser;
                 CustomBox.Message("information updated successfully");
             }
-
-            if (ChangePassword())
-                CustomBox.Message("password changed succesfully");
-
-            CurrentPasswordTextBox.Clear();
-            NewPasswordTextBox.Clear();
+            else
+            {
+                CustomBox.Message("something went wrong please try again");
+            }
         }
 
         private bool ChekPassword()
         {
-            if (string.IsNullOrWhiteSpace(NewPasswordTextBox.Text))
-                return false;
-
-            if (!string.IsNullOrWhiteSpace(CurrentPasswordTextBox.Text))
+            if (!string.IsNullOrWhiteSpace(NewPasswordTextBox.Text) || !string.IsNullOrWhiteSpace(RetypeNewPasswordTextBox.Text))
             {
-                if (CurrentPasswordTextBox.Text == User.Password)
+                if (NewPasswordTextBox.Text == RetypeNewPasswordTextBox.Text)
                 {
-                    CurrentPasswordFailedLabel.Visible = false;
+                    PasswordsFailedLabel.Visible = false;
                     return true;
                 }
                 else
                 {
-                    CurrentPasswordFailedLabel.Visible = true;
+                    PasswordsFailedLabel.Visible = true;
+                    return false;
                 }
             }
-
-            return false;
+            return true;
         }
 
         private bool ChangePassword()
         {
+            bool isChanged = false;
+
             if (ChekPassword())
             {
                 User resultUser = UserManager.ChangePassword(User, NewPasswordTextBox.Text);
-                return resultUser != null;
+
+                isChanged = resultUser != null ? true : false;
             }
-            return false;
+
+            NewPasswordTextBox.Clear();
+            RetypeNewPasswordTextBox.Clear();
+
+            return isChanged;
         }
 
         private void DeactivateProfileButton_Click(object sender, EventArgs e)

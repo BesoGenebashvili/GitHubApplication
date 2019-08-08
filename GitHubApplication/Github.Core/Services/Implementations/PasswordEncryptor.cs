@@ -1,9 +1,9 @@
-﻿using Github.Core.Services.Abstractions;
+﻿using GitHub.Core.Services.Abstractions;
 using Eramake;
 
-namespace Github.Core.Services.Implementations
+namespace GitHub.Core.Services.Implementations
 {
-    class PasswordEncryptor : IPasswordEncryptor
+    public class PasswordEncryptor : IPasswordEncryptor
     {
         public string EncryptPassword(string passwordToEncrypt) => eCryptography.Encrypt(passwordToEncrypt);
 
